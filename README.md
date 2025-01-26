@@ -1,2 +1,2 @@
 # mbchavezzportfolio
-My Personal Portfolio built using NextJS
+My Personal Portfolio 
