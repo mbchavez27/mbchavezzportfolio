@@ -1,9 +1,10 @@
 import { use, useEffect, useState } from 'react'
 
 import Drawer from '../drawer/drawer'
+import { Link } from 'react-router-dom'
 
 export default function NavBar() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(true)
   const [isHidden, setIsHidden] = useState(true)
 
   useEffect(() => {
@@ -19,7 +20,9 @@ export default function NavBar() {
     <>
       <div className="p-10 absolute z-10">
         <div className="text-[#BFBFBF] flex items-center space-x-4">
-          <h1 className=" font-bold text-5xl">@mbchavezz</h1>
+          <Link to="/" className="font-bold text-5xl">
+            @mbchavezz
+          </Link>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

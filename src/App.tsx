@@ -1,10 +1,14 @@
-import Layout from "./layout/layout";
+import Layout from './layout/layout'
+import { BrowserRouter } from 'react-router-dom'
+
 export default function App() {
   return (
     <>
-      <div className="font-inter">
-        <Layout></Layout>
-      </div>
+      <BrowserRouter>
+        <div className="font-inter">
+          <Layout></Layout>
+        </div>
+      </BrowserRouter>
     </>
-  );
+  )
 }

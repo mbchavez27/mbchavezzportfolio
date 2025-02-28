@@ -1,10 +1,10 @@
-import Home from "../pages/home";
-import NavBar from "../components/navbar/navbar";
+import NavBar from '../components/navbar/navbar'
+import PageRouter from '../components/pagerouter'
 export default function Layout() {
   return (
     <>
       <NavBar></NavBar>
-      <Home></Home>
+      <PageRouter></PageRouter>
     </>
-  );
+  )
 }
