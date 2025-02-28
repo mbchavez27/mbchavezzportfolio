@@ -13,7 +13,7 @@ export default function Drawer() {
           to="/experiences"
           className="hover:translate-x-6 transition duration-200"
         >
-          Experinces
+          Experiences
         </Link>
         <Link
           to="/about"

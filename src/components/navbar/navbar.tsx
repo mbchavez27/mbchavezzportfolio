@@ -4,8 +4,8 @@ import Drawer from '../drawer/drawer'
 import { Link } from 'react-router-dom'
 
 export default function NavBar() {
-  const [isOpen, setIsOpen] = useState(true)
-  const [isHidden, setIsHidden] = useState(true)
+  const [isOpen, setIsOpen] = useState(false)
+  const [isHidden, setIsHidden] = useState(false)
 
   useEffect(() => {
     if (isOpen) {
@@ -18,7 +18,7 @@ export default function NavBar() {
 
   return (
     <>
-      <div className="p-10 absolute z-10">
+      <div className="p-12 absolute z-10">
         <div className="text-[#BFBFBF] flex items-center space-x-4">
           <Link to="/" className="font-bold text-5xl">
             @mbchavezz
@@ -44,11 +44,11 @@ export default function NavBar() {
           </svg>
         </div>
         <div
-          className={`px-16 py-10 transition duration-200 ease-in-out opacity-0
+          className={`px-16 transition duration-75 ease-in-out opacity-0
                       ${
                         isOpen
-                          ? 'translate-x-[10px] opacity-100'
-                          : 'translate-x-[0px] opacity-0'
+                          ? 'translate-y-[50px] opacity-100'
+                          : 'translate-y-[0px] opacity-0'
                       }
                               ${isHidden ? 'hidden' : 'block'}
           `}
