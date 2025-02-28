@@ -17,7 +17,7 @@ export default function NavBar() {
 
   return (
     <>
-      <div>
+      <div className="p-10 min-h-screen bg-[#151515]">
         <div className="text-[#BFBFBF] flex items-center space-x-4">
           <h1 className=" font-bold text-5xl">@mbchavezz</h1>
           <svg
@@ -41,7 +41,7 @@ export default function NavBar() {
           </svg>
         </div>
         <div
-          className={`px-16 py-6 transition duration-200 ease-in-out 
+          className={`px-16 py-6 transition duration-200 ease-in-out opacity-0
                       ${
                         isOpen
                           ? "translate-x-[10px] opacity-100"
