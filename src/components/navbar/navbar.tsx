@@ -32,7 +32,7 @@ export default function NavBar() {
             onClick={() => {
               setIsOpen(!isOpen)
             }}
-            className={`size-8 transition duration-200 translate-y-1.5 ease-in-out ${
+            className={`size-8 transition duration-200 translate-y-1.5 ease-in-out cursor-pointer ${
               isOpen ? 'rotate-180' : 'rotate-0'
             }`}
           >
