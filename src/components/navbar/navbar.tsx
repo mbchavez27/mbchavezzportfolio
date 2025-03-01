@@ -1,17 +1,17 @@
-import { use, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import Drawer from '../drawer/drawer'
 import { Link } from 'react-router-dom'
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false)
-  const [isHidden, setIsHidden] = useState(false)
+  const [isHidden, setIsHidden] = useState(true)
 
   useEffect(() => {
     if (isOpen) {
       setIsHidden(false)
     } else {
-      const timer = setTimeout(() => setIsHidden(true), 3000)
+      const timer = setTimeout(() => setIsHidden(true), 1000)
       return () => clearTimeout(timer)
     }
   }, [isOpen])
