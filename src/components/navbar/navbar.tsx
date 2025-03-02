@@ -7,7 +7,7 @@ export default function NavBar() {
   const location = useLocation()
 
   useEffect(() => {
-    if (location.pathname == '/navigation') setIsOpen(true)
+    if (location.pathname == '/drawer') setIsOpen(true)
     else setIsOpen(false)
   }, [location.pathname])
 
@@ -18,7 +18,7 @@ export default function NavBar() {
           <Link to="/" className="font-bold text-5xl">
             @mbchavezz
           </Link>
-          <Link to="/navigation">
+          <Link to="/drawer">
             <motion.svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

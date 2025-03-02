@@ -1,8 +1,9 @@
 import { Route, Routes, useLocation } from 'react-router-dom'
 import Home from '../pages/home'
 import Projects from '../pages/projects'
-import Menu from './menu/menu'
 import { AnimatePresence, motion } from 'framer-motion'
+import Drawer from './drawer/drawer'
+import Experiences from '@/pages/experiences'
 
 export default function PageRouter() {
   const location = useLocation()
@@ -27,10 +28,18 @@ export default function PageRouter() {
             }
           ></Route>
           <Route
-            path="/navigation"
+            path="/drawer"
             element={
               <VerticalAnimation>
-                <Menu></Menu>
+                <Drawer></Drawer>
+              </VerticalAnimation>
+            }
+          ></Route>
+          <Route
+            path="/experiences"
+            element={
+              <VerticalAnimation>
+                <Experiences></Experiences>
               </VerticalAnimation>
             }
           ></Route>
