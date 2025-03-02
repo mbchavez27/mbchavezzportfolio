@@ -7,18 +7,18 @@ export default function NavBar() {
   const location = useLocation()
 
   useEffect(() => {
-    if (location.pathname == '/navbar') setIsOpen(true)
+    if (location.pathname == '/navigation') setIsOpen(true)
     else setIsOpen(false)
   }, [location.pathname])
 
   return (
     <>
       <div className="p-12 absolute z-10">
-        <div className="text-[#BFBFBF] flex items-center space-x-4">
+        <div className="text-[#881b14] flex items-center space-x-4">
           <Link to="/" className="font-bold text-5xl">
             @mbchavezz
           </Link>
-          <Link to="/navbar">
+          <Link to="/navigation">
             <motion.svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
