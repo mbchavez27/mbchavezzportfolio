@@ -6,7 +6,7 @@ export default function Home() {
       >
         <div className="text-green-900">
           Computer Science Student Studying{'  '}
-          <span className="font-bold">@DLSU</span>
+          <span className="font-bold">@dlsu</span>
         </div>
         <div className="text-gray-400">
           Senior Front End Engineer <span className="font-bold">@lscs</span>
