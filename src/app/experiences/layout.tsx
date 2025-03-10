@@ -14,10 +14,10 @@ export default function ExperienceLayout({
     <>
       <AnimatePresence>
         <motion.div
-          initial={{ translateX: 100, opacity: 0 }}
+          initial={{ translateX: -200, opacity: 0 }}
           animate={{ translateX: 0, opacity: 1 }}
-          exit={{ translateX: 150, opacity: 0 }}
-          transition={{ duration: 0.5, ease: [0, 0.71, 0.2, 1.01] }}
+          exit={{ translateX: -250, opacity: 0 }}
+          transition={{ duration: 1, ease: [0, 0.71, 0.2, 1.01] }}
         >
           <div className="p-12">
             <div className="text-5xl font-bold italic">Experiences</div>
@@ -44,11 +44,22 @@ export default function ExperienceLayout({
               >
                 Roles
               </Link>
+              <Link
+                href="/experiences/competitions"
+                className={clsx(
+                  "hover:border-b-2 hover:pb-1 hover:border-white transition duration-200",
+                  pathname == "/experiences/competitions"
+                    ? "border-b-2 border-white pb-1"
+                    : ""
+                )}
+              >
+                Competitions
+              </Link>
             </div>
+            {children}
           </div>
         </motion.div>
       </AnimatePresence>
-      {children}
     </>
   );
 }

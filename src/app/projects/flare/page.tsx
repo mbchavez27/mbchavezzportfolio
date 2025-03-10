@@ -10,7 +10,7 @@ const Project = () => {
           initial={{ translateX: -200, opacity: 0 }}
           animate={{ translateX: 0, opacity: 1 }}
           exit={{ translateX: -250, opacity: 0 }}
-          transition={{ duration: 0.5, ease: [0, 0.71, 0.2, 1.01] }}
+          transition={{ duration: 1, ease: [0, 0.71, 0.2, 1.01] }}
         >
           <div className="p-16">
             <div className="flex flex-col space-y-6">

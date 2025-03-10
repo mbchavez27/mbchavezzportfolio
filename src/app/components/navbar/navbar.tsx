@@ -17,7 +17,7 @@ const Navbar = () => {
           initial={{ translateX: -100, opacity: 0 }}
           animate={{ translateX: 0, opacity: 1 }}
           exit={{ translateX: -150, opacity: 0 }}
-          transition={{ duration: 0.5, ease: [0, 0.71, 0.2, 1.01] }}
+          transition={{ duration: 1, ease: [0, 0.71, 0.2, 1.01] }}
         >
           <div className="flex space-x-8 items-center">
             <div className="flex items-center space-x-3.5">
@@ -26,7 +26,7 @@ const Navbar = () => {
               </Link>
               <motion.div
                 animate={{ rotate: !isOpen ? 180 : 360, translateY: 2.5 }}
-                transition={{ duration: 0.2 }}
+                transition={{ duration: 0.5 }}
               >
                 <ChevronRightIcon
                   className="text-[#BFBFBF] size-8"
@@ -42,7 +42,7 @@ const Navbar = () => {
                   initial={{ translateX: -30, opacity: 0 }}
                   animate={{ translateX: 0, opacity: 1 }}
                   exit={{ translateX: -40, opacity: 0 }}
-                  transition={{ duration: 0.2, ease: [0, 0.71, 0.2, 1.01] }}
+                  transition={{ duration: 0.5, ease: [0, 0.71, 0.2, 1.01] }}
                 >
                   <div className="flex space-x-6 text-3xl translate-y-0.5">
                     <Link
