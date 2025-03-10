@@ -1,14 +1,14 @@
-'use client'
-import { motion, AnimatePresence } from 'motion/react'
-import { ChevronRightIcon } from '@heroicons/react/24/solid'
-import { useState } from 'react'
-import clsx from 'clsx'
-import { usePathname } from 'next/navigation'
-import Link from 'next/link'
+"use client";
+import { motion, AnimatePresence } from "motion/react";
+import { ChevronRightIcon } from "@heroicons/react/24/solid";
+import { useState } from "react";
+import clsx from "clsx";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const Navbar = () => {
-  const [isOpen, setOpen] = useState(false)
-  const pathname = usePathname()
+  const [isOpen, setOpen] = useState(false);
+  const pathname = usePathname();
   return (
     <>
       <AnimatePresence>
@@ -21,7 +21,9 @@ const Navbar = () => {
         >
           <div className="flex space-x-8 items-center">
             <div className="flex items-center space-x-3.5">
-              <h1 className="text-[#e93a3c] text-5xl font-bold">@mbchavezz</h1>
+              <Link href="/" className="text-[#e93a3c] text-5xl font-bold">
+                @mbchavezz
+              </Link>
               <motion.div
                 animate={{ rotate: !isOpen ? 180 : 360, translateY: 2.5 }}
                 transition={{ duration: 0.2 }}
@@ -29,7 +31,7 @@ const Navbar = () => {
                 <ChevronRightIcon
                   className="text-[#BFBFBF] size-8"
                   onClick={() => {
-                    setOpen(!isOpen)
+                    setOpen(!isOpen);
                   }}
                 ></ChevronRightIcon>
               </motion.div>
@@ -46,8 +48,8 @@ const Navbar = () => {
                     <Link
                       href="/"
                       className={clsx(
-                        'hover:text-[#e93a3c] transition duration-200',
-                        pathname == '/' ? 'text-[#e93a3c]' : ''
+                        "hover:text-[#e93a3c] transition duration-200",
+                        pathname == "/" ? "text-[#e93a3c]" : ""
                       )}
                     >
                       Home
@@ -55,8 +57,8 @@ const Navbar = () => {
                     <Link
                       href="/projects"
                       className={clsx(
-                        'hover:text-[#e93a3c] transition duration-200',
-                        pathname == '/projects' ? 'text-[#e93a3c]' : ''
+                        "hover:text-[#e93a3c] transition duration-200",
+                        pathname == "/projects" ? "text-[#e93a3c]" : ""
                       )}
                     >
                       Projects
@@ -64,8 +66,8 @@ const Navbar = () => {
                     <Link
                       href="/experiences"
                       className={clsx(
-                        'hover:text-[#e93a3c] transition duration-200',
-                        pathname == '/experiences' ? 'text-[#e93a3c]' : ''
+                        "hover:text-[#e93a3c] transition duration-200",
+                        pathname == "/experiences" ? "text-[#e93a3c]" : ""
                       )}
                     >
                       Experiences
@@ -78,7 +80,7 @@ const Navbar = () => {
         </motion.div>
       </AnimatePresence>
     </>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
