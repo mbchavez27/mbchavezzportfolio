@@ -1,9 +1,6 @@
+"use client";
 const Experiences = () => {
-  return (
-    <>
-      <div>birat</div>
-    </>
-  )
-}
+  return <></>;
+};
 
-export default Experiences
+export default Experiences;
