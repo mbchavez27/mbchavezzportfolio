@@ -6,7 +6,7 @@ const Home = () => {
       <div className="flex flex-col items-end px-30 py-16 space-y-12">
         <div>
           <p className="font-bold italic text-6xl/16 w-4xl text-right">
-            I'm a currently DLSU student studying BS Computer Science Major in
+            I'm a currently a DLSU student studying BS Computer Science Major in
             Software Tech and a Senior Front End Engineer at La Salle Computer
             Society
           </p>
