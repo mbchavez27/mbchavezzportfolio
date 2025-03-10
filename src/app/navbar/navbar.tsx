@@ -2,9 +2,12 @@
 import { motion, AnimatePresence } from 'motion/react'
 import { ChevronRightIcon } from '@heroicons/react/24/solid'
 import { useState } from 'react'
+import clsx from 'clsx'
+import { usePathname } from 'next/navigation'
 
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false)
+  const pathname = usePathname()
   return (
     <>
       <div className="absolute bottom-0 p-12">
@@ -32,7 +35,9 @@ const Navbar = () => {
                 transition={{ duration: 0.2, ease: [0, 0.71, 0.2, 1.01] }}
               >
                 <div className="flex space-x-6 text-3xl translate-y-0.5">
-                  <p>Home</p>
+                  <p className={clsx(pathname == '/' ? 'text-[#e93a3c]' : '')}>
+                    Home
+                  </p>
                   <p>Projects</p>
                   <p>Experiences</p>
                 </div>
