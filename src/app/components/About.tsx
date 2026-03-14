@@ -1,32 +1,32 @@
-import { Code2, Palette, Rocket, Users } from "lucide-react";
+import { Code2, Palette, Rocket, Users } from 'lucide-react'
 
 export function About() {
   const highlights = [
     {
       icon: Code2,
-      title: "Full-Stack Dev",
+      title: 'Full-Stack Dev',
       description:
-        "Building with TypeScript, Go, Python, and C++ for scalable applications.",
+        'Building with TypeScript, Go, Python, and C++ for scalable applications.',
     },
     {
       icon: Palette,
-      title: "NLP & Affective Computing",
+      title: 'NLP & Affective Computing',
       description:
-        "Researching multilingual sentiment analysis and emotion detection systems.",
+        'Researching multilingual sentiment analysis and emotion detection systems.',
     },
     {
       icon: Rocket,
-      title: "Innovation & Startups",
+      title: 'Innovation & Startups',
       description:
-        "From indie game development to scalable web platforms and ML research.",
+        'From indie game development to scalable web platforms and ML research.',
     },
     {
       icon: Users,
-      title: "Technical Leadership",
+      title: 'Technical Leadership',
       description:
-        "Leading frontend teams and supporting large-scale technical operations.",
+        'Leading frontend teams and supporting large-scale technical operations.',
     },
-  ];
+  ]
 
   return (
     <section className="py-24 px-6 relative" id="about">
@@ -41,7 +41,7 @@ export function About() {
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
           <div>
             <img
-              src="src/imports/max.jpeg"
+              src="/images/max.jpeg"
               alt="Max Benedict Chavez"
               className="rounded-lg border border-primary/20 shadow-lg shadow-primary/5 w-full object-cover aspect-square"
             />
@@ -95,5 +95,5 @@ export function About() {
         </div>
       </div>
     </section>
-  );
+  )
 }
