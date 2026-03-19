@@ -24,9 +24,9 @@ export function Projects() {
       github: "https://github.com/dlsu-lscs/arw-2025-web",
     },
     {
-      title: "LSCS Member House Clustering",
+      title: "Interest-Based Matchmaking Algorithm",
       description:
-        "Built an intelligent clustering system using MPNet embeddings to group students based on interests.",
+        "Built an NLP-powered system using MPNet embeddings to match and cluster people based on shared interests.",
       tags: ["Python", "MPNet", "Clustering", "NLP"],
       github: "https://github.com/mbchavez27/matchmaking-cluster-api",
     },
@@ -38,11 +38,39 @@ export function Projects() {
       github: "https://github.com/mbchavez27/taft-eats",
     },
     {
+      title: "Tomo Coffee Promo Web App",
+      description:
+        "Built a secure, mobile-first promo redemption platform for 500+ LSCS members, enabling sub-30s claims, achieving 95%+ user satisfaction, and driving a 20% boost in engagement and redemptions.",
+      tags: ["React", "Axios", "TailwindCSS", "TypeScript"],
+      github: "https://github.com/dlsu-lscs/dlsu-lscs-tomo-web",
+    },
+    {
+      title: "LSCS Links",
+      description:
+        "Built a custom link management platform for 100+ LSCS officers, improving link management efficiency by 30%, enabling near-instant link creation, and supporting consistent branding across 10+ events.",
+      tags: ["React", "Axios", "TailwindCSS", "TypeScript"],
+      github: "https://github.com/dlsu-lscs/lscs-links-web",
+    },
+    {
       title: "La Salle Compute Society Website",
       description:
         "Co-led frontend development of the LSCS website, delivering a modern, mobile-responsive platform to showcase initiatives, events, and projects with a scalable, intuitive UI.",
       tags: ["NextJS", "TailwindCSS", "TypeScript"],
       github: "https://github.com/dlsu-lscs/dlsu-lscs-website",
+    },
+    {
+      title: "Jump Shot: Tournament",
+      description:
+        "Built a 2D local multiplayer platformer shooter game, developing it in Unity with C# OOP and creating all game assets in Photoshop.",
+      tags: ["C#", "Unity", "Photoshop"],
+      github: "https://epyxx-27.itch.io/jump-shot-tournament",
+    },
+    {
+      title: "Jump Shot: Tournament",
+      description:
+        "Built a 2D single-player cooking game, developing the full experience in Unity using C# and object-oriented programming.",
+      tags: ["C#", "Unity", "Photoshop"],
+      github: "https://epyxx-27.itch.io/steakhouse-nightmare",
     },
   ];
 

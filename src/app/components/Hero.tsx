@@ -1,5 +1,5 @@
-import { Github, Linkedin, Mail, ArrowDown } from 'lucide-react'
-import { Button } from './ui/button'
+import { Github, Linkedin, Mail, ArrowDown } from "lucide-react";
+import { Button } from "./ui/button";
 
 export function Hero() {
   return (
@@ -23,8 +23,8 @@ export function Hero() {
         </div>
 
         <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-3xl leading-relaxed">
-          Lead Frontend Engineer at La Salle Computer Society, and aspiring NLP
-          & Affective Computing researcher.
+          Lead Frontend Engineer at LSCS and Research Assistant at CITE4D,
+          exploring NLP and Affective Computing.
         </p>
 
         <div className="flex gap-4">
@@ -57,5 +57,5 @@ export function Hero() {
         <ArrowDown className="h-6 w-6 text-primary" />
       </div>
     </section>
-  )
+  );
 }
