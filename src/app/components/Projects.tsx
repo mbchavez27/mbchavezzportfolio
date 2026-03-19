@@ -3,7 +3,7 @@ import { Github } from "lucide-react";
 export function Projects() {
   const projects = [
     {
-      title: "Pinoybot - Code-Switching Classifier",
+      title: "Pinoybot - Language Classifier",
       description:
         "Filipino-English code-switching classifier using MPNet embeddings and Random Forest. Achieved 94.16% accuracy and 0.94 weighted F1 score.",
       tags: ["Python", "Scikit-learn", "MPNet", "NLP"],
