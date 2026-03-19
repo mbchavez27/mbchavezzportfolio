@@ -1,16 +1,16 @@
-import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { Menu, X } from 'lucide-react'
+import { useState } from 'react'
 
 export function Navigation() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
 
   const navItems = [
-    { label: "About", href: "#about" },
-    { label: "Skills", href: "#skills" },
-    { label: "Projects", href: "#projects" },
-    { label: "Awards", href: "#awards" },
-    { label: "Contact", href: "#contact" },
-  ];
+    { label: 'About', href: '#about' },
+    { label: 'Skills', href: '#skills' },
+    { label: 'Projects', href: '#projects' },
+    { label: 'Awards', href: '#awards' },
+    { label: 'Contact', href: '#contact' },
+  ]
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-primary/20">
@@ -34,10 +34,19 @@ export function Navigation() {
             <a href="#about" className="hover:text-primary transition-colors">
               About
             </a>
+            <a
+              href="#experiences"
+              className="hover:text-primary transition-colors"
+            >
+              Experiences
+            </a>
             <a href="#skills" className="hover:text-primary transition-colors">
               Skills
             </a>
-            <a href="#projects" className="hover:text-primary transition-colors">
+            <a
+              href="#projects"
+              className="hover:text-primary transition-colors"
+            >
               Projects
             </a>
             <a href="#awards" className="hover:text-primary transition-colors">
@@ -67,7 +76,10 @@ export function Navigation() {
             <a href="#skills" className="hover:text-primary transition-colors">
               Skills
             </a>
-            <a href="#projects" className="hover:text-primary transition-colors">
+            <a
+              href="#projects"
+              className="hover:text-primary transition-colors"
+            >
               Projects
             </a>
             <a href="#awards" className="hover:text-primary transition-colors">
@@ -80,5 +92,5 @@ export function Navigation() {
         )}
       </div>
     </nav>
-  );
+  )
 }
