@@ -1,5 +1,5 @@
-import { Github, Linkedin, Mail, ArrowDown } from "lucide-react";
-import { Button } from "./ui/button";
+import { Github, Linkedin, Mail, ArrowDown } from 'lucide-react'
+import { Button } from './ui/button'
 
 export function Hero() {
   return (
@@ -18,7 +18,7 @@ export function Hero() {
             </span>
           </h1>
           <span className="inline-block px-6 py-3 bg-primary/10 text-primary rounded-full text-base md:text-lg border border-primary/20">
-            ML Engineer & Lead Frontend Engineer
+            ML & Software Engineer
           </span>
         </div>
 
@@ -57,5 +57,5 @@ export function Hero() {
         <ArrowDown className="h-6 w-6 text-primary" />
       </div>
     </section>
-  );
+  )
 }

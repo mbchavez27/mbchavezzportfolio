@@ -15,7 +15,7 @@ export function Experience() {
     },
     {
       title: 'Lead Frontend Engineer',
-      company: 'La Salle Computer Society, Research and Development',
+      company: 'La Salle Computer Society',
       location: 'Manila, Philippines',
       period: 'Aug 2024 - Present',
       responsibilities: [
