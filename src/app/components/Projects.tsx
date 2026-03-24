@@ -1,78 +1,78 @@
-import { Github } from "lucide-react";
+import { Github } from 'lucide-react'
 
 export function Projects() {
   const projects = [
     {
-      title: "Pinoybot - Language Classifier",
+      title: 'Pinoybot - Language Classifier',
       description:
-        "Filipino-English code-switching classifier using MPNet embeddings and Random Forest. Achieved 94.16% accuracy and 0.94 weighted F1 score.",
-      tags: ["Python", "Scikit-learn", "MPNet", "NLP"],
-      github: "https://github.com/mbchavez27/pinoybot",
+        'Filipino-English code-switching classifier using MPNet embeddings and Random Forest. Achieved 94.16% accuracy and 0.94 weighted F1 score.',
+      tags: ['Python', 'Scikit-learn', 'MPNet', 'NLP'],
+      github: 'https://github.com/mbchavez27/pinoybot',
     },
     {
-      title: "Leap 2025 Website",
+      title: 'Leap 2025 Website',
       description:
-        "Led frontend development of a registration platform for 29,000+ users with a scalable mobile-responsive interface.",
-      tags: ["Next.js", "TypeScript", "Tailwind CSS"],
-      github: "https://github.com/dlsu-lscs/leap25-web",
+        'Led frontend development of a registration platform for 29,000+ users with a scalable mobile-responsive interface.',
+      tags: ['Next.js', 'TypeScript', 'Tailwind CSS'],
+      github: 'https://github.com/dlsu-lscs/leap25-web',
     },
     {
-      title: "Annual Recruitment Week 2025 Website",
+      title: 'Annual Recruitment Week 2025 Website',
       description:
-        "Co-led frontend development enabling 22,000+ students to register across 40+ organizations, delivering a mobile-responsive, scalable platform with 99.8\% uptime and sub-1.2s load times.",
-      tags: ["Next.js", "TypeScript", "Tailwind CSS"],
-      github: "https://github.com/dlsu-lscs/arw-2025-web",
+        'Co-led frontend development enabling 22,000+ students to register across 40+ organizations, delivering a mobile-responsive, scalable platform with 99.8\% uptime and sub-1.2s load times.',
+      tags: ['Next.js', 'TypeScript', 'Tailwind CSS'],
+      github: 'https://github.com/dlsu-lscs/arw-2025-web',
     },
     {
-      title: "Interest-Based Matchmaking Algorithm",
+      title: 'Groupify',
       description:
-        "Developed an interest-based matchmaking API by generating semantic embeddings with MPNet and applying K-Means clustering, utilizing a greedy algorithm to pair 500+ users in under 10+ seconds.",
-      tags: ["Python", "MPNet", "Clustering", "NLP"],
-      github: "https://github.com/mbchavez27/matchmaking-cluster-api",
+        'Developed an interest-based matchmaking app by generating semantic embeddings with MPNet and applying K-Means clustering, utilizing a greedy algorithm to pair 500+ users in under 10+ seconds.',
+      tags: ['Python', 'MPNet', 'Clustering', 'NLP'],
+      github: 'https://github.com/mbchavez27/matchmaking-cluster-api',
     },
     {
-      title: "Taft Eats",
+      title: 'Taft Eats',
       description:
-        "Full-stack restaurant review app for Taft-area establishments with scalable search and review features.",
-      tags: ["React", "Express.js", "MySQL", "TypeScript"],
-      github: "https://github.com/mbchavez27/taft-eats",
+        'Full-stack restaurant review app for Taft-area establishments with scalable search and review features.',
+      tags: ['React', 'Express.js', 'MySQL', 'TypeScript'],
+      github: 'https://github.com/mbchavez27/taft-eats',
     },
     {
-      title: "Tomo Coffee Promo Web App",
+      title: 'Tomo Coffee Promo Web App',
       description:
-        "Built a secure, mobile-first promo redemption platform for 500+ LSCS members, enabling sub-30s claims, achieving 95%+ user satisfaction, and driving a 20% boost in engagement and redemptions.",
-      tags: ["React", "Axios", "TailwindCSS", "TypeScript"],
-      github: "https://github.com/dlsu-lscs/dlsu-lscs-tomo-web",
+        'Built a secure, mobile-first promo redemption platform for 500+ LSCS members, enabling sub-30s claims, achieving 95%+ user satisfaction, and driving a 20% boost in engagement and redemptions.',
+      tags: ['React', 'Axios', 'TailwindCSS', 'TypeScript'],
+      github: 'https://github.com/dlsu-lscs/dlsu-lscs-tomo-web',
     },
     {
-      title: "LSCS Links",
+      title: 'LSCS Links',
       description:
-        "Built a custom link management platform for 100+ LSCS officers, improving link management efficiency by 30%, enabling near-instant link creation, and supporting consistent branding across 10+ events.",
-      tags: ["React", "Axios", "TailwindCSS", "TypeScript"],
-      github: "https://github.com/dlsu-lscs/lscs-links-web",
+        'Built a custom link management platform for 100+ LSCS officers, improving link management efficiency by 30%, enabling near-instant link creation, and supporting consistent branding across 10+ events.',
+      tags: ['React', 'Axios', 'TailwindCSS', 'TypeScript'],
+      github: 'https://github.com/dlsu-lscs/lscs-links-web',
     },
     {
-      title: "La Salle Compute Society Website",
+      title: 'La Salle Compute Society Website',
       description:
-        "Co-led frontend development of the LSCS website, delivering a modern, mobile-responsive platform to showcase initiatives, events, and projects with a scalable, intuitive UI.",
-      tags: ["NextJS", "TailwindCSS", "TypeScript"],
-      github: "https://github.com/dlsu-lscs/dlsu-lscs-website",
+        'Co-led frontend development of the LSCS website, delivering a modern, mobile-responsive platform to showcase initiatives, events, and projects with a scalable, intuitive UI.',
+      tags: ['NextJS', 'TailwindCSS', 'TypeScript'],
+      github: 'https://github.com/dlsu-lscs/dlsu-lscs-website',
     },
     {
-      title: "Jump Shot: Tournament",
+      title: 'Jump Shot: Tournament',
       description:
-        "Built a 2D local multiplayer platformer shooter game, developing it in Unity with C# OOP and creating all game assets in Photoshop.",
-      tags: ["C#", "Unity", "Photoshop"],
-      github: "https://epyxx-27.itch.io/jump-shot-tournament",
+        'Built a 2D local multiplayer platformer shooter game, developing it in Unity with C# OOP and creating all game assets in Photoshop.',
+      tags: ['C#', 'Unity', 'Photoshop'],
+      github: 'https://epyxx-27.itch.io/jump-shot-tournament',
     },
     {
-      title: "Steakhouse Nightmare",
+      title: 'Steakhouse Nightmare',
       description:
-        "Built a 2D single-player cooking game, developing the full experience in Unity using C# and object-oriented programming.",
-      tags: ["C#", "Unity", "Photoshop"],
-      github: "https://epyxx-27.itch.io/steakhouse-nightmare",
+        'Built a 2D single-player cooking game, developing the full experience in Unity using C# and object-oriented programming.',
+      tags: ['C#', 'Unity', 'Photoshop'],
+      github: 'https://epyxx-27.itch.io/steakhouse-nightmare',
     },
-  ];
+  ]
 
   return (
     <section className="py-24 px-6" id="projects">
@@ -128,5 +128,5 @@ export function Projects() {
         </div>
       </div>
     </section>
-  );
+  )
 }
