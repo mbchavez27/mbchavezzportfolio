@@ -26,8 +26,8 @@ export function Projects() {
     {
       title: 'Groupify',
       description:
-        'Developed an interest-based matchmaking app by generating semantic embeddings with MPNet and applying K-Means clustering, utilizing a greedy algorithm to pair 500+ users in under 10+ seconds.',
-      tags: ['Python', 'MPNet', 'Clustering', 'NLP'],
+        'Developed Groupify, an interest-based matchmaking app that extracts and cleans user keywords, generates MPNet embeddings, clusters them with K-Means, and uses a greedy algorithm to match 800+ users in under 20 seconds.',
+      tags: ['Python', 'Transformer Based Models', 'KMeans Clustering', 'NLP'],
       github: 'https://github.com/mbchavez27/matchmaking-cluster-api',
     },
     {
