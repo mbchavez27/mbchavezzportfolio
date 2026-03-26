@@ -1,5 +1,5 @@
-import { Github, Linkedin, Mail, ArrowDown } from "lucide-react";
-import { Button } from "./ui/button";
+import { Github, Linkedin, Mail, Briefcase, ArrowDown } from 'lucide-react'
+import { Button } from './ui/button'
 
 export function Hero() {
   return (
@@ -50,6 +50,12 @@ export function Hero() {
           >
             <Mail className="h-5 w-5" />
           </a>
+          <a
+            href="https://drive.google.com/file/d/1dQ8OJHoPJEaYDg5MnW1FQ4rzgC26xrJT/view"
+            className="w-12 h-12 rounded-full border border-primary/20 flex items-center justify-center hover:bg-primary/10 hover:border-primary/40 transition-colors"
+          >
+            Resume
+          </a>
         </div>
       </div>
 
@@ -57,5 +63,5 @@ export function Hero() {
         <ArrowDown className="h-6 w-6 text-primary" />
       </div>
     </section>
-  );
+  )
 }
