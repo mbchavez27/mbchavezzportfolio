@@ -52,7 +52,7 @@ export function Hero() {
           </a>
           <a
             href="https://drive.google.com/file/d/1dQ8OJHoPJEaYDg5MnW1FQ4rzgC26xrJT/view"
-            className="w-12 h-12 rounded-full border border-primary/20 flex items-center justify-center hover:bg-primary/10 hover:border-primary/40 transition-colors"
+            className="w-12 h-12 rounded border border-primary/20 flex items-center justify-center hover:bg-primary/10 hover:border-primary/40 transition-colors"
           >
             Resume
           </a>
