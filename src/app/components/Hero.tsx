@@ -1,4 +1,5 @@
 import { Github, Linkedin, Mail, Briefcase, ArrowDown } from 'lucide-react'
+import { FileText, ExternalLink } from 'lucide-react'
 import { Button } from './ui/button'
 
 export function Hero() {
@@ -52,9 +53,19 @@ export function Hero() {
           </a>
           <a
             href="https://drive.google.com/file/d/1dQ8OJHoPJEaYDg5MnW1FQ4rzgC26xrJT/view"
-            className="w-12 h-12 rounded border border-primary/20 flex items-center justify-center hover:bg-primary/10 hover:border-primary/40 transition-colors"
+            className="w-12 h-12 rounded-xl border border-primary/20 flex items-center justify-center hover:bg-primary/10 hover:border-primary/40 transition-colors"
           >
             Resume
+          </a>
+          <a
+            href="https://drive.google.com/file/d/1dQ8OJHoPJEaYDg5MnW1FQ4rzgC26xrJT/view"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 h-12 rounded-xl border border-primary/20 flex items-center gap-2 justify-center hover:bg-primary/10 hover:border-primary/40 transition-colors"
+          >
+            <FileText className="w-5 h-5" />
+            Resume
+            <ExternalLink className="w-4 h-4 opacity-70" />
           </a>
         </div>
       </div>
