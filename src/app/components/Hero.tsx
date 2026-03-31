@@ -19,13 +19,13 @@ export function Hero() {
             </span>
           </h1>
           <span className="inline-block px-6 py-3 bg-primary/10 text-primary rounded-full text-base md:text-lg border border-primary/20">
-            ML & Software Engineer
+            Software Engineer & AI Researcher
           </span>
         </div>
 
         <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-3xl leading-relaxed">
-          Lead Frontend Engineer at LSCS and Research Assistant at CITE4D,
-          exploring NLP and Affective Computing.
+          Building human-centered systems and exploring affective computing to
+          bridge practical software development with AI research.
         </p>
 
         <div className="flex gap-4">
