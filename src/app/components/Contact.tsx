@@ -1,7 +1,4 @@
-import { Github, Linkedin, Mail, MapPin } from "lucide-react";
-import { Button } from "./ui/button";
-import { Input } from "./ui/input";
-import { Textarea } from "./ui/textarea";
+import { Github, Linkedin, Mail, MapPin } from 'lucide-react'
 
 export function Contact() {
   return (
@@ -22,7 +19,10 @@ export function Contact() {
               </div>
               <div>
                 <div className="mb-1">Email</div>
-                <a href="mailto:maxbenedictchavez@gmail.com" className="text-muted-foreground hover:text-primary transition-colors break-all">
+                <a
+                  href="mailto:maxbenedictchavez@gmail.com"
+                  className="text-muted-foreground hover:text-primary transition-colors break-all"
+                >
                   maxbenedictchavez@gmail.com
                 </a>
               </div>
@@ -44,7 +44,12 @@ export function Contact() {
               </div>
               <div>
                 <div className="mb-1">GitHub</div>
-                <a href="https://github.com/mbchavez27" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors break-all">
+                <a
+                  href="https://github.com/mbchavez27"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-primary transition-colors break-all"
+                >
                   github.com/mbchavez27
                 </a>
               </div>
@@ -56,7 +61,12 @@ export function Contact() {
               </div>
               <div>
                 <div className="mb-1">LinkedIn</div>
-                <a href="https://www.linkedin.com/in/mbchavez/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors break-all">
+                <a
+                  href="https://www.linkedin.com/in/mbchavez/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-primary transition-colors break-all"
+                >
                   linkedin.com/in/mbchavez
                 </a>
               </div>
@@ -65,5 +75,5 @@ export function Contact() {
         </div>
       </div>
     </section>
-  );
+  )
 }

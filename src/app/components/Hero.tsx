@@ -1,6 +1,5 @@
 import { Github, Linkedin, Mail, Briefcase, ArrowDown } from 'lucide-react'
 import { FileText, ExternalLink } from 'lucide-react'
-import { Button } from './ui/button'
 
 export function Hero() {
   return (

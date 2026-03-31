@@ -1,5 +1,3 @@
-import { Heart } from "lucide-react";
-
 export function Footer() {
   return (
     <footer className="py-8 px-6 border-t border-primary/20">
@@ -9,5 +7,5 @@ export function Footer() {
         </p>
       </div>
     </footer>
-  );
+  )
 }
