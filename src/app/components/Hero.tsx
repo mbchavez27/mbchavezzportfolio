@@ -1,70 +1,60 @@
-import { Github, Linkedin, Mail, Briefcase, ArrowDown } from 'lucide-react'
-import { FileText, ExternalLink } from 'lucide-react'
+import { Github, Linkedin, Mail, ArrowDown, ArrowUpRight } from 'lucide-react'
 
 export function Hero() {
   return (
-    <section className="min-h-screen flex flex-col justify-center relative overflow-hidden px-6 pt-32">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
-      </div>
-
-      <div className="max-w-5xl mx-auto w-full relative z-10">
-        <div className="mb-12">
-          <h1 className="text-6xl md:text-8xl lg:text-9xl mb-4 font-bold">
-            <span className="bg-gradient-to-r from-foreground via-primary to-primary bg-clip-text text-transparent">
-              Max Benedict Chavez
-            </span>
+    <section className="min-h-screen flex flex-col justify-center relative px-6 pt-28">
+      <div className="max-w-5xl mx-auto w-full">
+        <div className="mb-10">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl mb-6 font-semibold tracking-tight text-foreground">
+            Max Benedict Chavez
           </h1>
-          <span className="inline-block px-6 py-3 bg-primary/10 text-primary rounded-full text-base md:text-lg border border-primary/20">
+          <p className="text-muted-foreground text-lg">
             Software Engineer & AI Researcher
-          </span>
+          </p>
         </div>
 
-        <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-3xl leading-relaxed">
+        <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl leading-snug">
           Building human-centered systems and exploring affective computing to
           bridge practical software development with AI research.
         </p>
 
-        <div className="flex gap-4">
+        <div className="flex flex-wrap items-center gap-3">
+          <a
+            href="https://drive.google.com/file/d/1dQ8OJHoPJEaYDg5MnW1FQ4rzgC26xrJT/view"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-5 h-11 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors duration-200"
+          >
+            View Resume
+            <ArrowUpRight className="w-4 h-4" />
+          </a>
           <a
             href="https://github.com/mbchavez27"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-12 h-12 rounded-full border border-primary/20 flex items-center justify-center hover:bg-primary/10 hover:border-primary/40 transition-colors"
+            className="w-11 h-11 rounded-full bg-white/[0.05] flex items-center justify-center hover:bg-white/[0.08] transition-colors duration-200"
           >
-            <Github className="h-5 w-5" />
+            <Github className="h-4 w-4 text-muted-foreground" />
           </a>
           <a
             href="https://www.linkedin.com/in/mbchavez/"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-12 h-12 rounded-full border border-primary/20 flex items-center justify-center hover:bg-primary/10 hover:border-primary/40 transition-colors"
+            className="w-11 h-11 rounded-full bg-white/[0.05] flex items-center justify-center hover:bg-white/[0.08] transition-colors duration-200"
           >
-            <Linkedin className="h-5 w-5" />
+            <Linkedin className="h-4 w-4 text-muted-foreground" />
           </a>
           <a
             href="mailto:maxbenedictchavez@gmail.com"
-            className="w-12 h-12 rounded-full border border-primary/20 flex items-center justify-center hover:bg-primary/10 hover:border-primary/40 transition-colors"
+            className="w-11 h-11 rounded-full bg-white/[0.05] flex items-center justify-center hover:bg-white/[0.08] transition-colors duration-200"
           >
-            <Mail className="h-5 w-5" />
-          </a>
-          <a
-            href="https://drive.google.com/file/d/1dQ8OJHoPJEaYDg5MnW1FQ4rzgC26xrJT/view"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-4 h-12 rounded-xl border border-primary/20 flex items-center gap-2 justify-center hover:bg-primary/10 hover:border-primary/40 transition-colors"
-          >
-            <FileText className="w-5 h-5" />
-            Resume
-            <ExternalLink className="w-4 h-4 opacity-70" />
+            <Mail className="h-4 w-4 text-muted-foreground" />
           </a>
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <ArrowDown className="h-6 w-6 text-primary" />
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-30 animate-pulse">
+        <ArrowDown className="h-5 w-5 text-muted-foreground" />
       </div>
     </section>
   )

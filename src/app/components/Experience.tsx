@@ -1,4 +1,4 @@
-import { Briefcase, Calendar } from 'lucide-react'
+import { Calendar } from 'lucide-react'
 
 export function Experience() {
   const experiences = [
@@ -46,34 +46,30 @@ export function Experience() {
   ]
 
   return (
-    <section className="py-24 px-6 bg-card/50" id="experience">
+    <section className="py-24 px-6" id="experience">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl mb-4 inline-block bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
+        <div className="mb-16">
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-foreground">
             Experience
           </h2>
-          <div className="h-1 w-20 bg-primary mx-auto rounded-full"></div>
         </div>
 
-        <div className="space-y-8">
+        <div className="space-y-6">
           {experiences.map((exp, index) => (
             <div
               key={index}
-              className="group p-6 md:p-8 rounded-lg border border-primary/20 bg-card hover:border-primary/40 transition-all hover:shadow-lg hover:shadow-primary/5"
+              className="group p-6 md:p-8 rounded-xl border border-white/[0.06] bg-card hover:bg-white/[0.02] transition-colors duration-300"
             >
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4 gap-4">
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6 gap-4">
                 <div className="flex-1">
-                  <h3 className="text-xl md:text-2xl mb-2">{exp.title}</h3>
-                  <div className="flex items-start gap-2 mb-2">
-                    <Briefcase className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
-                    <p className="text-muted-foreground">{exp.company}</p>
-                  </div>
+                  <h3 className="text-xl md:text-2xl font-semibold tracking-tight mb-3">{exp.title}</h3>
+                  <p className="text-muted-foreground mb-1">{exp.company}</p>
                   <p className="text-sm text-muted-foreground">
                     {exp.location}
                   </p>
                 </div>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground md:text-right">
-                  <Calendar className="h-4 w-4 text-primary flex-shrink-0" />
+                <div className="flex items-center gap-2 text-sm text-muted-foreground md:text-right md:mt-1">
+                  <Calendar className="h-4 w-4 flex-shrink-0" />
                   <span>{exp.period}</span>
                 </div>
               </div>
@@ -84,7 +80,7 @@ export function Experience() {
                     key={idx}
                     className="flex gap-3 text-sm md:text-base text-muted-foreground leading-relaxed"
                   >
-                    <span className="text-primary mt-1.5 flex-shrink-0">▹</span>
+                    <span className="text-muted-foreground/50 mt-1.5 flex-shrink-0">▹</span>
                     <span>{responsibility}</span>
                   </li>
                 ))}

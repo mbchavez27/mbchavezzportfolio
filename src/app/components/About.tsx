@@ -29,26 +29,25 @@ export function About() {
   ]
 
   return (
-    <section className="py-24 px-6 relative" id="about">
+    <section className="py-24 px-6" id="about">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl mb-4 inline-block bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
+        <div className="mb-16">
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-foreground">
             About
           </h2>
-          <div className="h-1 w-20 bg-primary mx-auto rounded-full"></div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+        <div className="grid md:grid-cols-2 gap-12 items-start mb-20">
           <div>
             <img
               src="/images/max.jpeg"
               alt="Max Benedict Chavez"
-              className="rounded-lg border border-primary/20 shadow-lg shadow-primary/5 w-full object-cover aspect-square"
+              className="rounded-xl w-full object-cover aspect-[4/5]"
             />
           </div>
-          <div>
-            <h3 className="text-2xl mb-4">AI × Software Engineering</h3>
-            <p className="text-muted-foreground mb-4">
+          <div className="pt-4">
+            <h3 className="text-2xl font-semibold tracking-tight mb-6">AI × Software Engineering</h3>
+            <p className="text-muted-foreground mb-6 leading-relaxed">
               Computer Science student exploring the intersection of Software
               Engineering and Machine Learning, with a growing focus on Natural
               Language Processing and Affective Computing. Currently the Lead
@@ -57,7 +56,7 @@ export function About() {
               Media Group, supporting large-scale events through logistics and
               technical execution.
             </p>
-            <p className="text-muted-foreground mb-4">
+            <p className="text-muted-foreground mb-6 leading-relaxed">
               Previously worked on indie game development through Epyxx Studios,
               gaining hands-on experience in end-to-end product development. My
               research focuses on multilingual sentiment analysis and NLP,
@@ -66,7 +65,7 @@ export function About() {
               standardization tools and delivered scalable Next.js applications
               with 99.9% uptime and 445K+ page views.
             </p>
-            <p className="text-muted-foreground">
+            <p className="text-muted-foreground leading-relaxed">
               Passionate about innovation, startups, and creating technologies
               with real-world impact. I build with TypeScript, Go, Python, and
               C++ for full-stack development and machine learning. Beyond the
@@ -77,17 +76,17 @@ export function About() {
           </div>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {highlights.map((item, index) => (
             <div
               key={index}
-              className="p-6 rounded-lg border border-primary/20 bg-card hover:bg-primary/5 transition-all hover:border-primary/40 group"
+              className="p-8 rounded-xl bg-card hover:bg-white/[0.02] transition-colors duration-300"
             >
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                <item.icon className="h-6 w-6 text-primary" />
+              <div className="w-10 h-10 rounded-full bg-white/[0.05] flex items-center justify-center mb-5">
+                <item.icon className="h-5 w-5 text-muted-foreground" />
               </div>
-              <h4 className="mb-2">{item.title}</h4>
-              <p className="text-sm text-muted-foreground">
+              <h4 className="font-semibold mb-2">{item.title}</h4>
+              <p className="text-sm text-muted-foreground leading-relaxed">
                 {item.description}
               </p>
             </div>
