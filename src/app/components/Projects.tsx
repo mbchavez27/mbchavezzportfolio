@@ -1,4 +1,5 @@
 import { ArrowUpRight } from 'lucide-react'
+import { FadeIn } from './FadeIn'
 
 export function Projects() {
   const projects = [
@@ -77,42 +78,43 @@ export function Projects() {
   return (
     <section className="py-24 px-6" id="projects">
       <div className="max-w-6xl mx-auto">
-        <div className="mb-16">
+        <FadeIn className="mb-16">
           <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-foreground">
             Featured Projects
           </h2>
           <div className="h-px w-12 bg-primary/40 mt-4" />
-        </div>
+        </FadeIn>
 
         <div className="grid md:grid-cols-2 gap-4">
           {projects.map((project, index) => (
-            <a
-              key={index}
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group p-8 rounded-xl border border-white/[0.06] bg-card hover:border-primary/20 transition-colors duration-300"
-            >
-              <div className="flex items-start justify-between mb-4">
-                <h3 className="text-lg font-semibold tracking-tight flex-1 pr-4">{project.title}</h3>
-                <ArrowUpRight className="h-5 w-5 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex-shrink-0" />
-              </div>
+            <FadeIn key={index} delay={index * 0.05}>
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group p-8 rounded-xl border border-white/[0.06] bg-card hover:border-primary/20 transition-colors duration-300 block"
+              >
+                <div className="flex items-start justify-between mb-4">
+                  <h3 className="text-lg font-semibold tracking-tight flex-1 pr-4">{project.title}</h3>
+                  <ArrowUpRight className="h-5 w-5 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex-shrink-0" />
+                </div>
 
-              <p className="text-sm text-muted-foreground leading-relaxed mb-5">
-                {project.description}
-              </p>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-5">
+                  {project.description}
+                </p>
 
-              <div className="flex flex-wrap gap-1.5">
-                {project.tags.map((tag, idx) => (
-                  <span
-                    key={idx}
-                    className="px-2.5 py-1 text-[11px] font-medium bg-primary/10 text-primary rounded-full"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </a>
+                <div className="flex flex-wrap gap-1.5">
+                  {project.tags.map((tag, idx) => (
+                    <span
+                      key={idx}
+                      className="px-2.5 py-1 text-[11px] font-medium bg-primary/10 text-primary rounded-full"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </a>
+            </FadeIn>
           ))}
         </div>
       </div>

@@ -1,4 +1,5 @@
 import { Calendar } from 'lucide-react'
+import { FadeIn } from './FadeIn'
 
 export function Experience() {
   const experiences = [
@@ -48,45 +49,46 @@ export function Experience() {
   return (
     <section className="py-24 px-6" id="experience">
       <div className="max-w-6xl mx-auto">
-        <div className="mb-16">
+        <FadeIn className="mb-16">
           <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-foreground">
             Experience
           </h2>
           <div className="h-px w-12 bg-primary/40 mt-4" />
-        </div>
+        </FadeIn>
 
         <div className="space-y-6">
           {experiences.map((exp, index) => (
-            <div
-              key={index}
-              className="group p-6 md:p-8 rounded-xl border border-white/[0.06] bg-card hover:border-primary/20 transition-colors duration-300"
-            >
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6 gap-4">
-                <div className="flex-1">
-                  <h3 className="text-xl md:text-2xl font-semibold tracking-tight mb-3">{exp.title}</h3>
-                  <p className="text-muted-foreground mb-1">{exp.company}</p>
-                  <p className="text-sm text-muted-foreground">
-                    {exp.location}
-                  </p>
+            <FadeIn key={index} delay={index * 0.1}>
+              <div
+                className="group p-6 md:p-8 rounded-xl border border-white/[0.06] bg-card hover:border-primary/20 transition-colors duration-300"
+              >
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6 gap-4">
+                  <div className="flex-1">
+                    <h3 className="text-xl md:text-2xl font-semibold tracking-tight mb-3">{exp.title}</h3>
+                    <p className="text-muted-foreground mb-1">{exp.company}</p>
+                    <p className="text-sm text-muted-foreground">
+                      {exp.location}
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground md:text-right md:mt-1">
+                    <Calendar className="h-4 w-4 flex-shrink-0" />
+                    <span>{exp.period}</span>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground md:text-right md:mt-1">
-                  <Calendar className="h-4 w-4 flex-shrink-0" />
-                  <span>{exp.period}</span>
-                </div>
-              </div>
 
-              <ul className="space-y-3">
-                {exp.responsibilities.map((responsibility, idx) => (
-                  <li
-                    key={idx}
-                    className="flex gap-3 text-sm md:text-base text-muted-foreground leading-relaxed"
-                  >
-                    <span className="text-primary mt-1.5 flex-shrink-0">▹</span>
-                    <span>{responsibility}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+                <ul className="space-y-3">
+                  {exp.responsibilities.map((responsibility, idx) => (
+                    <li
+                      key={idx}
+                      className="flex gap-3 text-sm md:text-base text-muted-foreground leading-relaxed"
+                    >
+                      <span className="text-primary mt-1.5 flex-shrink-0">▹</span>
+                      <span>{responsibility}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </FadeIn>
           ))}
         </div>
       </div>

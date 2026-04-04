@@ -1,5 +1,6 @@
 import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
+import { AnimatePresence, motion } from 'motion/react'
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -52,31 +53,41 @@ export function Navigation() {
         </div>
 
         {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden flex flex-col gap-4 py-6">
-            <a href="#about" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-              About
-            </a>
-            <a href="#experience" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-              Experience
-            </a>
-            <a href="#skills" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-              Skills
-            </a>
-            <a
-              href="#projects"
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+              className="md:hidden overflow-hidden"
             >
-              Projects
-            </a>
-            <a href="#awards" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-              Awards
-            </a>
-            <a href="#contact" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-              Contact
-            </a>
-          </div>
-        )}
+              <div className="flex flex-col gap-4 py-6">
+                <a href="#about" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+                  About
+                </a>
+                <a href="#experience" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+                  Experience
+                </a>
+                <a href="#skills" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+                  Skills
+                </a>
+                <a
+                  href="#projects"
+                  className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+                >
+                  Projects
+                </a>
+                <a href="#awards" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+                  Awards
+                </a>
+                <a href="#contact" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+                  Contact
+                </a>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </nav>
   )
