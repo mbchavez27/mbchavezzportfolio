@@ -81,6 +81,7 @@ export function Projects() {
           <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-foreground">
             Featured Projects
           </h2>
+          <div className="h-px w-12 bg-primary/40 mt-4" />
         </div>
 
         <div className="grid md:grid-cols-2 gap-4">
@@ -90,11 +91,11 @@ export function Projects() {
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="group p-8 rounded-xl border border-white/[0.06] bg-card hover:bg-white/[0.02] transition-colors duration-300"
+              className="group p-8 rounded-xl border border-white/[0.06] bg-card hover:border-primary/20 transition-colors duration-300"
             >
               <div className="flex items-start justify-between mb-4">
                 <h3 className="text-lg font-semibold tracking-tight flex-1 pr-4">{project.title}</h3>
-                <ArrowUpRight className="h-5 w-5 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex-shrink-0" />
+                <ArrowUpRight className="h-5 w-5 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex-shrink-0" />
               </div>
 
               <p className="text-sm text-muted-foreground leading-relaxed mb-5">
@@ -105,7 +106,7 @@ export function Projects() {
                 {project.tags.map((tag, idx) => (
                   <span
                     key={idx}
-                    className="px-2.5 py-1 text-[11px] font-medium bg-white/[0.05] text-muted-foreground rounded-full"
+                    className="px-2.5 py-1 text-[11px] font-medium bg-primary/10 text-primary rounded-full"
                   >
                     {tag}
                   </span>

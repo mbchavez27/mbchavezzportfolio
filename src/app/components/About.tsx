@@ -29,12 +29,13 @@ export function About() {
   ]
 
   return (
-    <section className="py-24 px-6" id="about">
+    <section className="py-24 px-6 relative" id="about">
       <div className="max-w-6xl mx-auto">
         <div className="mb-16">
           <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-foreground">
             About
           </h2>
+          <div className="h-px w-12 bg-primary/40 mt-4" />
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-start mb-20">
@@ -42,7 +43,7 @@ export function About() {
             <img
               src="/images/max.jpeg"
               alt="Max Benedict Chavez"
-              className="rounded-xl w-full object-cover aspect-[4/5]"
+              className="rounded-xl w-full object-cover aspect-[4/5] border border-white/[0.06]"
             />
           </div>
           <div className="pt-4">
@@ -80,10 +81,10 @@ export function About() {
           {highlights.map((item, index) => (
             <div
               key={index}
-              className="p-8 rounded-xl bg-card hover:bg-white/[0.02] transition-colors duration-300"
+              className="p-8 rounded-xl border border-white/[0.06] bg-card hover:border-primary/20 transition-colors duration-300"
             >
-              <div className="w-10 h-10 rounded-full bg-white/[0.05] flex items-center justify-center mb-5">
-                <item.icon className="h-5 w-5 text-muted-foreground" />
+              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-5">
+                <item.icon className="h-5 w-5 text-primary" />
               </div>
               <h4 className="font-semibold mb-2">{item.title}</h4>
               <p className="text-sm text-muted-foreground leading-relaxed">

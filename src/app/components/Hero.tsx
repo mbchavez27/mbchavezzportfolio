@@ -3,9 +3,10 @@ import { Github, Linkedin, Mail, ArrowDown, ArrowUpRight } from 'lucide-react'
 export function Hero() {
   return (
     <section className="min-h-screen flex flex-col justify-center relative px-6 pt-28">
-      <div className="max-w-5xl mx-auto w-full">
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="max-w-5xl mx-auto w-full relative z-10">
         <div className="mb-10">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl mb-6 font-semibold tracking-tight text-foreground">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl mb-6 font-semibold tracking-tight bg-gradient-to-r from-foreground via-foreground to-primary/80 bg-clip-text text-transparent">
             Max Benedict Chavez
           </h1>
           <p className="text-muted-foreground text-lg">
@@ -32,29 +33,29 @@ export function Hero() {
             href="https://github.com/mbchavez27"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-11 h-11 rounded-full bg-white/[0.05] flex items-center justify-center hover:bg-white/[0.08] transition-colors duration-200"
+            className="w-11 h-11 rounded-full bg-white/[0.05] flex items-center justify-center hover:bg-primary/10 transition-colors duration-200 group"
           >
-            <Github className="h-4 w-4 text-muted-foreground" />
+            <Github className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors duration-200" />
           </a>
           <a
             href="https://www.linkedin.com/in/mbchavez/"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-11 h-11 rounded-full bg-white/[0.05] flex items-center justify-center hover:bg-white/[0.08] transition-colors duration-200"
+            className="w-11 h-11 rounded-full bg-white/[0.05] flex items-center justify-center hover:bg-primary/10 transition-colors duration-200 group"
           >
-            <Linkedin className="h-4 w-4 text-muted-foreground" />
+            <Linkedin className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors duration-200" />
           </a>
           <a
             href="mailto:maxbenedictchavez@gmail.com"
-            className="w-11 h-11 rounded-full bg-white/[0.05] flex items-center justify-center hover:bg-white/[0.08] transition-colors duration-200"
+            className="w-11 h-11 rounded-full bg-white/[0.05] flex items-center justify-center hover:bg-primary/10 transition-colors duration-200 group"
           >
-            <Mail className="h-4 w-4 text-muted-foreground" />
+            <Mail className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors duration-200" />
           </a>
         </div>
       </div>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-30 animate-pulse">
-        <ArrowDown className="h-5 w-5 text-muted-foreground" />
+        <ArrowDown className="h-5 w-5 text-primary" />
       </div>
     </section>
   )

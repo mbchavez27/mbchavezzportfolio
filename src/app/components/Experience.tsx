@@ -52,13 +52,14 @@ export function Experience() {
           <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-foreground">
             Experience
           </h2>
+          <div className="h-px w-12 bg-primary/40 mt-4" />
         </div>
 
         <div className="space-y-6">
           {experiences.map((exp, index) => (
             <div
               key={index}
-              className="group p-6 md:p-8 rounded-xl border border-white/[0.06] bg-card hover:bg-white/[0.02] transition-colors duration-300"
+              className="group p-6 md:p-8 rounded-xl border border-white/[0.06] bg-card hover:border-primary/20 transition-colors duration-300"
             >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6 gap-4">
                 <div className="flex-1">
@@ -80,7 +81,7 @@ export function Experience() {
                     key={idx}
                     className="flex gap-3 text-sm md:text-base text-muted-foreground leading-relaxed"
                   >
-                    <span className="text-muted-foreground/50 mt-1.5 flex-shrink-0">▹</span>
+                    <span className="text-primary mt-1.5 flex-shrink-0">▹</span>
                     <span>{responsibility}</span>
                   </li>
                 ))}

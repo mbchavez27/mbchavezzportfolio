@@ -30,16 +30,17 @@ export function Awards() {
           <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-foreground">
             Awards & Achievements
           </h2>
+          <div className="h-px w-12 bg-primary/40 mt-4" />
         </div>
 
         <div className="grid md:grid-cols-3 gap-4">
           {awards.map((award, index) => (
             <div
               key={index}
-              className="group p-8 rounded-xl border border-white/[0.06] bg-card hover:bg-white/[0.02] transition-colors duration-300"
+              className="group p-8 rounded-xl border border-white/[0.06] bg-card hover:border-primary/20 transition-colors duration-300"
             >
               <h3 className="text-lg font-semibold tracking-tight mb-2">{award.title}</h3>
-              <div className="inline-block px-3 py-1 text-xs font-medium bg-white/[0.05] text-muted-foreground rounded-full mb-3">
+              <div className="inline-block px-3 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full mb-3">
                 {award.position}
               </div>
               <p className="text-xs text-muted-foreground mb-4">{award.date}</p>
