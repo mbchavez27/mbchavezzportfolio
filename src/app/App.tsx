@@ -7,6 +7,7 @@ import { Awards } from './components/Awards'
 import { Contact } from './components/Contact'
 import { Footer } from './components/Footer'
 import { Experience } from './components/Experience'
+import { ChatBot } from './components/ChatBot'
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
       <Awards />
       <Contact />
       <Footer />
+      <ChatBot />
     </div>
   )
 }
