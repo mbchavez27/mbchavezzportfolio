@@ -83,7 +83,7 @@ export function Projects() {
       <div className="max-w-6xl mx-auto w-full">
         <FadeIn className="mb-16">
           <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-foreground">
-            Featured Projects
+            Technical Projects
           </h2>
           <div className="h-px w-12 bg-primary/40 mt-4" />
         </FadeIn>

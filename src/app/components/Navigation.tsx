@@ -41,6 +41,12 @@ export function Navigation() {
               Projects
             </a>
             <a
+              href="#production"
+              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200"
+            >
+              Production
+            </a>
+            <a
               href="#awards"
               className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200"
             >
@@ -98,6 +104,12 @@ export function Navigation() {
                   className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
                 >
                   Projects
+                </a>
+                <a
+                  href="#production"
+                  className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+                >
+                  Production
                 </a>
                 <a
                   href="#awards"
