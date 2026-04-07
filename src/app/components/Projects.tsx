@@ -50,14 +50,14 @@ export function Projects() {
       description:
         'Built a custom link management platform for 100+ LSCS officers, improving link management efficiency by 30%, enabling near-instant link creation, and supporting consistent branding across 10+ events.',
       tags: ['React', 'Axios', 'TailwindCSS', 'TypeScript'],
-      github: 'https://github.com/dlsu-lscs/lscs-links-web',
+      github: 'https://links.app.dlsu-lscs.org/',
     },
     {
       title: 'La Salle Compute Society Website',
       description:
         'Co-led frontend development of the LSCS website, delivering a modern, mobile-responsive platform to showcase initiatives, events, and projects with a scalable, intuitive UI.',
       tags: ['NextJS', 'TailwindCSS', 'TypeScript'],
-      github: 'https://github.com/dlsu-lscs/dlsu-lscs-website',
+      github: 'https://dlsu-lscs.org/',
     },
     {
       title: 'Jump Shot: Tournament',
@@ -76,7 +76,10 @@ export function Projects() {
   ]
 
   return (
-    <section className="min-h-screen flex flex-col justify-center py-24 px-6 snap-start" id="projects">
+    <section
+      className="min-h-screen flex flex-col justify-center py-24 px-6 snap-start"
+      id="projects"
+    >
       <div className="max-w-6xl mx-auto w-full">
         <FadeIn className="mb-16">
           <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-foreground">
@@ -95,7 +98,9 @@ export function Projects() {
                 className="group p-8 rounded-xl border border-white/[0.06] bg-card hover:border-primary/20 transition-colors duration-300 block"
               >
                 <div className="flex items-start justify-between mb-4">
-                  <h3 className="text-lg font-semibold tracking-tight flex-1 pr-4">{project.title}</h3>
+                  <h3 className="text-lg font-semibold tracking-tight flex-1 pr-4">
+                    {project.title}
+                  </h3>
                   <ArrowUpRight className="h-5 w-5 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex-shrink-0" />
                 </div>
 
