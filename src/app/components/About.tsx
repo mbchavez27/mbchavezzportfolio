@@ -30,7 +30,10 @@ export function About() {
   ]
 
   return (
-    <section className="min-h-screen flex flex-col justify-center py-24 px-6 relative snap-start snap-always" id="about">
+    <section
+      className="min-h-screen flex flex-col justify-center py-24 px-6 relative snap-start snap-always"
+      id="about"
+    >
       <div className="max-w-6xl mx-auto w-full">
         <FadeIn className="mb-16">
           <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-foreground">
@@ -57,15 +60,15 @@ export function About() {
                 NLP, and Affective Computing. Currently the Lead Frontend
                 Engineer at La Salle Computer Society and a Technical Operator
                 at Green Media Group. I build scalable full-stack and ML
-                solutions using TypeScript, Go, Python, and C++.
+                solutions using TypeScript, and Python.
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 I'm passionate about building high-impact tech with real-world
                 results. Recent milestones include delivering Next.js apps with
                 445K+ views and 99.9% uptime, achieving 94.16% accuracy in
                 multilingual NLP research, and winning top placements in
-                competitive hackathons (1st place CTF, 2nd place Bluehacks
-                2025).
+                competitive hackathons (1st place JISSA CTF 2021, 2nd place
+                Bluehacks 2025).
               </p>
             </div>
           </FadeIn>
