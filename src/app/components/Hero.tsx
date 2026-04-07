@@ -12,11 +12,11 @@ export function Hero() {
 
   const item = {
     hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] } }
+    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] as const } }
   }
 
   return (
-    <section className="min-h-screen flex flex-col justify-center relative px-6 pt-28">
+    <section className="min-h-screen flex flex-col justify-center relative px-6 pt-28 snap-start snap-always">
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
       <motion.div
         className="max-w-5xl mx-auto w-full relative z-10"

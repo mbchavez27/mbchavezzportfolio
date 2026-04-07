@@ -24,8 +24,8 @@ export function Skills() {
   ]
 
   return (
-    <section className="py-24 px-6" id="skills">
-      <div className="max-w-6xl mx-auto">
+    <section className="min-h-screen flex flex-col justify-center py-24 px-6 snap-start" id="skills">
+      <div className="max-w-6xl mx-auto w-full">
         <FadeIn className="mb-16">
           <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-foreground">
             Skills & Expertise
