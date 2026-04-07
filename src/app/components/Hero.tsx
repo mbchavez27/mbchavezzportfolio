@@ -1,18 +1,42 @@
+'use client'
+
+import { useState, useEffect } from 'react'
 import { Github, Linkedin, Mail, ArrowDown, ArrowUpRight } from 'lucide-react'
-import { motion } from 'motion/react'
+import { motion, AnimatePresence } from 'motion/react'
+
+const ROLES = [
+  'Software Engineer',
+  'AI Researcher',
+  'Game Developer',
+  'Live Production Engineer',
+]
 
 export function Hero() {
+  const [currentRoleIndex, setCurrentRoleIndex] = useState(0)
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentRoleIndex((prev) => (prev + 1) % ROLES.length)
+    }, 3500)
+
+    return () => clearInterval(intervalId)
+  }, [])
+
   const container = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
-      transition: { staggerChildren: 0.12, delayChildren: 0.2 }
-    }
+      transition: { staggerChildren: 0.12, delayChildren: 0.2 },
+    },
   }
 
   const item = {
     hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] as const } }
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] as const },
+    },
   }
 
   return (
@@ -28,17 +52,36 @@ export function Hero() {
           <h1 className="text-5xl md:text-7xl lg:text-8xl mb-6 font-semibold tracking-tight bg-gradient-to-r from-foreground via-foreground to-primary/80 bg-clip-text text-transparent">
             Max Benedict Chavez
           </h1>
-          <p className="text-muted-foreground text-lg">
-            Software Engineer & AI Researcher
-          </p>
+
+          {/* Animated Role Text */}
+          <div className="text-primary text-xl md:text-2xl lg:text-3xl font-medium h-10 md:h-12 flex items-center overflow-hidden tracking-wide mt-2">
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={currentRoleIndex}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3, ease: 'easeInOut' }}
+                className="block"
+              >
+                {ROLES[currentRoleIndex]}
+              </motion.span>
+            </AnimatePresence>
+          </div>
         </motion.div>
 
-        <motion.p variants={item} className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl leading-snug">
+        <motion.p
+          variants={item}
+          className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl leading-snug"
+        >
           Building human-centered systems and exploring affective computing to
           bridge practical software development with AI research.
         </motion.p>
 
-        <motion.div variants={item} className="flex flex-wrap items-center gap-3">
+        <motion.div
+          variants={item}
+          className="flex flex-wrap items-center gap-3"
+        >
           <a
             href="https://drive.google.com/file/d/1dQ8OJHoPJEaYDg5MnW1FQ4rzgC26xrJT/view"
             target="_blank"
