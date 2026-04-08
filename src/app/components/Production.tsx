@@ -3,7 +3,7 @@ import { FadeIn } from './FadeIn'
 export function Production() {
   const operations = [
     {
-      title: 'Animo Christmas 2025',
+      title: 'Animo Christmas CAO Concert 2025',
       role: 'Live Broadcast Camera Operator',
       date: 'November 2025',
     },
@@ -18,7 +18,7 @@ export function Production() {
       date: 'June 2025',
     },
     {
-      title: 'Animo Christmas 2024',
+      title: 'Animo Christmas USG Concert 2024',
       role: 'Logistics Lead',
       date: 'November 2024',
     },
