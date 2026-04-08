@@ -8,6 +8,11 @@ export function Production() {
       date: 'November 2025',
     },
     {
+      title: 'CCS Frosh Convocation',
+      role: 'Technical Operator',
+      date: 'October 2025',
+    },
+    {
       title: 'Comedy Manila',
       role: 'Technical Director',
       date: 'June 2025',
