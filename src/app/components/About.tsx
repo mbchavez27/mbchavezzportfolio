@@ -57,18 +57,20 @@ export function About() {
               </h3>
               <p className="text-muted-foreground mb-6 leading-relaxed">
                 Computer Science student specializing in Software Engineering,
-                NLP, and Affective Computing. Currently the Lead Frontend
-                Engineer at La Salle Computer Society and a Technical Operator
-                at Green Media Group. I build scalable full-stack and ML
-                solutions using TypeScript, and Python.
+                NLP, and Affective Computing.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                I'm passionate about building high-impact tech with real-world
-                results. Recent milestones include delivering Next.js apps with
-                445K+ views and 99.9% uptime, achieving 94.16% accuracy in
-                multilingual NLP research, and winning top placements in
-                competitive hackathons (1st place JISSA CTF 2021, 2nd place
-                Bluehacks 2025).
+                Lead Frontend Engineer at La Salle Computer Society, Technical
+                Operator at Green Media Group, and Research Assistant at
+                CITE4D—building scalable full-stack and machine learning
+                solutions with TypeScript and Python.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                Delivered high-impact full-stack applications (445K+ views,
+                99.9% uptime, 30K+ users), achieved 94.16% accuracy in
+                multilingual NLP on a 23K+ dataset, and analyzed 16K+
+                cross-cultural reviews for sentiment insights. Hackathon wins:
+                1st JISSA CTF 2021, 2nd BlueHacks 2025.
               </p>
             </div>
           </FadeIn>
