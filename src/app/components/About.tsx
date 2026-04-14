@@ -59,7 +59,7 @@ export function About() {
                 Computer Science student specializing in Software Engineering,
                 NLP, and Affective Computing.
               </p>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground mb-6 leading-relaxed">
                 Lead Frontend Engineer at La Salle Computer Society, Technical
                 Operator at Green Media Group, and Research Assistant at
                 CITE4D—building scalable full-stack and machine learning
