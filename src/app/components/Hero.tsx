@@ -84,7 +84,7 @@ export function Hero() {
           className="flex flex-wrap items-center gap-3"
         >
           <a
-            href="https://drive.google.com/file/d/1dQ8OJHoPJEaYDg5MnW1FQ4rzgC26xrJT/view"
+            href="animo.li/mbchavez-resume"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 h-11 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors duration-200"
