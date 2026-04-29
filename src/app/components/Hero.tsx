@@ -74,8 +74,9 @@ export function Hero() {
           variants={item}
           className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl leading-snug"
         >
-          Building human-centered systems and exploring affective computing to
-          bridge practical software development with AI research.
+          AI Researcher & Software Engineer focused on human-centered systems
+          and affective computing, bridging software development with AI
+          research.
         </motion.p>
 
         <motion.div

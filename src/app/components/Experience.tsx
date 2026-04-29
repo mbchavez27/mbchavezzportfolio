@@ -10,8 +10,8 @@ export function Experience() {
       location: 'Manila, Philippines',
       period: 'Feb 2026 - Present',
       responsibilities: [
-        'Conducted data collection and analysis on 10,000+ multilingual entries, applying machine learning and transformer-based models to extract actionable insights.',
-        'Co-authored research papers presenting findings on cross-cultural patterns in multilingual text, contributing to projects under peer review and conference submission.',
+        'Conducted research on sentiment analysis and emotion detection in multilingual and code-switched text under Natural Language Processing and Affective Computing domains.',
+        'Designed and implemented transformer-based models while analyzing large-scale datasets (10,000+ entries), contributing to research outputs under peer review and conference submission.',
       ],
     },
     {
@@ -47,7 +47,10 @@ export function Experience() {
   ]
 
   return (
-    <section className="min-h-screen flex flex-col justify-center py-24 px-6 snap-start" id="experience">
+    <section
+      className="min-h-screen flex flex-col justify-center py-24 px-6 snap-start"
+      id="experience"
+    >
       <div className="max-w-6xl mx-auto w-full">
         <FadeIn className="mb-16">
           <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-foreground">
@@ -59,12 +62,12 @@ export function Experience() {
         <div className="space-y-6">
           {experiences.map((exp, index) => (
             <FadeIn key={index} delay={index * 0.1}>
-              <div
-                className="group p-6 md:p-8 rounded-xl border border-white/[0.06] bg-card hover:border-primary/20 transition-colors duration-300"
-              >
+              <div className="group p-6 md:p-8 rounded-xl border border-white/[0.06] bg-card hover:border-primary/20 transition-colors duration-300">
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6 gap-4">
                   <div className="flex-1">
-                    <h3 className="text-xl md:text-2xl font-semibold tracking-tight mb-3">{exp.title}</h3>
+                    <h3 className="text-xl md:text-2xl font-semibold tracking-tight mb-3">
+                      {exp.title}
+                    </h3>
                     <p className="text-muted-foreground mb-1">{exp.company}</p>
                     <p className="text-sm text-muted-foreground">
                       {exp.location}
@@ -82,7 +85,9 @@ export function Experience() {
                       key={idx}
                       className="flex gap-3 text-sm md:text-base text-muted-foreground leading-relaxed"
                     >
-                      <span className="text-primary mt-1.5 flex-shrink-0">▹</span>
+                      <span className="text-primary mt-1.5 flex-shrink-0">
+                        ▹
+                      </span>
                       <span>{responsibility}</span>
                     </li>
                   ))}
