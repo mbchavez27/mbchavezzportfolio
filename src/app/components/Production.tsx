@@ -3,6 +3,11 @@ import { FadeIn } from './FadeIn'
 export function Production() {
   const operations = [
     {
+      title: 'INSCAPE: 45 Years in Motion',
+      role: 'Live Sound Engineer',
+      date: 'November 2025',
+    },
+    {
       title: 'Animo Christmas CAO Concert 2025',
       role: 'Live Broadcast Camera Operator',
       date: 'November 2025',
