@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "build": "vite build",
-    "dev": "vite"
+    "dev": "vite",
+    "deploy": "npm run build && wrangler deploy",
+    "preview": "npm run build && wrangler dev"
   },
   "dependencies": {
     "@emotion/react": "11.14.0",
@@ -65,10 +67,12 @@
     "vaul": "1.1.2"
   },
   "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.37.1",
     "@tailwindcss/vite": "4.1.12",
     "@vitejs/plugin-react": "4.7.0",
     "tailwindcss": "4.1.12",
-    "vite": "^6.4.1"
+    "vite": "^6.4.1",
+    "wrangler": "^4.92.0"
   },
   "peerDependencies": {
     "react": "18.3.1",
