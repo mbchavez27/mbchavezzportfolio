@@ -1,0 +1,270 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Max Benedict Chavez} \\[1pt]
+    \small Pasay, Philippines $|$ 09176316182 $|$ 
+    \href{mailto:maxbenedictchavez@gmail.com}{maxbenedictchavez@gmail.com} $|$ 
+    \href{https://www.linkedin.com/in/mbchavez/}{linkedin.com/in/mbchavez} $|$ 
+    \href{https://github.com/mbchavez27}{github.com/mbchavez27}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{De La Salle University}{Manila, Philippines}
+{Bachelor of Science in Computer Science, Major in Software Technology}{2023 -- 2028}
+\resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+\resumeSubHeadingListStart
+
+% \resumeSubheading
+% {Research Assistant}{Manila, Philippines}
+% {Center for ICT for Development (CITE4D), De La Salle University}{Feb 2026 -- Present}
+% \resumeItemListStart
+% \resumeItem{Conduct multilingual sentiment analysis and topic modeling on social media datasets to examine cross-cultural perceptions of Korean films.}
+% \resumeItem{Co-authored an NLP research paper presenting findings on cross-cultural audience sentiment and bias.}
+% \resumeItemListEnd
+
+\resumeSubheading
+{Research Assistant}{Manila, Philippines}
+{Center for ICT for Development (CITE4D), De La Salle University}{Feb 2026 -- Present}
+\resumeItemListStart
+\resumeItem{Analyzed 16,000+ bilingual reviews of Korean films to identify key differences in how local and international audiences react to the same content.}
+\resumeItem{Co-authored research proving that Korean viewers are 41\% more influenced by cultural connection, while global audiences focus 62\% on general feedback.}
+\resumeItemListEnd
+
+\resumeSubheading
+{Lead Frontend Engineer}{Manila, Philippines}
+{La Salle Computer Society, Research and Development}{Aug 2024 -- Present}
+\resumeItemListStart
+\resumeItem{Led a team of frontend engineers, co-authoring a Frontend Standards Manual and developing tools such as npx create-lscs-app, reducing project setup time for engineers by 50\% and standardizing workflows across 3+ teams.}
+\resumeItem{Directed frontend development of web platforms for recruitment and event registration using Next.js and TypeScript, delivering responsive interfaces used by 29,000+ students, improving registration efficiency and reducing support tickets.}
+\resumeItemListEnd
+
+\resumeSubheading
+{Frontend Engineer}{Pasay, Philippines}
+{Berde Technologies}{Mar 2024 -- Aug 2024}
+\resumeItemListStart
+\resumeItem{Developed frontend of an e-commerce platform and CRM system using ReactJS, TypeScript, and Tailwind CSS, improving usability, performance, and scalability.}
+\resumeItem{Integrated REST APIs with Axios and translated Figma designs into responsive production-ready interfaces.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+\newcommand{\resumeProjectListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeProjectListEnd}{\end{itemize}\vspace{-5pt}}
+
+\resumeProjectListStart
+
+\resumeProjectHeading
+{\textbf{Pinoybot} $|$ Python, Scikit-learn}{Oct 2025 -- Dec 2025}
+\resumeItemListStart
+\resumeItem{Built a word-level Filipino-English code-switching classifier using MPNet embeddings and a Random Forest model on a validated dataset, achieving 94.16\% accuracy and 0.94 weighted F1 score, placing 3rd in a CSINTSY course competition.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{\textbf{LSCS Member House Clustering} $|$ Python, NLP, Transformers}{Sep 2025 -- Sep 2025}
+\resumeItemListStart
+\resumeItem{Built a system that grouped students into houses based on their interests using MPNet embeddings and clustering algorithms, reducing manual effort by 90\% and improving group alignment.}
+\resumeItemListEnd
+
+% \resumeProjectHeading
+% {\textbf{Leap 2025 Website} $|$ TypeScript, Next.js, Tailwind CSS}{Apr 2025 -- Jun 2025}
+% \resumeItemListStart
+% \resumeItem{Led frontend development of a registration platform for 29,000+ users, delivering a scalable, mobile-responsive interface with secure authentication in 5 weeks, achieving 99.9\% uptime and 445K+ page views.}
+% \resumeItemListEnd
+
+% \resumeProjectHeading
+% {\textbf{Taft Eats} $|$ React, Express.js, MySQL, TypeScript}{Jan 2026 -- Apr 2026}
+% \resumeItemListStart
+% \resumeItem{Led full-stack development of a restaurant review app for Taft-area restaurants, delivering a scalable, responsive platform for discovering and reviewing local establishments.}
+% \resumeItemListEnd
+
+% \resumeProjectHeading
+% {\textbf{Lasallian.Me} $|$ Next.js, Express.js}{Oct 2025 -- Feb 2026}
+% \resumeItemListStart
+% \resumeItem{Led bi-weekly agile sprints and team coordination to build Lasallian.Me, delivering a stable, scalable platform supporting multiple users and ongoing updates.}
+% \resumeItemListEnd
+
+% \resumeProjectHeading
+% {\textbf{Annual Recruitment Week 2025 Website} $|$ TypeScript, Next.js, Tailwind CSS}{Aug 2025 -- Sep 2025}
+% \resumeItemListStart
+% \resumeItem{Co-led frontend development enabling 22,000+ students to register across 40+ organizations, delivering a mobile-responsive, scalable platform with 99.8\% uptime and sub-1.2s load times.}
+% \resumeItemListEnd
+
+% \resumeProjectHeading
+% {\textbf{La Salle Computer Society Website} $|$ TypeScript, Next.js, Tailwind CSS, ShadCN, Framer}{Aug 2025 -- Dec 2025}
+% \resumeItemListStart
+% \resumeItem{Co-led frontend development of the LSCS website, delivering a modern, mobile-responsive platform to showcase initiatives, events, and projects with a scalable, intuitive UI.}
+% \resumeItemListEnd
+
+\resumeProjectListEnd
+
+
+% %-----------PUBLICATIONS-----------
+% \section{Publications}
+% \newcommand{\resumePublicationListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+% \newcommand{\resumePublicationListEnd}{\end{itemize}\vspace{-5pt}}
+
+% \resumePublicationListStart
+
+% \resumeProjectHeading
+% {\textbf{DLSU Research Congress 2026} \textit{(Under Review)}}{March 2026}
+% \resumeItemListStart
+% \resumeItem{Chavez, M.B., Lee, H., Sadiarin, E.J., Gonda, R.J. (2026). \textit{Cross-Cultural Sentiment Analysis of Local and International Audiences Toward Korean Media Using Transformer-Based Models}.}
+% \resumeItemListEnd
+
+% \resumePublicationListEnd
+
+%-----------AWARDS-----------
+\section{Awards and Achievements}
+\newcommand{\resumeAwardListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeAwardListEnd}{\end{itemize}\vspace{-5pt}}
+
+\resumeAwardListStart
+
+\resumeProjectHeading
+{\textbf{Bluehacks 2025} \textit{(2nd Place Winner)}}{February 2025}
+\resumeItemListStart
+\resumeItem{Contributed to Hackin Ka Nalang, the second-place winning team that developed Flare, an SOS mobile app supporting victims of natural disasters, focusing on typhoon response and emergency assistance.}
+\resumeItemListEnd
+
+% \resumeProjectHeading
+% {\textbf{Microsoft Imagine Cup Junior 2022} \textit{(Competitor)}}{May 2022}
+% \resumeItemListStart
+% \resumeItem{Participated in a global student innovation competition, pitching a mobile app utilizing computer vision to detect food spoilage and promote food safety.}
+% \resumeItemListEnd
+
+% \resumeProjectHeading
+% {\textbf{Cyphersupercluster: Capture the Flag} \textit{(Top 1)}}{October 2021}
+% \resumeItemListStart
+% \resumeItem{Secured 1st place in a Capture the Flag (CTF) cybersecurity competition, demonstrating problem-solving, cryptography, and system exploitation skills.}
+% \resumeItemListEnd
+
+\resumeAwardListEnd
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}, itemsep=1pt, topsep=2pt]
+\small{
+    \item \textbf{Languages:} TypeScript, Python, Java, SQL (PostgreSQL, MySQL, MongoDB)
+    \item \textbf{Frameworks/Libraries:} PyTorch, TensorFlow, Scikit-learn, Pandas, NumPy, Transformers, Next.js, ExpressJS, Tailwind CSS
+    \item \textbf{Tools:} Jupyter, Git, Docker, Figma
+    \item \textbf{Core Competencies:} Machine Learning, Deep Learning, Natural Language Processing, Data Analysis, Feature Engineering, Full-stack Development, RESTful APIs
+}
+\end{itemize}
+
+%-------------------------------------------
+\end{document}
