@@ -35,6 +35,3 @@ coverage/
 # Temporary files
 *.tmp
 *.temp
-
-# Figma Make / generated files
-.figma/

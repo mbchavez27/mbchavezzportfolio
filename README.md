@@ -1,11 +1,32 @@
+# Max Benedict Chavez — Portfolio
 
-  # Technical Portfolio Design
+Personal portfolio for Max Benedict Chavez, frontend engineer and NLP researcher. Built with React, TypeScript, and Vite.
 
-  This is a code bundle for Technical Portfolio Design. The original project is available at https://www.figma.com/design/ayBJGZPUe0gEsoEVQCaW57/Technical-Portfolio-Design.
+## Pages
 
-  ## Running the code
+- `/` — Home
+- `/experience` — Work experience
+- `/papers` — NLP research papers
+- `/projects` — Projects
+- `/productions` — Productions
+- `/case-study/coming-soon` — Coming soon case study
 
-  Run `npm i` to install the dependencies.
+## Stack
 
-  Run `npm run dev` to start the development server.
-  
+- [Vite](https://vitejs.dev/) + [React](https://react.dev/) + TypeScript
+- [Tailwind CSS](https://tailwindcss.com/)
+- [MUI](https://mui.com/)
+- [react-router](https://reactrouter.com/)
+
+## Getting started
+
+```sh
+npm install
+npm run dev
+```
+
+## Build
+
+```sh
+npm run build
+```
