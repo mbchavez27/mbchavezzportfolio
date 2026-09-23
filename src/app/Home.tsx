@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ArrowRight, Github, Linkedin, Mail, FileText } from "lucide-react";
 import { Link } from "react-router";
 import { Navbar } from "./components/Navbar";
-import portfolioPic from "@/imports/portfolio_pic-1.jpeg";
+import portfolioPic from "@/imports/max.jpg";
 import aiResearchImg from "@/imports/ai_research.jpg";
 import lscsImg from "@/imports/lscs.jpg";
 import techImg from "@/imports/tech.jpg";
