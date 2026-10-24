@@ -1,7 +1,18 @@
 import { useEffect, useId, useRef, useState, type FocusEvent, type PointerEvent } from "react";
 import { ChevronDown } from "lucide-react";
+import { AnimatePresence, motion, type Variants } from "motion/react";
 import NavAnchor from "@/components/atoms/NavAnchor";
 import type { NavGroup } from "@/config/links";
+
+const panelVariants: Variants = {
+  closed: { opacity: 0, y: -6, transition: { duration: 0.12, ease: "easeIn" } },
+  open: { opacity: 1, y: 0, transition: { duration: 0.18, ease: "easeOut", staggerChildren: 0.04, delayChildren: 0.03 } },
+};
+
+const itemVariants: Variants = {
+  closed: { opacity: 0, x: -4 },
+  open: { opacity: 1, x: 0, transition: { duration: 0.16, ease: "easeOut" } },
+};
 
 /**
  * Disclosure-style nav dropdown: a button that shows a list of plain links.
@@ -69,27 +80,39 @@ export default function NavDropdown({ group }: { group: NavGroup }) {
         aria-expanded={isOpen}
         aria-controls={panelId}
         onClick={toggleOnClick}
-        className="font-body flex items-center gap-1.5 border border-zinc-700 px-3 py-1 text-sm font-medium text-zinc-400 hover:border-zinc-500 hover:text-white aria-expanded:border-zinc-400 aria-expanded:text-white transition-colors duration-200 cursor-pointer"
+        className="font-body flex items-center gap-1 text-sm font-medium text-zinc-400 hover:text-white aria-expanded:text-white transition-colors duration-200 cursor-pointer"
       >
         {group.label}
         <ChevronDown size={14} className={`transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
       </button>
 
-      <div id={panelId} hidden={!isOpen} className="absolute left-0 top-full pt-2">
-        <ul className="min-w-40 bg-black border border-zinc-700 py-1.5">
-          {group.links.map((link) => (
-            <li key={link.label}>
-              <NavAnchor
-                link={link}
-                onNavigate={close}
-                className="font-body block px-3 py-1.5 text-sm font-medium text-zinc-400 hover:text-white focus-visible:text-white transition-colors duration-200"
-              >
-                {link.label}
-              </NavAnchor>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <AnimatePresence>
+        {isOpen && (
+          // pt bridges the gap to the navbar's bottom edge so the list reads as part of the navbar
+          <motion.div
+            id={panelId}
+            variants={panelVariants}
+            initial="closed"
+            animate="open"
+            exit="closed"
+            className="absolute -left-4 top-full pt-[18px]"
+          >
+            <ul className="min-w-40 bg-black pt-1 pb-3">
+              {group.links.map((link) => (
+                <motion.li key={link.label} variants={itemVariants}>
+                  <NavAnchor
+                    link={link}
+                    onNavigate={close}
+                    className="font-body block px-4 py-1.5 text-sm font-medium text-zinc-400 hover:text-white focus-visible:text-white transition-colors duration-200"
+                  >
+                    {link.label}
+                  </NavAnchor>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
