@@ -93,6 +93,14 @@ Images go in `src/assets/<feature>/` and are imported from the matching data fil
 
 A missing or malformed header stops `npm run dev` and fails `npm run build` (and CI) with the file name and the problem, so a broken post never ships.
 
+**Images in a log:** put the file in `public/log-images/<slug>/` and reference it with an absolute path. The quoted text is optional and shows as a caption:
+
+```md
+![What the image shows, for screen readers](/log-images/<slug>/photo.jpg "Optional caption")
+```
+
+**Examples:** `example-plain-text.md`, `example-with-image.md` and `example-with-figures.md` in the posts folder show text, images, and tables/code/task lists/footnotes. They're drafts, so run `npm run dev` and open `/logs` to see them. Delete them (and `public/log-images/example-with-image/`) when you no longer need them.
+
 ### CI and dependency updates
 
 - GitHub Actions (`.github/workflows/ci.yml`) runs the typecheck and build on every push to `main` and on every pull request.
