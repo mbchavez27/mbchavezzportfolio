@@ -23,10 +23,11 @@ Personal portfolio for Max Benedict Chavez, frontend engineer and NLP researcher
 ```
 src/
 ├── app/                 # App root and route table
-├── pages/               # Thin route components that compose features
+├── pages/               # Thin route components that compose feature containers
 ├── features/<name>/     # home, experience, papers, projects, productions, case-study
-│   ├── index.ts         # Public API — import features only from here
-│   ├── components/      # Presentational components
+│   ├── index.ts         # Public API (containers only) — import features only from here
+│   ├── containers/      # Read data, run domain logic, pass props down
+│   ├── components/      # Presentational: props in, UI out
 │   ├── data/            # Portfolio content
 │   └── domain/          # Types and pure logic (e.g. tenure durations, paper stats)
 ├── components/shared/   # UI used by 2+ features (Navbar, PageHero, AtAGlance, Tag…)
