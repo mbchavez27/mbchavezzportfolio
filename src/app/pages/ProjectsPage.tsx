@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router";
-import { Navbar } from "../components/Navbar";
+import Navbar from "@/components/shared/Navbar";
 import groupifyImg from "@/assets/projects/groupify.png";
 import panaToolsImg from "@/assets/projects/pana-tools.png";
 import lscsLinksImg from "@/assets/projects/lscs-links.png";

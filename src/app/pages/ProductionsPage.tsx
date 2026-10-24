@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Navbar } from "../components/Navbar";
+import Navbar from "@/components/shared/Navbar";
 import echoesImg from "@/assets/productions/echoes-of-a-decade.png";
 import inscapeImg from "@/assets/productions/inscape.png";
 import animoCAOImg from "@/assets/productions/animo-christmas-cao.png";

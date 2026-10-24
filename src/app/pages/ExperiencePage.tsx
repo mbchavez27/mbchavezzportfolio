@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Navbar } from "../components/Navbar";
+import Navbar from "@/components/shared/Navbar";
 
 const experiences = [
   {

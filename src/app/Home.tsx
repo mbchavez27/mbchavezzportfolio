@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ArrowRight, Github, Linkedin, Mail, FileText } from "lucide-react";
 import { Link } from "react-router";
-import { Navbar } from "./components/Navbar";
+import Navbar from "@/components/shared/Navbar";
 import portfolioPic from "@/assets/home/portrait.jpg";
 import aiResearchImg from "@/assets/home/ai-researcher.jpg";
 import lscsImg from "@/assets/home/software-engineer.jpg";

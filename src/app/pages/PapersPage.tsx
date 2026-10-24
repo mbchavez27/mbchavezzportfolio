@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Navbar } from "../components/Navbar";
+import Navbar from "@/components/shared/Navbar";
 import { ExternalLink, BookOpen, FileText, Link } from "lucide-react";
 
 type PaperLink = { label: string; icon: React.ReactNode; href: string };
