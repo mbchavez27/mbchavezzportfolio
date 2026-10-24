@@ -91,7 +91,7 @@ Images go in `src/assets/<feature>/` and are imported from the matching data fil
 3. Write the body in Markdown. GitHub extras like tables and task lists work.
 4. Keep `draft: true` while you're writing: the post shows in `npm run dev` but not on the live site. Remove it to publish.
 
-A missing or malformed header fails the build with the file name and the problem, so a broken post never ships.
+A missing or malformed header stops `npm run dev` and fails `npm run build` (and CI) with the file name and the problem, so a broken post never ships.
 
 ### CI and dependency updates
 

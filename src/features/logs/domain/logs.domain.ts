@@ -13,7 +13,11 @@ export type Log = {
 
 const isoDate = z.string().check(
   z.regex(/^\d{4}-\d{2}-\d{2}$/, "must be YYYY-MM-DD"),
-  z.refine((value) => !Number.isNaN(Date.parse(`${value}T00:00:00Z`)), "must be a real date"),
+  // Round-trip so impossible dates like 2026-02-30 (which Date silently rolls over) are rejected.
+  z.refine((value) => {
+    const parsed = new Date(`${value}T00:00:00Z`);
+    return !Number.isNaN(parsed.getTime()) && parsed.toISOString().startsWith(value);
+  }, "must be a real date"),
 );
 
 const frontmatterSchema = z.object({
