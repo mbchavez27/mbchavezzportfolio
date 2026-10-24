@@ -11,7 +11,8 @@ Personal portfolio site, built as a client-side React app and deployed on Cloudf
 - [Tailwind CSS 4](https://tailwindcss.com/) for styling, with theme tokens in `src/styles/theme.css`
 - [Motion](https://motion.dev/) for scroll and page animations
 - [Lucide](https://lucide.dev/) icons
-- [Zod](https://zod.dev/) (`zod/mini`) to validate URL params
+- [Zod](https://zod.dev/) (`zod/mini`) to validate URL params and log headers
+- [react-markdown](https://github.com/remarkjs/react-markdown) + GFM and [Tailwind Typography](https://github.com/tailwindlabs/tailwindcss-typography) for log posts
 - [Cloudflare Workers](https://developers.cloudflare.com/workers/) static assets for hosting, via `@cloudflare/vite-plugin` and Wrangler
 
 ### Architecture
@@ -28,7 +29,7 @@ The code is organized by feature. Each feature splits into containers and presen
 src/
 ├── app/                 # App root, router, scroll-to-top layout
 ├── pages/               # Thin route components
-├── features/<name>/     # home, experience, papers, projects, productions, case-study
+├── features/<name>/     # home, experience, papers, projects, productions, logs, case-study
 │   ├── index.ts         # Public API: other code imports a feature only from here
 │   ├── containers/      # Wire data and domain logic to components
 │   ├── components/      # Feature-specific presentational components
@@ -79,8 +80,18 @@ All content lives in each feature's `data/` folder. Most edits never touch compo
 | Productions and capabilities            | `src/features/productions/data/productions.data.ts`    |
 | Home hero, hat cards, highlights, contact | `src/features/home/data/home.data.ts`                |
 | Navbar items and profile links          | `src/config/links.ts`                                  |
+| Logs (blog posts)                       | `src/features/logs/posts/*.md` (see below)             |
 
 Images go in `src/assets/<feature>/` and are imported from the matching data file.
+
+### Writing a log
+
+1. Copy `src/features/logs/posts/_template.md` to `src/features/logs/posts/<slug>.md`. The file name becomes the URL, `/logs/<slug>`.
+2. Fill in the header: `title`, `date` (YYYY-MM-DD) and `summary` are required, and `tags` is an optional comma-separated list.
+3. Write the body in Markdown. GitHub extras like tables and task lists work.
+4. Keep `draft: true` while you're writing: the post shows in `npm run dev` but not on the live site. Remove it to publish.
+
+A missing or malformed header fails the build with the file name and the problem, so a broken post never ships.
 
 ### CI and dependency updates
 
