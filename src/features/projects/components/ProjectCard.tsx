@@ -2,24 +2,27 @@ import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router";
 import TagList from "@/components/shared/TagList";
-import { caseStudyPath } from "@/features/case-study";
 import { formatIndex } from "@/lib/format";
 import { revealOnScroll } from "@/lib/motion";
 import type { Project } from "../domain/projects.domain";
 
-type Props = {
-  project: Project;
+export type ProjectCardItem = {
+  readonly project: Project;
+  readonly caseStudyHref: string;
+};
+
+type Props = ProjectCardItem & {
   position: number;
 };
 
-export default function ProjectCard({ project, position }: Props) {
+export default function ProjectCard({ project, caseStudyHref, position }: Props) {
   return (
     <motion.div
       {...revealOnScroll({ y: 40, delay: position * 0.12, duration: 0.5 })}
       className="relative overflow-hidden border-b md:border-b-0 md:border-r border-zinc-200 last:border-r-0"
     >
       <Link
-        to={caseStudyPath(project.title)}
+        to={caseStudyHref}
         className="block relative text-left overflow-hidden group min-h-96 w-full bg-zinc-950"
       >
         <img src={project.image} alt="" className="absolute inset-0 w-full h-full object-cover object-center" />
