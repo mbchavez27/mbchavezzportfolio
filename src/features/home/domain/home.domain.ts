@@ -16,6 +16,11 @@ export type Highlight = {
   readonly metric: { readonly value: string; readonly label: string };
 };
 
+export type CallToAction = {
+  readonly label: string;
+  readonly to: string;
+};
+
 export type ContactLink = {
   readonly label: string;
   readonly value: string;

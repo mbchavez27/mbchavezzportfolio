@@ -1,14 +1,17 @@
 import { motion } from "motion/react";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router";
 import { drawRule, revealOnLoad } from "@/lib/motion";
-import type { ContactLink } from "../domain/home.domain";
+import type { CallToAction, ContactLink } from "../domain/home.domain";
 
 type Props = {
   portraitSrc: string;
+  callToAction: CallToAction;
   socialLinks: readonly ContactLink[];
   onScrollDown: () => void;
 };
 
-export default function Introduction({ portraitSrc, socialLinks, onScrollDown }: Props) {
+export default function Introduction({ portraitSrc, callToAction, socialLinks, onScrollDown }: Props) {
   return (
     <section className="pt-14 min-h-screen grid grid-cols-1 md:grid-cols-2">
       <div className="relative min-h-64 md:min-h-full bg-zinc-900 overflow-hidden">
@@ -43,6 +46,16 @@ export default function Introduction({ portraitSrc, socialLinks, onScrollDown }:
         >
           Max Benedict Chavez
         </motion.p>
+
+        <motion.div {...revealOnLoad({ y: 8, delay: 0.6, duration: 0.5 })} className="self-start mt-1">
+          <Link
+            to={callToAction.to}
+            className="group inline-flex items-center gap-3 bg-primary hover:bg-primary/85 text-white px-5 py-3 transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+          >
+            <span className="font-body text-xs tracking-widest uppercase">{callToAction.label}</span>
+            <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-200" />
+          </Link>
+        </motion.div>
 
         <motion.div {...revealOnLoad({ delay: 0.65, duration: 0.5 })} className="flex items-center gap-5">
           {socialLinks.map(({ label, href, Icon }) => (
