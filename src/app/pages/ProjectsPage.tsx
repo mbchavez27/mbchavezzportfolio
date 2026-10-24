@@ -3,12 +3,12 @@ import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router";
 import { Navbar } from "../components/Navbar";
-import groupifyImg from "@/imports/image-7.png";
-import panaToolsImg from "@/imports/image-8.png";
-import lscsLinksImg from "@/imports/image-9.png";
-import leapImg from "@/imports/image-10.png";
-import arwImg from "@/imports/image-11.png";
-import lscsWebsiteImg from "@/imports/image-12.png";
+import groupifyImg from "@/assets/projects/groupify.png";
+import panaToolsImg from "@/assets/projects/pana-tools.png";
+import lscsLinksImg from "@/assets/projects/lscs-links.png";
+import leapImg from "@/assets/projects/leap-2025.png";
+import arwImg from "@/assets/projects/arw-2025.png";
+import lscsWebsiteImg from "@/assets/projects/lscs-website.png";
 
 const stats = [
   { value: "5+", label: "Projects Built" },

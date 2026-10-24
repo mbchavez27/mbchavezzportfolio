@@ -2,10 +2,10 @@ import { useState } from "react";
 import { ArrowRight, Github, Linkedin, Mail, FileText } from "lucide-react";
 import { Link } from "react-router";
 import { Navbar } from "./components/Navbar";
-import portfolioPic from "@/imports/max.jpg";
-import aiResearchImg from "@/imports/ai_research.jpg";
-import lscsImg from "@/imports/lscs.jpg";
-import techImg from "@/imports/tech.jpg";
+import portfolioPic from "@/assets/home/portrait.jpg";
+import aiResearchImg from "@/assets/home/ai-researcher.jpg";
+import lscsImg from "@/assets/home/software-engineer.jpg";
+import techImg from "@/assets/home/technical-operator.jpg";
 const resumePdf = "https://animo.li/mbchavez-resume";
 import { motion } from "motion/react";
 

@@ -1,12 +1,12 @@
 import { motion } from "motion/react";
 import { Navbar } from "../components/Navbar";
-import echoesImg from "@/imports/image.png";
-import inscapeImg from "@/imports/image-1.png";
-import animoCAOImg from "@/imports/image-2.png";
-import comedyManilaImg from "@/imports/image-3.png";
-import animusikaImg from "@/imports/image-5.png";
-import froshImg from "@/imports/image-4.png";
-import animoUSGImg from "@/imports/image-6.png";
+import echoesImg from "@/assets/productions/echoes-of-a-decade.png";
+import inscapeImg from "@/assets/productions/inscape.png";
+import animoCAOImg from "@/assets/productions/animo-christmas-cao.png";
+import comedyManilaImg from "@/assets/productions/comedy-manila.png";
+import animusikaImg from "@/assets/productions/animusika.png";
+import froshImg from "@/assets/productions/ccs-frosh.png";
+import animoUSGImg from "@/assets/productions/animo-christmas-usg.png";
 
 const stats = [
   { value: "5+", label: "Events Supported" },
