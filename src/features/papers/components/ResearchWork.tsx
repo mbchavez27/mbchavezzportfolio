@@ -5,7 +5,7 @@ import PaperEntry from "./PaperEntry";
 
 export default function ResearchWork({ venueGroups }: { venueGroups: readonly VenueGroup[] }) {
   return (
-    <div className="px-10 md:px-24 lg:px-32">
+    <div className="px-6 sm:px-10 md:px-24 lg:px-32">
       <motion.div {...revealOnScroll()} className="mb-14">
         <p className="font-body text-xs text-zinc-400 tracking-[0.2em] uppercase mb-3">Featured Contributions</p>
         <h2 className="font-display text-2xl md:text-3xl font-semibold text-zinc-900">Research Work</h2>

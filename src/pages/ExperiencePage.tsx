@@ -6,9 +6,9 @@ export default function ExperiencePage() {
   return (
     <PageShell>
       <PageHero eyebrow="Experience">
-        Experience spanning research,<br />engineering, and live production.
+        Experience spanning research, <br className="hidden md:inline" />engineering, and live production.
       </PageHero>
-      <div className="px-10 md:px-24 lg:px-32 pb-32">
+      <div className="px-6 sm:px-10 md:px-24 lg:px-32 pb-32">
         <ExperienceTimelineContainer />
         <EducationTimelineContainer />
       </div>

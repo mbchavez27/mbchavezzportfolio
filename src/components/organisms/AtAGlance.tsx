@@ -22,7 +22,7 @@ export default function AtAGlance({ title, stats, tagGroups }: Props) {
     <motion.div {...revealOnScroll()} className="border-t border-b border-zinc-100 mb-20 relative overflow-hidden">
       <div className="h-0.5 w-full bg-primary" />
 
-      <div className="px-10 md:px-24 lg:px-32 pt-16 pb-5 border-b border-zinc-100">
+      <div className="px-6 sm:px-10 md:px-24 lg:px-32 pt-16 pb-5 border-b border-zinc-100">
         <p className="font-body text-xs text-zinc-400 tracking-[0.2em] uppercase">{title}</p>
       </div>
 
@@ -33,7 +33,7 @@ export default function AtAGlance({ title, stats, tagGroups }: Props) {
           <motion.div
             key={stat.label}
             {...revealOnScroll({ y: 16, delay: i * 0.1, duration: 0.5 })}
-            className="px-10 md:px-24 lg:px-32 py-10"
+            className="px-6 sm:px-10 md:px-24 lg:px-32 py-10"
           >
             <p className="font-display text-4xl font-semibold text-zinc-900 mb-1">{stat.value}</p>
             <p className="font-body text-xs text-zinc-400">{stat.label}</p>
@@ -44,7 +44,7 @@ export default function AtAGlance({ title, stats, tagGroups }: Props) {
       {tagGroups.map((group) => (
         <div
           key={group.label}
-          className="px-10 md:px-24 lg:px-32 py-5 border-t border-zinc-100 flex flex-wrap items-center gap-2"
+          className="px-6 sm:px-10 md:px-24 lg:px-32 py-5 border-t border-zinc-100 flex flex-wrap items-center gap-2"
         >
           <p className="font-body text-xs text-zinc-400 tracking-wide mr-2">{group.label}</p>
           {group.tags.map((tag) => (

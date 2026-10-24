@@ -6,7 +6,7 @@ export default function PapersPage() {
   return (
     <PageShell>
       <PageHero eyebrow="Papers">
-        A collection of research contributions<br />in AI, machine learning, and language technologies.
+        A collection of research contributions <br className="hidden md:inline" />in AI, machine learning, and language technologies.
       </PageHero>
       <ResearchAtAGlanceContainer />
       <div className="pb-32">

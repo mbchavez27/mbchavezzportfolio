@@ -20,12 +20,12 @@ export default function Introduction({ portraitSrc, socialLinks, onScrollDown }:
         <div className="absolute inset-0 bg-black/40" />
       </div>
 
-      <div className="bg-zinc-950 relative flex flex-col px-10 md:px-16 py-20 md:py-0 gap-5 justify-center">
+      <div className="bg-zinc-950 relative flex flex-col px-6 sm:px-10 md:px-16 py-20 md:py-0 gap-5 justify-center">
         <motion.p
           {...revealOnLoad({ y: 16, delay: 0.1 })}
           className="font-body text-zinc-400 text-xl md:text-2xl leading-relaxed mb-1"
         >
-          AI researcher, software engineer,<br />and technical operator.
+          AI researcher, software engineer, <br className="hidden lg:inline" />and technical operator.
         </motion.p>
 
         <motion.h1

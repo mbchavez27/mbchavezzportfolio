@@ -4,7 +4,7 @@ import type { Capability } from "../domain/productions.domain";
 
 export default function RolesCapabilities({ capabilities }: { capabilities: readonly Capability[] }) {
   return (
-    <section className="bg-zinc-950 border-t border-zinc-800 py-24 px-10 md:px-24 lg:px-32">
+    <section className="bg-zinc-950 border-t border-zinc-800 py-24 px-6 sm:px-10 md:px-24 lg:px-32">
       <motion.div {...revealOnScroll()} className="mb-16">
         <p className="font-body text-xs text-zinc-600 tracking-[0.2em] uppercase mb-5">Roles & Capabilities</p>
       </motion.div>

@@ -17,7 +17,7 @@ export default function ProductionRow({ production, position }: Props) {
       <img src={production.image} alt="" className="absolute inset-0 w-full h-full object-cover object-center" />
       <div className="absolute inset-0 bg-zinc-950/65 group-hover:bg-zinc-950/80 transition-colors duration-500" />
 
-      <div className="relative z-10 grid grid-cols-1 md:grid-cols-[48px_1fr_auto] gap-6 px-10 md:px-24 lg:px-32 py-12">
+      <div className="relative z-10 grid grid-cols-1 md:grid-cols-[48px_1fr_auto] gap-6 px-6 sm:px-10 md:px-24 lg:px-32 py-12">
         <div className="flex items-start pt-1">
           <span className="font-body text-xs text-zinc-500">{formatIndex(position)}</span>
         </div>

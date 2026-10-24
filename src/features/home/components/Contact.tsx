@@ -7,7 +7,7 @@ export type ContactItem = ContactLink & { readonly opensInNewTab: boolean };
 
 export default function Contact({ items }: { items: readonly ContactItem[] }) {
   return (
-    <section className="bg-zinc-950 py-32 px-10 md:px-16">
+    <section className="bg-zinc-950 py-32 px-6 sm:px-10 md:px-16">
       <motion.div {...revealOnScroll({ y: 30 })} className="max-w-2xl">
         <p className="font-body text-xs text-zinc-600 tracking-[0.2em] uppercase mb-6">Contact</p>
         <h2 className="font-display text-4xl md:text-5xl font-semibold text-white leading-tight mb-6">

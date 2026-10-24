@@ -10,7 +10,7 @@ export default function ProductionsPage() {
   return (
     <PageShell>
       <PageHero eyebrow="Productions">
-        A collection of live events,<br />technical experiences, and productions I've supported.
+        A collection of live events, <br className="hidden md:inline" />technical experiences, and productions I've supported.
       </PageHero>
       <ProductionsAtAGlanceContainer />
       <FeaturedProductionsContainer />

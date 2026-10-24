@@ -4,11 +4,11 @@ import type { StackCategory } from "../domain/projects.domain";
 
 export default function TechnicalStack({ categories }: { categories: readonly StackCategory[] }) {
   return (
-    <section className="bg-zinc-950 border-t border-zinc-800 py-24 px-10 md:px-24 lg:px-32">
+    <section className="bg-zinc-950 border-t border-zinc-800 py-24 px-6 sm:px-10 md:px-24 lg:px-32">
       <motion.div {...revealOnScroll()} className="mb-16">
         <p className="font-body text-xs text-zinc-600 tracking-[0.2em] uppercase mb-5">Technical Stack</p>
         <h2 className="font-display text-2xl md:text-3xl font-semibold text-white mb-4">
-          The technologies and tools I use to build<br />software systems, intelligent applications,<br />and data-driven solutions.
+          The technologies and tools I use to build <br className="hidden md:inline" />software systems, intelligent applications, <br className="hidden md:inline" />and data-driven solutions.
         </h2>
       </motion.div>
 

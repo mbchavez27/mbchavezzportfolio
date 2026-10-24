@@ -6,7 +6,7 @@ export default function ProjectsPage() {
   return (
     <PageShell>
       <PageHero eyebrow="Engineering">
-        A collection of systems, applications,<br />and solutions built through engineering.
+        A collection of systems, applications, <br className="hidden md:inline" />and solutions built through engineering.
       </PageHero>
       <ProjectsAtAGlanceContainer />
       <FeaturedProjectsContainer />
