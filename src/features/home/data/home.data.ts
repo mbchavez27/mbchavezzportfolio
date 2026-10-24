@@ -18,7 +18,7 @@ export const hats: readonly Hat[] = [
   {
     role: "Software Engineer",
     description:
-      "Leading frontend engineering across 3+ teams, architecting Next.js platforms serving 22,000+ students and building internal tooling that cut project setup time by 50%.",
+      "Led frontend engineering across 3+ teams, architecting Next.js platforms serving 22,000+ students and building internal tooling that cut project setup time by 50%.",
     tags: ["Next.js", "TypeScript", "Architecture", "Tooling"],
     image: softwareEngineerImg,
     to: "/projects",
