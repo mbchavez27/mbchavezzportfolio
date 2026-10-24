@@ -1,9 +1,11 @@
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import { revealOnScroll } from "@/lib/motion";
-import { opensInNewTab, type ContactLink } from "../domain/home.domain";
+import type { ContactLink } from "../domain/home.domain";
 
-export default function Contact({ contactLinks }: { contactLinks: readonly ContactLink[] }) {
+export type ContactItem = ContactLink & { readonly opensInNewTab: boolean };
+
+export default function Contact({ items }: { items: readonly ContactItem[] }) {
   return (
     <section className="bg-zinc-950 py-32 px-10 md:px-16">
       <motion.div {...revealOnScroll({ y: 30 })} className="max-w-2xl">
@@ -18,11 +20,11 @@ export default function Contact({ contactLinks }: { contactLinks: readonly Conta
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-px bg-zinc-800/50">
-          {contactLinks.map((link) => (
+          {items.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              target={opensInNewTab(link) ? "_blank" : undefined}
+              target={link.opensInNewTab ? "_blank" : undefined}
               rel="noreferrer"
               className="flex flex-col gap-3 bg-zinc-950 px-6 py-8 hover:bg-zinc-900 transition-colors duration-200 group"
             >

@@ -4,7 +4,6 @@ import aiResearcherImg from "@/assets/home/ai-researcher.jpg";
 import softwareEngineerImg from "@/assets/home/software-engineer.jpg";
 import technicalOperatorImg from "@/assets/home/technical-operator.jpg";
 import { profileLinks } from "@/config/links";
-import { papers, summarizePapers } from "@/features/papers";
 import type { ContactLink, Hat, Highlight } from "../domain/home.domain";
 
 export const hats: readonly Hat[] = [
@@ -34,15 +33,16 @@ export const hats: readonly Hat[] = [
   },
 ];
 
-export const highlights: readonly Highlight[] = [
-  {
-    category: "Publications & Conference Presentations",
-    title: "A Machine Proposed Human-Validated Taglish-English Parallel Corpus for E-Commerce Alignment Analysis.",
-    description:
-      "Chavez, M.B., Lee, H., Sadiarin Jr., E., & Gonda, R. — Accepted for Oral Presentation at AILRIC 2026. Research on building a machine-proposed, human-validated parallel corpus for Taglish-English e-commerce text alignment.",
-    tags: ["AILRIC 2026", "Corpus Linguistics", "NLP", "Taglish"],
-    metric: { value: String(summarizePapers(papers).accepted), label: "Accepted Papers" },
-  },
+/** The research metric is derived from the papers feature, so it is added by HighlightsContainer. */
+export const researchHighlight: Omit<Highlight, "metric"> = {
+  category: "Publications & Conference Presentations",
+  title: "A Machine Proposed Human-Validated Taglish-English Parallel Corpus for E-Commerce Alignment Analysis.",
+  description:
+    "Chavez, M.B., Lee, H., Sadiarin Jr., E., & Gonda, R. — Accepted for Oral Presentation at AILRIC 2026. Research on building a machine-proposed, human-validated parallel corpus for Taglish-English e-commerce text alignment.",
+  tags: ["AILRIC 2026", "Corpus Linguistics", "NLP", "Taglish"],
+};
+
+export const otherHighlights: readonly Highlight[] = [
   {
     category: "Software Projects",
     title: "LEAP 2025 Registration Platform.",

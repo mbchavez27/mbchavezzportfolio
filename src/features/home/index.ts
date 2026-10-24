@@ -1,5 +1,4 @@
-export { default as Contact } from "./components/Contact";
-export { default as HatSelector } from "./components/HatSelector";
-export { default as Highlights } from "./components/Highlights";
-export { default as Introduction } from "./components/Introduction";
-export { contactLinks, hats, highlights, socialLinks } from "./data/home.data";
+export { default as ContactContainer } from "./containers/ContactContainer";
+export { default as HatSelectorContainer } from "./containers/HatSelectorContainer";
+export { default as HighlightsContainer } from "./containers/HighlightsContainer";
+export { default as IntroductionContainer } from "./containers/IntroductionContainer";

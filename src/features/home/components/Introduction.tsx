@@ -1,14 +1,18 @@
 import { motion } from "motion/react";
-import portraitImg from "@/assets/home/portrait.jpg";
 import { drawRule, revealOnLoad } from "@/lib/motion";
 import type { ContactLink } from "../domain/home.domain";
 
-export default function Introduction({ socialLinks }: { socialLinks: readonly ContactLink[] }) {
+type Props = {
+  portraitSrc: string;
+  socialLinks: readonly ContactLink[];
+};
+
+export default function Introduction({ portraitSrc, socialLinks }: Props) {
   return (
     <section className="pt-14 min-h-screen grid grid-cols-1 md:grid-cols-2">
       <div className="relative min-h-64 md:min-h-full bg-zinc-900 overflow-hidden">
         <img
-          src={portraitImg}
+          src={portraitSrc}
           alt="Max Benedict Chavez"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
