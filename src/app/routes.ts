@@ -4,7 +4,7 @@ import ExperiencePage from "./pages/ExperiencePage";
 import PapersPage from "@/pages/PapersPage";
 import ProjectsPage from "./pages/ProjectsPage";
 import ProductionsPage from "./pages/ProductionsPage";
-import CaseStudyComingSoon from "./pages/CaseStudyComingSoon";
+import CaseStudyComingSoonPage from "@/pages/CaseStudyComingSoonPage";
 
 export const router = createBrowserRouter([
   {
@@ -29,6 +29,6 @@ export const router = createBrowserRouter([
   },
   {
     path: "/case-study/coming-soon",
-    Component: CaseStudyComingSoon,
+    Component: CaseStudyComingSoonPage,
   },
 ]);
