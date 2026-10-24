@@ -78,6 +78,11 @@
   --sidebar-ring: #dc2626;
 }
 
+@theme {
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
