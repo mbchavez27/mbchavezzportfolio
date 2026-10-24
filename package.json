@@ -7,9 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "typecheck": "tsc",
-    "test": "vitest run",
-    "test:e2e": "playwright test"
+    "typecheck": "tsc"
   },
   "dependencies": {
     "lucide-react": "0.487.0",
@@ -21,14 +19,12 @@
     "zod": "^4.6.7"
   },
   "devDependencies": {
-    "@playwright/test": "^1.64.1",
     "@tailwindcss/vite": "4.1.12",
     "@types/react": "^18.3.31",
     "@types/react-dom": "^18.3.7",
     "@vitejs/plugin-react": "4.7.0",
     "tailwindcss": "4.1.12",
     "typescript": "^7.0.2",
-    "vite": "^6.4.3",
-    "vitest": "^5.0.5"
+    "vite": "^6.4.3"
   }
 }
