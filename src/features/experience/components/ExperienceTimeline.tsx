@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import TagList from "@/components/shared/TagList";
+import TagList from "@/components/molecules/TagList";
 import { revealOnScroll } from "@/lib/motion";
 import TimelineEntry from "./TimelineEntry";
 

@@ -1,5 +1,5 @@
-import PageHero from "@/components/shared/PageHero";
-import PageShell from "@/components/shared/PageShell";
+import PageHero from "@/components/molecules/PageHero";
+import PageShell from "@/components/templates/PageShell";
 import { FeaturedProjectsContainer, ProjectsAtAGlanceContainer, TechnicalStackContainer } from "@/features/projects";
 
 export default function ProjectsPage() {

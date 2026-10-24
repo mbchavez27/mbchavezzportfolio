@@ -1,4 +1,4 @@
-import AtAGlance from "@/components/shared/AtAGlance";
+import AtAGlance from "@/components/organisms/AtAGlance";
 import { papers, researchAreas, textSamplesAnalyzed } from "../data/papers.data";
 import { summarizePapers } from "../domain/papers.domain";
 

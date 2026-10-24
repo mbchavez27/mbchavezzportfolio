@@ -1,4 +1,4 @@
-import SectionIntro from "@/components/shared/SectionIntro";
+import SectionIntro from "@/components/molecules/SectionIntro";
 import type { Production } from "../domain/productions.domain";
 import ProductionRow from "./ProductionRow";
 

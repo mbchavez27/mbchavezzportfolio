@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { revealOnScroll } from "@/lib/motion";
-import Tag from "./Tag";
+import Tag from "@/components/atoms/Tag";
 
 export type Stat = { readonly value: string; readonly label: string };
 export type TagGroup = { readonly label: string; readonly tags: readonly string[] };

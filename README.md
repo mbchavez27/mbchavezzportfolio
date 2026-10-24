@@ -27,10 +27,14 @@ src/
 ├── features/<name>/     # home, experience, papers, projects, productions, case-study
 │   ├── index.ts         # Public API (containers only) — import features only from here
 │   ├── containers/      # Read data, run domain logic, pass props down
-│   ├── components/      # Presentational: props in, UI out
+│   ├── components/      # Presentational: props in, UI out (feature-specific)
 │   ├── data/            # Portfolio content
 │   └── domain/          # Types and pure logic (e.g. tenure durations, paper stats)
-├── components/shared/   # UI used by 2+ features (Navbar, PageHero, AtAGlance, Tag…)
+├── components/          # Shared UI, by atomic design level (used by 2+ features)
+│   ├── atoms/           # Tag, brand icons
+│   ├── molecules/       # TagList, SectionIntro, PageHero
+│   ├── organisms/       # Navbar, AtAGlance
+│   └── templates/       # PageShell
 ├── config/links.ts      # Profile and nav links
 ├── lib/                 # Formatting and motion presets
 ├── assets/              # Images, grouped by feature

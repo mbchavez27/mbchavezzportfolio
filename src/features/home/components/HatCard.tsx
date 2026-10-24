@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router";
-import TagList from "@/components/shared/TagList";
+import TagList from "@/components/molecules/TagList";
 import { formatIndex } from "@/lib/format";
 import { revealOnScroll } from "@/lib/motion";
 import type { Hat } from "../domain/home.domain";

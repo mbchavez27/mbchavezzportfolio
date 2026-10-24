@@ -4,7 +4,7 @@ import leapImg from "@/assets/projects/leap-2025.png";
 import lscsLinksImg from "@/assets/projects/lscs-links.png";
 import lscsWebsiteImg from "@/assets/projects/lscs-website.png";
 import panaToolsImg from "@/assets/projects/pana-tools.png";
-import type { Stat } from "@/components/shared/AtAGlance";
+import type { Stat } from "@/components/organisms/AtAGlance";
 import type { Project, StackCategory } from "../domain/projects.domain";
 
 export const projectStats: readonly Stat[] = [

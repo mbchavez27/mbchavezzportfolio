@@ -1,4 +1,4 @@
-import AtAGlance from "@/components/shared/AtAGlance";
+import AtAGlance from "@/components/organisms/AtAGlance";
 import { productionStats, productionTagGroups } from "../data/productions.data";
 
 export default function ProductionsAtAGlanceContainer() {

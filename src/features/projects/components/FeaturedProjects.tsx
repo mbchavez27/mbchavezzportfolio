@@ -1,4 +1,4 @@
-import SectionIntro from "@/components/shared/SectionIntro";
+import SectionIntro from "@/components/molecules/SectionIntro";
 import ProjectCard, { type ProjectCardItem } from "./ProjectCard";
 
 export default function FeaturedProjects({ items }: { items: readonly ProjectCardItem[] }) {

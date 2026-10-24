@@ -1,5 +1,5 @@
 import { FileText, Mail } from "lucide-react";
-import { Github, Linkedin } from "@/components/shared/brand-icons";
+import { Github, Linkedin } from "@/components/atoms/brand-icons";
 import aiResearcherImg from "@/assets/home/ai-researcher.jpg";
 import softwareEngineerImg from "@/assets/home/software-engineer.jpg";
 import technicalOperatorImg from "@/assets/home/technical-operator.jpg";

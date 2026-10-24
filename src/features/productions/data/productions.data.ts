@@ -5,7 +5,7 @@ import froshImg from "@/assets/productions/ccs-frosh.png";
 import comedyManilaImg from "@/assets/productions/comedy-manila.png";
 import echoesImg from "@/assets/productions/echoes-of-a-decade.png";
 import inscapeImg from "@/assets/productions/inscape.png";
-import type { Stat, TagGroup } from "@/components/shared/AtAGlance";
+import type { Stat, TagGroup } from "@/components/organisms/AtAGlance";
 import type { Capability, Production } from "../domain/productions.domain";
 
 export const productionStats: readonly Stat[] = [

@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import Tag from "@/components/shared/Tag";
+import Tag from "@/components/atoms/Tag";
 import { revealOnScroll } from "@/lib/motion";
 import type { Paper } from "../domain/papers.domain";
 import PaperLinks from "./PaperLinks";

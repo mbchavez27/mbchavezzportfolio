@@ -1,4 +1,4 @@
-import Tag from "./Tag";
+import Tag from "@/components/atoms/Tag";
 
 type Props = {
   tags: readonly string[];
