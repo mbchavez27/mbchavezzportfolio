@@ -1,58 +1,88 @@
-# Max Benedict Chavez — Portfolio
+# mbchavezz portfolio
 
-Personal portfolio for Max Benedict Chavez, frontend engineer and NLP researcher. Built with React, TypeScript, and Vite.
+Personal portfolio site, built as a client-side React app and deployed on Cloudflare Workers.
 
-## Pages
+## How it's made
 
-- `/` — Home
-- `/experience` — Work experience
-- `/papers` — NLP research papers
-- `/projects` — Projects
-- `/productions` — Productions
-- `/case-study/coming-soon` — Coming soon case study
+### Stack
 
-## Stack
+- [React 19](https://react.dev/) + TypeScript (strict), bundled with [Vite 8](https://vite.dev/)
+- [React Router 8](https://reactrouter.com/), with every page except home lazy-loaded
+- [Tailwind CSS 4](https://tailwindcss.com/) for styling, with theme tokens in `src/styles/theme.css`
+- [Motion](https://motion.dev/) for scroll and page animations
+- [Lucide](https://lucide.dev/) icons
+- [Zod](https://zod.dev/) (`zod/mini`) to validate URL params
+- [Cloudflare Workers](https://developers.cloudflare.com/workers/) static assets for hosting, via `@cloudflare/vite-plugin` and Wrangler
 
-- [Vite](https://vitejs.dev/) + [React](https://react.dev/) + TypeScript
-- [Tailwind CSS](https://tailwindcss.com/)
-- [MUI](https://mui.com/)
-- [react-router](https://reactrouter.com/)
+### Architecture
 
-## Structure
+The code is organized by feature. Each feature splits into containers and presentational components:
+
+- **Pages** (`src/pages/`) only compose feature containers.
+- **Containers** read the feature's data, run its domain logic, and pass ready-to-render props down.
+- **Presentational components** take props and render. They don't import data or call domain logic.
+- **Domain** files hold types and pure logic. For example, tenure durations are computed from start and end months, and paper counts come from the papers list.
+- **Shared components** (used by two or more features) follow atomic design: atoms, molecules, organisms, templates.
 
 ```
 src/
-├── app/                 # App root and route table
-├── pages/               # Thin route components that compose feature containers
+├── app/                 # App root, router, scroll-to-top layout
+├── pages/               # Thin route components
 ├── features/<name>/     # home, experience, papers, projects, productions, case-study
-│   ├── index.ts         # Public API (containers only) — import features only from here
-│   ├── containers/      # Read data, run domain logic, pass props down
-│   ├── components/      # Presentational: props in, UI out (feature-specific)
+│   ├── index.ts         # Public API: other code imports a feature only from here
+│   ├── containers/      # Wire data and domain logic to components
+│   ├── components/      # Feature-specific presentational components
 │   ├── data/            # Portfolio content
-│   └── domain/          # Types and pure logic (e.g. tenure durations, paper stats)
-├── components/          # Shared UI, by atomic design level (used by 2+ features)
-│   ├── atoms/           # Tag, brand icons
-│   ├── molecules/       # TagList, SectionIntro, PageHero
+│   └── domain/          # Types and pure functions
+├── components/          # Shared UI by atomic level
+│   ├── atoms/           # Tag, NavAnchor, brand icons
+│   ├── molecules/       # TagList, PageHero, SectionIntro, NavDropdown, RevealOnHover
 │   ├── organisms/       # Navbar, AtAGlance
 │   └── templates/       # PageShell
-├── config/links.ts      # Profile and nav links
-├── lib/                 # Formatting and motion presets
+├── config/links.ts      # Profile links and navbar items
+├── lib/                 # Formatting, motion presets, scroll helper
 ├── assets/              # Images, grouped by feature
-└── styles/
+└── styles/              # Tailwind entry, fonts, theme tokens
 ```
 
-To add a project, paper, or production, edit the matching `features/<name>/data/*.data.ts`.
+## Setup
 
-## Getting started
+Requires Node.js 22.22 or newer (CI uses Node 24).
 
 ```sh
+git clone git@github.com:mbchavez27/mbchavezzportfolio.git
+cd mbchavezzportfolio
 npm install
-npm run dev
 ```
 
-## Build
+## Usage
 
-```sh
-npm run typecheck
-npm run build
-```
+| Command             | What it does                                                    |
+| ------------------- | --------------------------------------------------------------- |
+| `npm run dev`       | Start the dev server at http://localhost:5173                   |
+| `npm run typecheck` | Type-check the project with `tsc`                               |
+| `npm run build`     | Build for production into `dist/`                               |
+| `npm run preview`   | Serve the production build locally                              |
+| `npm run deploy`    | Build and deploy to Cloudflare Workers (needs `wrangler login`) |
+
+Restart `npm run dev` after installing or upgrading dependencies. Vite reloads config changes, but not packages that change on disk.
+
+### Editing content
+
+All content lives in each feature's `data/` folder. Most edits never touch components:
+
+| To change…                              | Edit                                                   |
+| --------------------------------------- | ------------------------------------------------------ |
+| Work experience and education           | `src/features/experience/data/experience.data.ts`      |
+| Papers (stats update automatically)     | `src/features/papers/data/papers.data.ts`              |
+| Projects and the technical stack        | `src/features/projects/data/projects.data.ts`          |
+| Productions and capabilities            | `src/features/productions/data/productions.data.ts`    |
+| Home hero, hat cards, highlights, contact | `src/features/home/data/home.data.ts`                |
+| Navbar items and profile links          | `src/config/links.ts`                                  |
+
+Images go in `src/assets/<feature>/` and are imported from the matching data file.
+
+### CI and dependency updates
+
+- GitHub Actions (`.github/workflows/ci.yml`) runs the typecheck and build on every push to `main` and on every pull request.
+- Dependabot opens weekly PRs for npm packages and GitHub Actions.
