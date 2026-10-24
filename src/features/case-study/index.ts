@@ -1,2 +1,2 @@
-export { default as ComingSoon } from "./components/ComingSoon";
-export { caseStudyPath, parseProjectTitle } from "./domain/case-study.domain";
+export { default as ComingSoonContainer } from "./containers/ComingSoonContainer";
+export { caseStudyPath } from "./domain/case-study.domain";
