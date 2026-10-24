@@ -1,6 +1,8 @@
+import { papers, summarizePapers } from "@/features/papers";
 import HatSelector from "../components/HatSelector";
-import { hats } from "../data/home.data";
+import { otherHats, researcherHat } from "../data/home.data";
 
 export default function HatSelectorContainer() {
-  return <HatSelector hats={hats} />;
+  const { accepted } = summarizePapers(papers);
+  return <HatSelector hats={[researcherHat(accepted), ...otherHats]} />;
 }

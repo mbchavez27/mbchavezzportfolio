@@ -12,15 +12,18 @@ export const heroCallToAction: CallToAction = {
   Icon: BriefcaseBusiness,
 };
 
-export const hats: readonly Hat[] = [
-  {
+/** The accepted-paper count comes from the papers feature, so HatSelectorContainer supplies it. */
+export function researcherHat(acceptedPapers: number): Hat {
+  return {
     role: "AI Researcher",
-    description:
-      "LLM-focused NLP research across sentiment analysis, emotion detection, and code-switched text — contributing to 3 accepted conference papers and 1 IEEE full paper.",
-    tags: ["LLMs", "NLP", "Research", "IEEE"],
+    description: `LLM-focused NLP research across sentiment analysis, emotion detection, and code-switched text — with ${acceptedPapers} accepted conference ${acceptedPapers === 1 ? "paper" : "papers"}.`,
+    tags: ["LLMs", "NLP", "Research", "Publications"],
     image: aiResearcherImg,
     to: "/papers",
-  },
+  };
+}
+
+export const otherHats: readonly Hat[] = [
   {
     role: "Software Engineer",
     description:
