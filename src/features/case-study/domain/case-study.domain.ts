@@ -1,9 +1,9 @@
-import { z } from "zod";
+import * as z from "zod/mini";
 
 const COMING_SOON_PATH = "/case-study/coming-soon";
 const PROJECT_PARAM = "project";
 
-const projectTitleSchema = z.string().trim().min(1).max(120);
+const projectTitleSchema = z.string().check(z.trim(), z.minLength(1), z.maxLength(120));
 
 export function caseStudyPath(projectTitle: string): string {
   return `${COMING_SOON_PATH}?${PROJECT_PARAM}=${encodeURIComponent(projectTitle)}`;
