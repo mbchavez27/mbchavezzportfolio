@@ -3,6 +3,15 @@ import { yearMonth } from "../domain/tenure.domain";
 
 export const positions: readonly Position[] = [
   {
+    role: "Retail Tech Intern",
+    organization: "ING Hubs Philippines",
+    employmentType: "Internship",
+    tenure: { start: yearMonth(2026, 10) },
+    location: "Makati, NCR, Philippines · Hybrid",
+    highlights: [],
+    skills: [],
+  },
+  {
     role: "Undergraduate Student Researcher",
     organization: "Center for ICT for Development",
     employmentType: "Full-time",
@@ -18,7 +27,7 @@ export const positions: readonly Position[] = [
     role: "Technical Operator",
     organization: "DLSU Green Media Group",
     employmentType: "Full-time",
-    tenure: { start: yearMonth(2025, 8) },
+    tenure: { start: yearMonth(2025, 8), end: yearMonth(2026, 8) },
     location: "Manila, NCR, Philippines · On-site",
     highlights: [
       "Gained hands-on experience in technical operations, including sound design, lighting design, and live camera switching for university-wide events, learning how to mix audio for bands and manage visuals.",
