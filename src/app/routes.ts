@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router";
-import Home from "./Home";
+import HomePage from "@/pages/HomePage";
 import ExperiencePage from "@/pages/ExperiencePage";
 import PapersPage from "@/pages/PapersPage";
 import ProjectsPage from "@/pages/ProjectsPage";
@@ -9,7 +9,7 @@ import CaseStudyComingSoonPage from "@/pages/CaseStudyComingSoonPage";
 export const router = createBrowserRouter([
   {
     path: "/",
-    Component: Home,
+    Component: HomePage,
   },
   {
     path: "/experience",
