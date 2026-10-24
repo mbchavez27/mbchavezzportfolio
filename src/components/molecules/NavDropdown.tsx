@@ -69,21 +69,20 @@ export default function NavDropdown({ group }: { group: NavGroup }) {
         aria-expanded={isOpen}
         aria-controls={panelId}
         onClick={toggleOnClick}
-        className="font-body relative flex items-center gap-1 text-sm font-medium text-zinc-400 hover:text-white aria-expanded:text-white transition-colors duration-200 cursor-pointer group"
+        className="font-body flex items-center gap-1.5 border border-zinc-700 px-3 py-1 text-sm font-medium text-zinc-400 hover:border-zinc-500 hover:text-white aria-expanded:border-zinc-400 aria-expanded:text-white transition-colors duration-200 cursor-pointer"
       >
         {group.label}
         <ChevronDown size={14} className={`transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
-        <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-primary group-hover:w-full group-aria-expanded:w-full transition-all duration-200" />
       </button>
 
-      <div id={panelId} hidden={!isOpen} className="absolute left-1/2 -translate-x-1/2 top-full pt-[18px]">
-        <ul className="min-w-44 bg-black border border-zinc-800 py-2">
+      <div id={panelId} hidden={!isOpen} className="absolute left-0 top-full pt-2">
+        <ul className="min-w-40 bg-black border border-zinc-700 py-1.5">
           {group.links.map((link) => (
             <li key={link.label}>
               <NavAnchor
                 link={link}
                 onNavigate={close}
-                className="font-body block px-4 py-2 text-sm font-medium text-zinc-400 hover:text-white hover:bg-zinc-900 focus-visible:text-white focus-visible:bg-zinc-900 transition-colors duration-200"
+                className="font-body block px-3 py-1.5 text-sm font-medium text-zinc-400 hover:text-white focus-visible:text-white transition-colors duration-200"
               >
                 {link.label}
               </NavAnchor>
