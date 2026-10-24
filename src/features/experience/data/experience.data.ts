@@ -18,10 +18,10 @@ export const positions: readonly Position[] = [
     tenure: { start: yearMonth(2026, 2) },
     location: "Manila, NCR, Philippines · Hybrid",
     highlights: [
-      "Conduct research in Natural Language Processing (NLP), developing transformer-based models for sentiment analysis, emotion detection, and multilingual/code-switched text.",
+      "Conduct Natural Language Processing (NLP) research centered on large language models (LLMs), applying them to sentiment analysis, emotion detection, and multilingual/code-switched text.",
       "Analyze and model 10,000+ text samples, contributing to 3 accepted conference papers, including 2 oral presentations at AILRIC 2026 and 1 accepted IEEE full paper.",
     ],
-    skills: ["Machine Learning", "Natural Language Processing (NLP)"],
+    skills: ["Large Language Models (LLMs)", "Natural Language Processing (NLP)", "Machine Learning"],
   },
   {
     role: "Technical Operator",

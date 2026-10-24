@@ -16,8 +16,8 @@ export const hats: readonly Hat[] = [
   {
     role: "AI Researcher",
     description:
-      "Transformer-based NLP research across sentiment analysis, emotion detection, and code-switched text — contributing to 3 accepted conference papers and 1 IEEE full paper.",
-    tags: ["NLP", "Transformers", "Research", "IEEE"],
+      "LLM-focused NLP research across sentiment analysis, emotion detection, and code-switched text — contributing to 3 accepted conference papers and 1 IEEE full paper.",
+    tags: ["LLMs", "NLP", "Research", "IEEE"],
     image: aiResearcherImg,
     to: "/papers",
   },
