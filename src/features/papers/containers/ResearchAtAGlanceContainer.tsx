@@ -1,8 +1,8 @@
 import AtAGlance from "@/components/shared/AtAGlance";
-import { researchAreas, textSamplesAnalyzed } from "../data/papers.data";
-import { summarizePapers, type Paper } from "../domain/papers.domain";
+import { papers, researchAreas, textSamplesAnalyzed } from "../data/papers.data";
+import { summarizePapers } from "../domain/papers.domain";
 
-export default function ResearchAtAGlance({ papers }: { papers: readonly Paper[] }) {
+export default function ResearchAtAGlanceContainer() {
   const { accepted, oralPresentations } = summarizePapers(papers);
 
   return (

@@ -1,9 +1,9 @@
 import { motion } from "motion/react";
 import { revealOnScroll } from "@/lib/motion";
-import { groupByVenue, type Paper } from "../domain/papers.domain";
+import type { VenueGroup } from "../domain/papers.domain";
 import PaperEntry from "./PaperEntry";
 
-export default function ResearchWork({ papers }: { papers: readonly Paper[] }) {
+export default function ResearchWork({ venueGroups }: { venueGroups: readonly VenueGroup[] }) {
   return (
     <div className="px-10 md:px-24 lg:px-32">
       <motion.div {...revealOnScroll()} className="mb-14">
@@ -11,7 +11,7 @@ export default function ResearchWork({ papers }: { papers: readonly Paper[] }) {
         <h2 className="font-display text-2xl md:text-3xl font-semibold text-zinc-900">Research Work</h2>
       </motion.div>
 
-      {groupByVenue(papers).map(({ venue, papers: venuePapers }) => (
+      {venueGroups.map(({ venue, papers: venuePapers }) => (
         <motion.div key={venue.name} {...revealOnScroll()} className="mb-16 last:mb-0">
           <div className="mb-8">
             <h2 className="font-display text-lg font-semibold text-zinc-900">{venue.name}</h2>

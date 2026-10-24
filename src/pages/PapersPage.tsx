@@ -1,6 +1,6 @@
 import PageHero from "@/components/shared/PageHero";
 import PageShell from "@/components/shared/PageShell";
-import { papers, ResearchAtAGlance, ResearchWork } from "@/features/papers";
+import { ResearchAtAGlanceContainer, ResearchWorkContainer } from "@/features/papers";
 
 export default function PapersPage() {
   return (
@@ -8,9 +8,9 @@ export default function PapersPage() {
       <PageHero eyebrow="Papers">
         A collection of research contributions<br />in AI, machine learning, and language technologies.
       </PageHero>
-      <ResearchAtAGlance papers={papers} />
+      <ResearchAtAGlanceContainer />
       <div className="pb-32">
-        <ResearchWork papers={papers} />
+        <ResearchWorkContainer />
       </div>
     </PageShell>
   );

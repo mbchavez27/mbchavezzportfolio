@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import Tag from "@/components/shared/Tag";
 import { revealOnScroll } from "@/lib/motion";
-import { hasPublishedLinks, type Paper } from "../domain/papers.domain";
+import type { Paper } from "../domain/papers.domain";
 import PaperLinks from "./PaperLinks";
 
 type Props = {
@@ -21,7 +21,7 @@ export default function PaperEntry({ paper, position }: Props) {
           <Tag key={area} label={area} variant="light" />
         ))}
       </div>
-      {hasPublishedLinks(paper) ? (
+      {paper.links.length > 0 ? (
         <PaperLinks links={paper.links} />
       ) : (
         <span className="font-body inline-flex items-center gap-1.5 text-xs border border-dashed border-zinc-200 text-zinc-400 px-3 py-1.5">

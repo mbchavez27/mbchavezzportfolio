@@ -47,7 +47,3 @@ export function groupByVenue(papers: readonly Paper[]): readonly VenueGroup[] {
   }
   return [...groups.values()];
 }
-
-export function hasPublishedLinks(paper: Paper): boolean {
-  return paper.links.length > 0;
-}
