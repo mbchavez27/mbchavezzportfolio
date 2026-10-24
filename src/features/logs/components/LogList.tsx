@@ -15,13 +15,13 @@ export type LogListEntry = {
 
 export default function LogList({ entries }: { entries: readonly LogListEntry[] }) {
   return (
-    <section className="px-6 sm:px-10 md:px-24 lg:px-32 pb-32">
+    <section className="px-6 sm:px-10 md:px-24 lg:px-32 pt-16 pb-32">
       {entries.length === 0 ? (
         <p className="font-body inline-flex text-sm border border-dashed border-zinc-200 text-zinc-400 px-4 py-3">
           No logs yet. The first one is on its way.
         </p>
       ) : (
-        <ul className="flex flex-col divide-y divide-zinc-100 border-t border-zinc-100">
+        <ul className="flex flex-col divide-y divide-zinc-100">
           {entries.map((entry, i) => (
             <motion.li key={entry.slug} {...revealOnScroll({ x: -16, y: 0, delay: i * 0.08, duration: 0.5 })}>
               <Link to={entry.href} className="group block py-8">

@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { revealOnScroll } from "@/lib/motion";
+import AccentRule from "@/components/atoms/AccentRule";
 import Tag from "@/components/atoms/Tag";
 
 export type Stat = { readonly value: string; readonly label: string };
@@ -20,7 +21,7 @@ const statColumns: Record<number, string> = {
 export default function AtAGlance({ title, stats, tagGroups }: Props) {
   return (
     <motion.div {...revealOnScroll()} className="border-t border-b border-zinc-100 mb-20 relative overflow-hidden">
-      <div className="h-0.5 w-full bg-primary" />
+      <AccentRule />
 
       <div className="px-6 sm:px-10 md:px-24 lg:px-32 pt-16 pb-5 border-b border-zinc-100">
         <p className="font-body text-xs text-zinc-400 tracking-[0.2em] uppercase">{title}</p>
