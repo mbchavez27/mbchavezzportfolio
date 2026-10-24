@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router";
 import Home from "./Home";
 import ExperiencePage from "./pages/ExperiencePage";
 import PapersPage from "@/pages/PapersPage";
-import ProjectsPage from "./pages/ProjectsPage";
+import ProjectsPage from "@/pages/ProjectsPage";
 import ProductionsPage from "./pages/ProductionsPage";
 import CaseStudyComingSoonPage from "@/pages/CaseStudyComingSoonPage";
 
