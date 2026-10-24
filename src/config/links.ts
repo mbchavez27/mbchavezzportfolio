@@ -24,5 +24,6 @@ export const navItems: readonly NavItem[] = [
       { kind: "internal", label: "Productions", to: "/productions" },
     ],
   },
+  { kind: "internal", label: "Logs", to: "/logs" },
   { kind: "external", label: "Resume", href: profileLinks.resume },
 ];
