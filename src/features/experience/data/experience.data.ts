@@ -14,7 +14,7 @@ export const positions: readonly Position[] = [
   {
     role: "Undergraduate Student Researcher",
     organization: "Center for ICT for Development",
-    employmentType: "Full-time",
+    employmentType: "Apprenticeship",
     tenure: { start: yearMonth(2026, 2) },
     location: "Manila, NCR, Philippines · Hybrid",
     highlights: [
@@ -39,7 +39,7 @@ export const positions: readonly Position[] = [
     role: "Lead Software Engineer, Frontend",
     organization: "La Salle Computer Society",
     employmentType: "Full-time",
-    tenure: { start: yearMonth(2024, 9) },
+    tenure: { start: yearMonth(2024, 9), end: yearMonth(2026, 8) },
     location: "Philippines · Hybrid",
     highlights: [
       "Led frontend engineering across 3+ teams, managing 8 engineers, defining development standards, and creating internal tooling such as npx create-lscs-app that reduced project setup time by 50%.",
