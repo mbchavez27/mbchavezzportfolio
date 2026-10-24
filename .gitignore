@@ -35,3 +35,7 @@ coverage/
 # Temporary files
 *.tmp
 *.temp
+# Wrangler
+.wrangler/
+.dev.vars*
+!.dev.vars.example
