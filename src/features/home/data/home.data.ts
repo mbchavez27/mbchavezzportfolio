@@ -10,7 +10,6 @@ import type { ContactLink, Hat, Highlight } from "../domain/home.domain";
 export const hats: readonly Hat[] = [
   {
     role: "AI Researcher",
-    organization: "Center for ICT for Development",
     description:
       "Transformer-based NLP research across sentiment analysis, emotion detection, and code-switched text — contributing to 3 accepted conference papers and 1 IEEE full paper.",
     tags: ["NLP", "Transformers", "Research", "IEEE"],
@@ -19,7 +18,6 @@ export const hats: readonly Hat[] = [
   },
   {
     role: "Software Engineer",
-    organization: "La Salle Computer Society",
     description:
       "Leading frontend engineering across 3+ teams, architecting Next.js platforms serving 22,000+ students and building internal tooling that cut project setup time by 50%.",
     tags: ["Next.js", "TypeScript", "Architecture", "Tooling"],
@@ -28,7 +26,6 @@ export const hats: readonly Hat[] = [
   },
   {
     role: "Technical Operator",
-    organization: "Green Media Group",
     description:
       "On-the-ground technical operations for university-wide events — sound design, lighting, and live multi-camera switching.",
     tags: ["Audio", "Lighting", "Live Switching", "AV"],

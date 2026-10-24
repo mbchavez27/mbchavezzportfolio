@@ -2,7 +2,6 @@ import type { LucideIcon } from "lucide-react";
 
 export type Hat = {
   readonly role: string;
-  readonly organization: string;
   readonly description: string;
   readonly tags: readonly string[];
   readonly image: string;
