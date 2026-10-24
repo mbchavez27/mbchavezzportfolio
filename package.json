@@ -10,7 +10,7 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "lucide-react": "0.487.0",
+    "lucide-react": "^1.61.0",
     "motion": "12.23.24",
     "react": "18.3.1",
     "react-dom": "18.3.1",
