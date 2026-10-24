@@ -36,15 +36,21 @@ export default function ExperienceTimeline({ entries }: { entries: readonly Posi
               location={entry.location}
               isOngoing={entry.isOngoing}
             >
-              <ul className="flex flex-col gap-2 mt-5 mb-5">
-                {entry.highlights.map((highlight) => (
-                  <li key={highlight} className="font-body flex gap-3 text-sm text-zinc-500 leading-relaxed">
-                    <span className="text-primary mt-1.5 shrink-0">—</span>
-                    {highlight}
-                  </li>
-                ))}
-              </ul>
-              <TagList tags={entry.skills} variant="light" />
+              {entry.highlights.length > 0 && (
+                <ul className="flex flex-col gap-2 mt-5">
+                  {entry.highlights.map((highlight) => (
+                    <li key={highlight} className="font-body flex gap-3 text-sm text-zinc-500 leading-relaxed">
+                      <span className="text-primary mt-1.5 shrink-0">—</span>
+                      {highlight}
+                    </li>
+                  ))}
+                </ul>
+              )}
+              {entry.skills.length > 0 && (
+                <div className="mt-5">
+                  <TagList tags={entry.skills} variant="light" />
+                </div>
+              )}
             </TimelineEntry>
           </motion.div>
         ))}
