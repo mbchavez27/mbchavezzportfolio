@@ -18,6 +18,14 @@ The body is regular Markdown, including GitHub extras like tables and task lists
 
 Some text with a [link](https://example.com) and `inline code`.
 
+Images go in `public/log-images/your-slug/`. The quoted text is an optional caption:
+
+![What the image shows, for screen readers](/log-images/your-slug/photo.jpg "Optional caption")
+
+| Column | Another |
+| ------ | ------: |
+| Tables | work    |
+
 ```ts
 const hello = "world";
 ```

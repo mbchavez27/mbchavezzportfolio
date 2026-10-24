@@ -36,7 +36,7 @@ src/
 │   ├── data/            # Portfolio content
 │   └── domain/          # Types and pure functions
 ├── components/          # Shared UI by atomic level
-│   ├── atoms/           # Tag, NavAnchor, brand icons
+│   ├── atoms/           # Tag, NavAnchor, AccentRule, brand icons
 │   ├── molecules/       # TagList, PageHero, SectionIntro, NavDropdown, RevealOnHover
 │   ├── organisms/       # Navbar, AtAGlance
 │   └── templates/       # PageShell
@@ -87,19 +87,17 @@ Images go in `src/assets/<feature>/` and are imported from the matching data fil
 ### Writing a log
 
 1. Copy `src/features/logs/posts/_template.md` to `src/features/logs/posts/<slug>.md`. The file name becomes the URL, `/logs/<slug>`.
-2. Fill in the header: `title`, `date` (YYYY-MM-DD) and `summary` are required, and `tags` is an optional comma-separated list.
-3. Write the body in Markdown. GitHub extras like tables and task lists work.
+2. Fill in the header: `title`, `date` (YYYY-MM-DD) and `summary` are required, and `tags` is an optional comma-separated list. Every tag becomes a filter on `/logs`; the chosen filter and sort live in the URL (`/logs?tag=llm&sort=oldest`), so filtered views can be shared.
+3. Write the body in Markdown. GitHub extras work too: tables, task lists, strikethrough and footnotes.
 4. Keep `draft: true` while you're writing: the post shows in `npm run dev` but not on the live site. Remove it to publish.
 
 A missing or malformed header stops `npm run dev` and fails `npm run build` (and CI) with the file name and the problem, so a broken post never ships.
 
-**Images in a log:** put the file in `public/log-images/<slug>/` and reference it with an absolute path. The quoted text is optional and shows as a caption:
+**Images in a log:** put the file in `public/log-images/<slug>/` (create the folder) and reference it with an absolute path. The quoted text is optional and shows as a caption. Tall images are capped to the screen height, and keeping files under ~300 KB keeps posts fast:
 
 ```md
 ![What the image shows, for screen readers](/log-images/<slug>/photo.jpg "Optional caption")
 ```
-
-**Examples:** `example-plain-text.md`, `example-with-image.md` and `example-with-figures.md` in the posts folder show text, images, and tables/code/task lists/footnotes. They're drafts, so run `npm run dev` and open `/logs` to see them. Delete them (and `public/log-images/example-with-image/`) when you no longer need them.
 
 ### CI and dependency updates
 
