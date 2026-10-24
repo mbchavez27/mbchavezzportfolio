@@ -1,4 +1,4 @@
-import { FileText, Mail } from "lucide-react";
+import { BriefcaseBusiness, FileText, Mail } from "lucide-react";
 import { Github, Linkedin } from "@/components/atoms/brand-icons";
 import aiResearcherImg from "@/assets/home/ai-researcher.jpg";
 import softwareEngineerImg from "@/assets/home/software-engineer.jpg";
@@ -6,7 +6,11 @@ import technicalOperatorImg from "@/assets/home/technical-operator.jpg";
 import { profileLinks } from "@/config/links";
 import type { CallToAction, ContactLink, Hat, Highlight } from "../domain/home.domain";
 
-export const heroCallToAction: CallToAction = { label: "View my experience", to: "/experience" };
+export const heroCallToAction: CallToAction = {
+  label: "View my experience",
+  to: "/experience",
+  Icon: BriefcaseBusiness,
+};
 
 export const hats: readonly Hat[] = [
   {

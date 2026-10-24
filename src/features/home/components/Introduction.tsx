@@ -1,5 +1,4 @@
 import { motion } from "motion/react";
-import { ArrowRight } from "lucide-react";
 import { Link } from "react-router";
 import { drawRule, revealOnLoad } from "@/lib/motion";
 import type { CallToAction, ContactLink } from "../domain/home.domain";
@@ -47,17 +46,14 @@ export default function Introduction({ portraitSrc, callToAction, socialLinks, o
           Max Benedict Chavez
         </motion.p>
 
-        <motion.div {...revealOnLoad({ y: 8, delay: 0.6, duration: 0.5 })} className="self-start mt-1">
+        <motion.div {...revealOnLoad({ delay: 0.65, duration: 0.5 })} className="flex flex-wrap items-center gap-x-5 gap-y-3">
           <Link
             to={callToAction.to}
-            className="group inline-flex items-center gap-3 bg-primary hover:bg-primary/85 text-white px-5 py-3 transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+            className="flex items-center gap-2 text-zinc-500 hover:text-white transition-colors duration-200"
           >
-            <span className="font-body text-xs tracking-widest uppercase">{callToAction.label}</span>
-            <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-200" />
+            <callToAction.Icon size={14} />
+            <span className="font-body text-xs tracking-wide">{callToAction.label}</span>
           </Link>
-        </motion.div>
-
-        <motion.div {...revealOnLoad({ delay: 0.65, duration: 0.5 })} className="flex items-center gap-5">
           {socialLinks.map(({ label, href, Icon }) => (
             <a
               key={label}

@@ -19,6 +19,7 @@ export type Highlight = {
 export type CallToAction = {
   readonly label: string;
   readonly to: string;
+  readonly Icon: LucideIcon;
 };
 
 export type ContactLink = {
