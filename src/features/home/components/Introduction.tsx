@@ -5,9 +5,10 @@ import type { ContactLink } from "../domain/home.domain";
 type Props = {
   portraitSrc: string;
   socialLinks: readonly ContactLink[];
+  onScrollDown: () => void;
 };
 
-export default function Introduction({ portraitSrc, socialLinks }: Props) {
+export default function Introduction({ portraitSrc, socialLinks, onScrollDown }: Props) {
   return (
     <section className="pt-14 min-h-screen grid grid-cols-1 md:grid-cols-2">
       <div className="relative min-h-64 md:min-h-full bg-zinc-900 overflow-hidden">
@@ -58,10 +59,17 @@ export default function Introduction({ portraitSrc, socialLinks }: Props) {
           ))}
         </motion.div>
 
-        <div className="absolute bottom-10 left-10 md:left-16 flex flex-col items-start gap-2" aria-hidden="true">
-          <span className="font-body text-zinc-700 text-xs tracking-widest uppercase">Scroll</span>
-          <div className="w-px h-12 bg-gradient-to-b from-primary to-transparent" />
-        </div>
+        <button
+          type="button"
+          onClick={onScrollDown}
+          aria-label="Scroll down"
+          className="group mt-4 self-start flex flex-col items-start gap-2 cursor-pointer md:mt-0 md:absolute md:bottom-10 md:left-16"
+        >
+          <span className="font-body text-zinc-700 group-hover:text-zinc-400 text-xs tracking-widest uppercase transition-colors duration-200">
+            Scroll
+          </span>
+          <span className="block w-px h-12 bg-gradient-to-b from-primary to-transparent origin-top group-hover:scale-y-125 transition-transform duration-300" />
+        </button>
       </div>
     </section>
   );

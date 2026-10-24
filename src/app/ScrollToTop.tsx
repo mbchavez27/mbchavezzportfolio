@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router";
+import { preferredScrollBehavior } from "@/lib/scroll";
 
 /** Scrolls back to the top whenever the page (path) changes; instant for reduced-motion users. */
 export default function ScrollToTop() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "instant" : "smooth" });
+    window.scrollTo({ top: 0, behavior: preferredScrollBehavior() });
   }, [pathname]);
 
   return null;
