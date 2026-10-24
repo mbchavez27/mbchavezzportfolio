@@ -18,6 +18,26 @@ Personal portfolio for Max Benedict Chavez, frontend engineer and NLP researcher
 - [MUI](https://mui.com/)
 - [react-router](https://reactrouter.com/)
 
+## Structure
+
+```
+src/
+├── app/                 # App root and route table
+├── pages/               # Thin route components that compose features
+├── features/<name>/     # home, experience, papers, projects, productions, case-study
+│   ├── index.ts         # Public API — import features only from here
+│   ├── components/      # Presentational components
+│   ├── data/            # Portfolio content
+│   └── domain/          # Types and pure logic (e.g. tenure durations, paper stats)
+├── components/shared/   # UI used by 2+ features (Navbar, PageHero, AtAGlance, Tag…)
+├── config/links.ts      # Profile and nav links
+├── lib/                 # Formatting and motion presets
+├── assets/              # Images, grouped by feature
+└── styles/
+```
+
+To add a project, paper, or production, edit the matching `features/<name>/data/*.data.ts`.
+
 ## Getting started
 
 ```sh
@@ -28,5 +48,6 @@ npm run dev
 ## Build
 
 ```sh
+npm run typecheck
 npm run build
 ```
