@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router";
+import RevealOnHover from "@/components/molecules/RevealOnHover";
 import TagList from "@/components/molecules/TagList";
 import { formatIndex } from "@/lib/format";
 import { revealOnScroll } from "@/lib/motion";
@@ -35,10 +36,10 @@ export default function ProjectCard({ project, caseStudyHref, position }: Props)
           <p className="font-body text-xs tracking-widest uppercase text-zinc-600 mb-5">
             <span className="text-primary">@</span> {project.domain}
           </p>
-          <div className="overflow-hidden max-h-0 group-hover:max-h-48 transition-all duration-500">
+          <RevealOnHover>
             <p className="font-body text-sm text-zinc-400 leading-relaxed mb-4">{project.summary}</p>
             <TagList tags={project.tags} variant="dark" />
-          </div>
+          </RevealOnHover>
           <div className="flex items-center gap-2 text-zinc-500 group-hover:text-white transition-colors duration-300 mt-5">
             <span className="font-body text-xs tracking-widest uppercase">View Case Study</span>
             <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform duration-300" />

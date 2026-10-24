@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router";
+import RevealOnHover from "@/components/molecules/RevealOnHover";
 import TagList from "@/components/molecules/TagList";
 import { formatIndex } from "@/lib/format";
 import { revealOnScroll } from "@/lib/motion";
@@ -25,10 +26,10 @@ export default function HatCard({ hat, position }: Props) {
         <div className="relative z-10 flex flex-col justify-end h-full min-h-96 p-8">
           <span className="font-body block text-xs tracking-widest mb-4 text-zinc-400">{formatIndex(position)}</span>
           <h3 className="font-display text-xl font-semibold text-white mb-5">{hat.role}</h3>
-          <div className="overflow-hidden max-h-0 group-hover:max-h-40 transition-all duration-500">
+          <RevealOnHover>
             <p className="font-body text-sm text-zinc-400 leading-relaxed mb-4">{hat.description}</p>
             <TagList tags={hat.tags} variant="dark" />
-          </div>
+          </RevealOnHover>
           <div className="flex items-center gap-2 text-zinc-400 group-hover:text-white transition-colors duration-300 mt-5">
             <span className="font-body text-xs tracking-widest uppercase">Explore</span>
             <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform duration-300" />
