@@ -1,13 +1,9 @@
-import AtAGlance from "@/components/shared/AtAGlance";
 import PageHero from "@/components/shared/PageHero";
 import PageShell from "@/components/shared/PageShell";
 import {
-  capabilities,
-  FeaturedProductions,
-  productions,
-  productionStats,
-  productionTagGroups,
-  RolesCapabilities,
+  FeaturedProductionsContainer,
+  ProductionsAtAGlanceContainer,
+  RolesCapabilitiesContainer,
 } from "@/features/productions";
 
 export default function ProductionsPage() {
@@ -16,9 +12,9 @@ export default function ProductionsPage() {
       <PageHero eyebrow="Productions">
         A collection of live events,<br />technical experiences, and productions I've supported.
       </PageHero>
-      <AtAGlance title="Production Highlights" stats={productionStats} tagGroups={productionTagGroups} />
-      <FeaturedProductions productions={productions} />
-      <RolesCapabilities capabilities={capabilities} />
+      <ProductionsAtAGlanceContainer />
+      <FeaturedProductionsContainer />
+      <RolesCapabilitiesContainer />
     </PageShell>
   );
 }

@@ -1,3 +1,3 @@
-export { default as FeaturedProductions } from "./components/FeaturedProductions";
-export { default as RolesCapabilities } from "./components/RolesCapabilities";
-export { capabilities, productions, productionStats, productionTagGroups } from "./data/productions.data";
+export { default as FeaturedProductionsContainer } from "./containers/FeaturedProductionsContainer";
+export { default as ProductionsAtAGlanceContainer } from "./containers/ProductionsAtAGlanceContainer";
+export { default as RolesCapabilitiesContainer } from "./containers/RolesCapabilitiesContainer";
