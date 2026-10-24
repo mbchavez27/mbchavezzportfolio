@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { motion } from "motion/react";
 import { Link } from "react-router";
 import Tag from "@/components/atoms/Tag";
@@ -13,13 +14,23 @@ export type LogListEntry = {
   readonly draft: boolean;
 };
 
-export default function LogList({ entries }: { entries: readonly LogListEntry[] }) {
+type Props = {
+  entries: readonly LogListEntry[];
+  /** Filter and sort controls, rendered under the heading. */
+  controls: ReactNode;
+};
+
+export default function LogList({ entries, controls }: Props) {
   return (
     <section className="px-6 sm:px-10 md:px-24 lg:px-32 pt-16 pb-32">
-      <motion.div {...revealOnScroll()} className="mb-10">
-        <p className="font-body text-xs text-zinc-400 tracking-[0.2em] uppercase mb-3">Entries</p>
-        <h2 className="font-display text-2xl md:text-3xl font-semibold text-zinc-900">Latest Logs</h2>
-      </motion.div>
+      <motion.h2
+        {...revealOnScroll()}
+        className="font-display text-2xl md:text-3xl font-semibold text-zinc-900 mb-6"
+      >
+        Entries
+      </motion.h2>
+
+      {controls}
 
       {entries.length === 0 ? (
         <p className="font-body inline-flex text-sm border border-dashed border-zinc-200 text-zinc-400 px-4 py-3">
@@ -34,9 +45,9 @@ export default function LogList({ entries }: { entries: readonly LogListEntry[] 
                   {entry.dateLabel}
                   {entry.draft && <span className="ml-2 text-primary uppercase tracking-widest">Draft</span>}
                 </p>
-                <h2 className="font-display text-xl md:text-2xl font-semibold text-zinc-900 group-hover:text-primary transition-colors duration-200 mb-2">
+                <h3 className="font-display text-xl md:text-2xl font-semibold text-zinc-900 group-hover:text-primary transition-colors duration-200 mb-2">
                   {entry.title}
-                </h2>
+                </h3>
                 <p className="font-body text-sm text-zinc-500 leading-relaxed mb-4">{entry.summary}</p>
                 {entry.tags.length > 0 && (
                   <div className="flex flex-wrap gap-2">

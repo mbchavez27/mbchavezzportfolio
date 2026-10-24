@@ -67,8 +67,21 @@ export function parseLog(slug: string, raw: string): Log {
   };
 }
 
-export function newestFirst(logs: readonly Log[]): readonly Log[] {
-  return logs.toSorted((a, b) => b.date.localeCompare(a.date) || a.title.localeCompare(b.title));
+export type LogSort = "newest" | "oldest";
+
+export function sortByDate(logs: readonly Log[], order: LogSort): readonly Log[] {
+  const direction = order === "newest" ? -1 : 1;
+  return logs.toSorted((a, b) => direction * a.date.localeCompare(b.date) || a.title.localeCompare(b.title));
+}
+
+/** No tag means every log. */
+export function filterByTag(logs: readonly Log[], tag: string | undefined): readonly Log[] {
+  return tag ? logs.filter((log) => log.tags.includes(tag)) : logs;
+}
+
+/** Every tag used by the given logs, alphabetically, without duplicates. */
+export function tagsOf(logs: readonly Log[]): readonly string[] {
+  return [...new Set(logs.flatMap((log) => log.tags))].toSorted((a, b) => a.localeCompare(b));
 }
 
 /** Drafts are visible while developing locally and hidden from the published site. */
