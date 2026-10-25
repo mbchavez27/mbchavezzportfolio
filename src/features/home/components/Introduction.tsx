@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { Link } from "react-router";
 import { drawRule, revealOnLoad } from "@/lib/motion";
+import RotatingRoles from "./RotatingRoles";
 import type { CallToAction, ContactLink } from "../domain/home.domain";
 
 type Props = {
@@ -27,7 +28,7 @@ export default function Introduction({ portraitSrc, callToAction, socialLinks, o
           {...revealOnLoad({ y: 16, delay: 0.1 })}
           className="font-display text-white text-3xl md:text-4xl font-semibold leading-snug"
         >
-          AI researcher, software engineer, <br className="hidden lg:inline" />and technical operator.
+          <RotatingRoles />
         </motion.h1>
 
         <motion.div {...drawRule(0.45)} className="h-px bg-primary" />
