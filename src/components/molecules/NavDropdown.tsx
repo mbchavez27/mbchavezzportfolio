@@ -1,4 +1,5 @@
 import { useEffect, useId, useRef, useState, type FocusEvent, type PointerEvent } from "react";
+import { Plus } from "lucide-react";
 import { AnimatePresence, motion, type Variants } from "motion/react";
 import NavAnchor from "@/components/atoms/NavAnchor";
 import type { NavGroup } from "@/config/links";
@@ -79,9 +80,10 @@ export default function NavDropdown({ group }: { group: NavGroup }) {
         aria-expanded={isOpen}
         aria-controls={panelId}
         onClick={toggleOnClick}
-        className="font-body relative text-sm font-light text-zinc-400 hover:text-white aria-expanded:text-white transition-colors duration-200 cursor-pointer group"
+        className="font-body relative flex items-center gap-1 text-sm font-light text-zinc-400 hover:text-white aria-expanded:text-white transition-colors duration-200 cursor-pointer group"
       >
         {group.label}
+        <Plus size={12} strokeWidth={1.5} aria-hidden className={`transition-transform duration-200 ${isOpen ? "rotate-45" : ""}`} />
         <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-primary group-hover:w-full group-aria-expanded:w-full transition-all duration-200" />
       </button>
 
