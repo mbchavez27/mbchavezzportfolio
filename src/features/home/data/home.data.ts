@@ -27,8 +27,8 @@ export const otherHats: readonly Hat[] = [
   {
     role: "Software Engineer",
     description:
-      "Building scalable systems with TypeScript and Python. Retail Tech Intern at ING Hubs Philippines; previously led frontend engineering across 3+ teams at LSCS, shipping platforms for 22,000+ students.",
-    tags: ["Scalable Systems", "TypeScript", "Python", "Next.js"],
+      "Building scalable systems with TypeScript, Python, and Java. Retail Tech Intern at ING Hubs Philippines; previously led frontend engineering across 3+ teams at LSCS, shipping platforms for 22,000+ students.",
+    tags: ["Scalable Systems", "TypeScript", "Python", "Java"],
     image: softwareEngineerImg,
     to: "/projects",
   },

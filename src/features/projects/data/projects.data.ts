@@ -15,7 +15,7 @@ export const projectStats: readonly Stat[] = [
 
 export const projectDomains: readonly string[] = ["Frontend", "Backend", "Artificial Intelligence"];
 
-export const projectFocus: readonly string[] = ["Scalable Systems", "TypeScript", "Python"];
+export const projectFocus: readonly string[] = ["Scalable Systems", "TypeScript", "Python", "Java"];
 
 export const projects: readonly Project[] = [
   {
