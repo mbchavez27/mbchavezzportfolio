@@ -98,7 +98,7 @@ export default function NavDropdown({ group }: { group: NavGroup }) {
             exit="closed"
             className="absolute -left-4 top-full pt-[18px]"
           >
-            <ul className="min-w-36 bg-black border border-t-0 border-zinc-800 py-2">
+            <ul className="min-w-36 py-2">
               {group.links.map((link) => (
                 <motion.li key={link.label} variants={itemVariants}>
                   <NavAnchor
