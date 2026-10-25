@@ -111,7 +111,7 @@ export default function NavDropdown({ group }: { group: NavGroup }) {
               variants={trunkVariants}
               className="absolute left-[17px] top-1 h-[14px] w-px bg-zinc-700 origin-top"
             />
-            <ul className="relative min-w-36 pt-0.5 pb-2 bg-black/80 backdrop-blur-md border border-t-0 border-white/10 rounded-b-md before:absolute before:left-4 before:top-0 before:h-0.5 before:w-px before:bg-zinc-700">
+            <ul className="relative pt-0.5 pb-2 bg-black/80 backdrop-blur-md border border-t-0 border-white/10 rounded-b-md before:absolute before:left-4 before:top-0 before:h-0.5 before:w-px before:bg-zinc-700">
               {group.links.map((link, index) => (
                 <motion.li key={link.label} variants={itemVariants} className="relative">
                   <span
@@ -121,7 +121,7 @@ export default function NavDropdown({ group }: { group: NavGroup }) {
                   <NavAnchor
                     link={link}
                     onNavigate={close}
-                    className="font-body group/item flex items-center gap-2 px-4 py-1.5 text-xs font-light tracking-wide text-zinc-300 hover:text-white focus-visible:text-white transition-colors duration-200"
+                    className="font-body group/item flex items-center gap-2 pl-4 pr-5 py-1.5 text-xs whitespace-nowrap font-light tracking-wide text-zinc-300 hover:text-white focus-visible:text-white transition-colors duration-200"
                   >
                     <span className="w-2 h-px bg-zinc-700 group-hover/item:w-3 group-hover/item:bg-primary group-focus-visible/item:w-3 group-focus-visible/item:bg-primary transition-all duration-200" />
                     {link.label}
