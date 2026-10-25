@@ -32,3 +32,15 @@ export function drawRule(delay: number) {
     transition: { duration: 0.5, delay },
   } as const;
 }
+
+/**
+ * Fades and lifts a page's content in when its route mounts. Applied to <main>, never to a wrapper
+ * around the fixed navbar: a transformed ancestor would break the navbar's fixed positioning.
+ */
+export function pageEnter() {
+  return {
+    initial: { opacity: 0, y: 12 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.45, ease: "easeOut" },
+  } as const;
+}

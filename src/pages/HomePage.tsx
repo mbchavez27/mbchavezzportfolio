@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import Navbar from "@/components/organisms/Navbar";
 import {
   ContactContainer,
@@ -5,17 +6,18 @@ import {
   HighlightsContainer,
   IntroductionContainer,
 } from "@/features/home";
+import { pageEnter } from "@/lib/motion";
 
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
-      <main>
+      <motion.main {...pageEnter()}>
         <IntroductionContainer />
         <HatSelectorContainer />
         <HighlightsContainer />
         <ContactContainer />
-      </main>
+      </motion.main>
     </div>
   );
 }
