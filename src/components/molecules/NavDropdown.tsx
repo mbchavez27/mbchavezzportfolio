@@ -9,9 +9,15 @@ const panelVariants: Variants = {
   open: { opacity: 1, y: 0, transition: { duration: 0.18, ease: "easeOut", staggerChildren: 0.04, delayChildren: 0.03 } },
 };
 
+// Items fade in place (no slide) so their connector segments stay aligned with the trunk line.
 const itemVariants: Variants = {
-  closed: { opacity: 0, x: -4 },
-  open: { opacity: 1, x: 0, transition: { duration: 0.16, ease: "easeOut" } },
+  closed: { opacity: 0 },
+  open: { opacity: 1, transition: { duration: 0.16, ease: "easeOut" } },
+};
+
+const trunkVariants: Variants = {
+  closed: { scaleY: 0 },
+  open: { scaleY: 1, transition: { duration: 0.14, ease: "easeOut" } },
 };
 
 /**
@@ -98,15 +104,26 @@ export default function NavDropdown({ group }: { group: NavGroup }) {
             exit="closed"
             className="absolute -left-4 top-full pt-[18px]"
           >
-            <ul className="min-w-36 py-2 bg-black/80 backdrop-blur-md border border-t-0 border-white/10 rounded-b-md">
-              {group.links.map((link) => (
-                <motion.li key={link.label} variants={itemVariants}>
+            {/* Tree connector: a trunk drops from under the trigger and branches to each item.
+                left-[17px] accounts for the list's 1px border so the trunk lines up with the in-list segments. */}
+            <motion.span
+              aria-hidden
+              variants={trunkVariants}
+              className="absolute left-[17px] top-1 h-[14px] w-px bg-zinc-700 origin-top"
+            />
+            <ul className="relative min-w-36 py-2 bg-black/80 backdrop-blur-md border border-t-0 border-white/10 rounded-b-md before:absolute before:left-4 before:top-0 before:h-2 before:w-px before:bg-zinc-700">
+              {group.links.map((link, index) => (
+                <motion.li key={link.label} variants={itemVariants} className="relative">
+                  <span
+                    aria-hidden
+                    className={`absolute left-4 top-0 w-px bg-zinc-700 ${index === group.links.length - 1 ? "h-1/2" : "h-full"}`}
+                  />
                   <NavAnchor
                     link={link}
                     onNavigate={close}
                     className="font-body group/item flex items-center gap-2 px-4 py-1.5 text-xs font-light tracking-wide text-zinc-300 hover:text-white focus-visible:text-white transition-colors duration-200"
                   >
-                    <span className="w-0 h-px bg-primary group-hover/item:w-2 group-focus-visible/item:w-2 transition-all duration-200" />
+                    <span className="w-2 h-px bg-zinc-700 group-hover/item:w-3 group-hover/item:bg-primary group-focus-visible/item:w-3 group-focus-visible/item:bg-primary transition-all duration-200" />
                     {link.label}
                   </NavAnchor>
                 </motion.li>
