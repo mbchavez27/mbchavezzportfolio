@@ -25,7 +25,7 @@ export default function Introduction({ portraitSrc, callToAction, socialLinks, o
       <div className="bg-zinc-950 relative flex flex-col px-6 sm:px-10 md:px-16 py-20 md:py-0 gap-5 justify-center">
         <motion.p
           {...revealOnLoad({ y: 16, delay: 0.1 })}
-          className="font-body font-light text-zinc-400 text-xl md:text-2xl leading-relaxed mb-1"
+          className="font-body font-extralight text-zinc-400 text-xl md:text-2xl leading-relaxed mb-1"
         >
           AI researcher, software engineer, <br className="hidden lg:inline" />and technical operator.
         </motion.p>
