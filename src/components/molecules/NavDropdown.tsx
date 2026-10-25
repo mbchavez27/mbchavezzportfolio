@@ -80,7 +80,7 @@ export default function NavDropdown({ group }: { group: NavGroup }) {
         aria-expanded={isOpen}
         aria-controls={panelId}
         onClick={toggleOnClick}
-        className="font-body flex items-center gap-1 text-sm font-medium text-zinc-400 hover:text-white aria-expanded:text-white transition-colors duration-200 cursor-pointer"
+        className="font-body flex items-center gap-1 text-sm font-light text-zinc-400 hover:text-white aria-expanded:text-white transition-colors duration-200 cursor-pointer"
       >
         {group.label}
         <ChevronDown size={14} className={`transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
@@ -103,7 +103,7 @@ export default function NavDropdown({ group }: { group: NavGroup }) {
                   <NavAnchor
                     link={link}
                     onNavigate={close}
-                    className="font-body block px-4 py-1.5 text-sm font-medium text-zinc-400 hover:text-white focus-visible:text-white transition-colors duration-200"
+                    className="font-body block px-4 py-1.5 text-sm font-light text-zinc-400 hover:text-white focus-visible:text-white transition-colors duration-200"
                   >
                     {link.label}
                   </NavAnchor>

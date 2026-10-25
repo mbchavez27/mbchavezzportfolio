@@ -29,7 +29,7 @@ export default function Navbar() {
               <NavAnchor
                 key={item.label}
                 link={item}
-                className="font-body relative text-sm font-medium text-zinc-400 hover:text-white transition-colors duration-200 group"
+                className="font-body relative text-sm font-light text-zinc-400 hover:text-white transition-colors duration-200 group"
               >
                 {item.label}
                 <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-primary group-hover:w-full transition-all duration-200" />
@@ -70,7 +70,7 @@ export default function Navbar() {
                       key={link.label}
                       link={link}
                       onNavigate={closeMenu}
-                      className="font-body text-sm font-medium text-zinc-400 hover:text-white transition-colors duration-200"
+                      className="font-body text-sm font-light text-zinc-400 hover:text-white transition-colors duration-200"
                     >
                       {link.label}
                     </NavAnchor>
@@ -82,7 +82,7 @@ export default function Navbar() {
                 key={item.label}
                 link={item}
                 onNavigate={closeMenu}
-                className="font-body text-sm font-medium text-zinc-400 hover:text-white transition-colors duration-200"
+                className="font-body text-sm font-light text-zinc-400 hover:text-white transition-colors duration-200"
               >
                 {item.label}
               </NavAnchor>

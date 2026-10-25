@@ -52,7 +52,7 @@ export default function Introduction({ portraitSrc, callToAction, socialLinks, o
             className="flex items-center gap-2 text-zinc-500 hover:text-white transition-colors duration-200"
           >
             <callToAction.Icon size={14} />
-            <span className="font-body text-xs tracking-wide">{callToAction.label}</span>
+            <span className="font-body font-light text-xs tracking-wide">{callToAction.label}</span>
           </Link>
           {socialLinks.map(({ label, href, Icon }) => (
             <a
@@ -63,7 +63,7 @@ export default function Introduction({ portraitSrc, callToAction, socialLinks, o
               className="flex items-center gap-2 text-zinc-500 hover:text-white transition-colors duration-200"
             >
               <Icon size={14} />
-              <span className="font-body text-xs tracking-wide">{label}</span>
+              <span className="font-body font-light text-xs tracking-wide">{label}</span>
             </a>
           ))}
         </motion.div>
