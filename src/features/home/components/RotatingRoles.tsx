@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 
 const ROLES = ["AI researcher", "Software engineer", "Technical operator"] as const;
-const ROLE_DURATION_MS = 2600;
+const ROLE_DURATION_MS = 3600;
 
 /**
  * Cycles through the roles one at a time. Screen readers get the full sentence once;
@@ -38,7 +38,7 @@ export default function RotatingRoles() {
             initial={{ opacity: 0, y: 18, filter: "blur(6px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             exit={{ opacity: 0, y: -18, filter: "blur(6px)" }}
-            transition={{ duration: 0.45, ease: "easeOut" }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
             className="inline-block"
           >
             {ROLES[index]}
