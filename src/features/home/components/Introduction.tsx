@@ -23,18 +23,11 @@ export default function Introduction({ portraitSrc, callToAction, socialLinks, o
       </div>
 
       <div className="bg-zinc-950 relative flex flex-col px-6 sm:px-10 md:px-16 py-20 md:py-0 gap-5 justify-center">
-        <motion.p
+        <motion.h1
           {...revealOnLoad({ y: 16, delay: 0.1 })}
-          className="font-body font-extralight text-zinc-400 text-xl md:text-2xl leading-relaxed mb-1"
+          className="font-display text-white text-3xl md:text-4xl font-semibold leading-snug"
         >
           AI researcher, software engineer, <br className="hidden lg:inline" />and technical operator.
-        </motion.p>
-
-        <motion.h1
-          {...revealOnLoad({ y: 16, delay: 0.25 })}
-          className="font-display text-white text-2xl md:text-3xl font-semibold leading-snug"
-        >
-          Building intelligent systems, scalable software, and unforgettable experiences.
         </motion.h1>
 
         <motion.div {...drawRule(0.45)} className="h-px bg-primary" />
