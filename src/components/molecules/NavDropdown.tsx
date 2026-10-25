@@ -111,7 +111,7 @@ export default function NavDropdown({ group }: { group: NavGroup }) {
               variants={trunkVariants}
               className="absolute left-[17px] top-1 h-[14px] w-px bg-zinc-700 origin-top"
             />
-            <ul className="relative min-w-36 py-2 bg-black/80 backdrop-blur-md border border-t-0 border-white/10 rounded-b-md before:absolute before:left-4 before:top-0 before:h-2 before:w-px before:bg-zinc-700">
+            <ul className="relative min-w-36 pt-0.5 pb-2 bg-black/80 backdrop-blur-md border border-t-0 border-white/10 rounded-b-md before:absolute before:left-4 before:top-0 before:h-0.5 before:w-px before:bg-zinc-700">
               {group.links.map((link, index) => (
                 <motion.li key={link.label} variants={itemVariants} className="relative">
                   <span
