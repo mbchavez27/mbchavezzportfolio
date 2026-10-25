@@ -1,5 +1,4 @@
 import { useEffect, useId, useRef, useState, type FocusEvent, type PointerEvent } from "react";
-import { ChevronDown } from "lucide-react";
 import { AnimatePresence, motion, type Variants } from "motion/react";
 import NavAnchor from "@/components/atoms/NavAnchor";
 import type { NavGroup } from "@/config/links";
@@ -80,10 +79,10 @@ export default function NavDropdown({ group }: { group: NavGroup }) {
         aria-expanded={isOpen}
         aria-controls={panelId}
         onClick={toggleOnClick}
-        className="font-body flex items-center gap-1 text-sm font-light text-zinc-400 hover:text-white aria-expanded:text-white transition-colors duration-200 cursor-pointer"
+        className="font-body relative text-sm font-light text-zinc-400 hover:text-white aria-expanded:text-white transition-colors duration-200 cursor-pointer group"
       >
         {group.label}
-        <ChevronDown size={14} className={`transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
+        <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-primary group-hover:w-full group-aria-expanded:w-full transition-all duration-200" />
       </button>
 
       <AnimatePresence>
@@ -97,14 +96,15 @@ export default function NavDropdown({ group }: { group: NavGroup }) {
             exit="closed"
             className="absolute -left-4 top-full pt-[18px]"
           >
-            <ul className="min-w-40 bg-black pt-1 pb-3">
+            <ul className="min-w-36 bg-black border border-t-0 border-zinc-800 py-2">
               {group.links.map((link) => (
                 <motion.li key={link.label} variants={itemVariants}>
                   <NavAnchor
                     link={link}
                     onNavigate={close}
-                    className="font-body block px-4 py-1.5 text-sm font-light text-zinc-400 hover:text-white focus-visible:text-white transition-colors duration-200"
+                    className="font-body group/item flex items-center gap-2 px-4 py-1.5 text-xs font-light tracking-wide text-zinc-500 hover:text-white focus-visible:text-white transition-colors duration-200"
                   >
+                    <span className="w-0 h-px bg-primary group-hover/item:w-2 group-focus-visible/item:w-2 transition-all duration-200" />
                     {link.label}
                   </NavAnchor>
                 </motion.li>
