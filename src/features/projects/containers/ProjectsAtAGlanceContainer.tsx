@@ -1,8 +1,15 @@
 import AtAGlance from "@/components/organisms/AtAGlance";
-import { projectDomains, projectStats } from "../data/projects.data";
+import { projectDomains, projectFocus, projectStats } from "../data/projects.data";
 
 export default function ProjectsAtAGlanceContainer() {
   return (
-    <AtAGlance title="Projects at a Glance" stats={projectStats} tagGroups={[{ label: "Domains", tags: projectDomains }]} />
+    <AtAGlance
+      title="Projects at a Glance"
+      stats={projectStats}
+      tagGroups={[
+        { label: "Focus", tags: projectFocus },
+        { label: "Domains", tags: projectDomains },
+      ]}
+    />
   );
 }

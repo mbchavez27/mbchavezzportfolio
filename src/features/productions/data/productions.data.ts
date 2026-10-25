@@ -14,7 +14,7 @@ export const productionStats: readonly Stat[] = [
 ];
 
 export const productionTagGroups: readonly TagGroup[] = [
-  { label: "Disciplines", tags: ["Audio", "Visuals", "Lights", "Technical Operations"] },
+  { label: "Disciplines", tags: ["Audio", "AVP", "Technical Operations"] },
   { label: "Event Types", tags: ["University Events", "Concerts", "Productions"] },
 ];
 
@@ -106,8 +106,8 @@ export const productions: readonly Production[] = [
 ];
 
 export const capabilities: readonly Capability[] = [
+  { label: "Audio", description: "Running live sound: mixing, microphones, and audio cues." },
+  { label: "AVP", description: "Operating audio-visual playback, displays, and show visuals." },
   { label: "Technical Operations", description: "Managing live systems and show execution." },
-  { label: "Audio", description: "Supporting sound workflows and live audio operations." },
-  { label: "Visual Systems", description: "Handling video playback, displays, and production visuals." },
   { label: "Show Support", description: "Coordinating technical elements during live events." },
 ];

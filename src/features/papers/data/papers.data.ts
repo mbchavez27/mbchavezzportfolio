@@ -39,4 +39,9 @@ export const papers: readonly Paper[] = [
 
 export const textSamplesAnalyzed = "10k+";
 
-export const researchAreas: readonly string[] = ["NLP", "Sentiment Analysis", "LLMs", "Social Computing"];
+export const researchAreas: readonly string[] = [
+  "Computational Social Science",
+  "Large Language Models (LLMs)",
+  "Machine Translation",
+  "Text Mining",
+];

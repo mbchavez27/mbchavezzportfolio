@@ -16,8 +16,8 @@ export const heroCallToAction: CallToAction = {
 export function researcherHat(acceptedPapers: number): Hat {
   return {
     role: "AI Researcher",
-    description: `LLM-focused NLP research across sentiment analysis, emotion detection, and code-switched text — with ${acceptedPapers} accepted conference ${acceptedPapers === 1 ? "paper" : "papers"}.`,
-    tags: ["LLMs", "NLP", "Research", "Publications"],
+    description: `Research in computational social science, large language models, machine translation, and text mining — with ${acceptedPapers} accepted conference ${acceptedPapers === 1 ? "paper" : "papers"}.`,
+    tags: ["Computational Social Science", "LLMs", "Machine Translation", "Text Mining"],
     image: aiResearcherImg,
     to: "/papers",
   };
@@ -27,16 +27,16 @@ export const otherHats: readonly Hat[] = [
   {
     role: "Software Engineer",
     description:
-      "Retail Tech Intern at ING Hubs Philippines. Previously led frontend engineering across 3+ teams at LSCS, shipping Next.js platforms for 22,000+ students.",
-    tags: ["Next.js", "TypeScript", "Architecture", "Tooling"],
+      "Building scalable systems with TypeScript and Python. Retail Tech Intern at ING Hubs Philippines; previously led frontend engineering across 3+ teams at LSCS, shipping platforms for 22,000+ students.",
+    tags: ["Scalable Systems", "TypeScript", "Python", "Next.js"],
     image: softwareEngineerImg,
     to: "/projects",
   },
   {
     role: "Technical Operator",
     description:
-      "On-the-ground technical operations for university-wide events — sound design, lighting, and live multi-camera switching.",
-    tags: ["Audio", "Lighting", "Live Switching", "AV"],
+      "Audio and AVP operator for university-wide events — running live sound and audio-visual playback, with camera and live switching work along the way.",
+    tags: ["Audio", "AVP", "Live Sound", "Live Switching"],
     image: technicalOperatorImg,
     to: "/productions",
   },
