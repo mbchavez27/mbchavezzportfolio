@@ -98,13 +98,13 @@ export default function NavDropdown({ group }: { group: NavGroup }) {
             exit="closed"
             className="absolute -left-4 top-full pt-[18px]"
           >
-            <ul className="min-w-36 py-2">
+            <ul className="min-w-36 py-2 bg-black/60 backdrop-blur-md border border-t-0 border-white/10">
               {group.links.map((link) => (
                 <motion.li key={link.label} variants={itemVariants}>
                   <NavAnchor
                     link={link}
                     onNavigate={close}
-                    className="font-body group/item flex items-center gap-2 px-4 py-1.5 text-xs font-light tracking-wide text-zinc-500 hover:text-white focus-visible:text-white transition-colors duration-200"
+                    className="font-body group/item flex items-center gap-2 px-4 py-1.5 text-xs font-light tracking-wide text-zinc-300 hover:text-white focus-visible:text-white transition-colors duration-200"
                   >
                     <span className="w-0 h-px bg-primary group-hover/item:w-2 group-focus-visible/item:w-2 transition-all duration-200" />
                     {link.label}
