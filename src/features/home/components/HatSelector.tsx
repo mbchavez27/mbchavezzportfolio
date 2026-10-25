@@ -12,7 +12,7 @@ export default function HatSelector({ hats }: { hats: readonly Hat[] }) {
         <h2 className="font-display text-2xl md:text-3xl font-semibold text-zinc-900 mb-3">
           Three hats. One portfolio.
         </h2>
-        <p className="font-body text-sm text-zinc-400">Choose the lens that best matches what you're looking for.</p>
+        <p className="font-body font-light text-sm text-zinc-400">Choose the lens that best matches what you're looking for.</p>
       </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 border-t border-zinc-200">

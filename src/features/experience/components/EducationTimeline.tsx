@@ -15,7 +15,7 @@ export type SchoolingEntry = {
 export default function EducationTimeline({ entries }: { entries: readonly SchoolingEntry[] }) {
   return (
     <motion.div {...revealOnScroll()} className="mt-24 pt-16 border-t border-zinc-100">
-      <p className="font-body text-xs text-zinc-400 tracking-[0.2em] uppercase mb-10">Education</p>
+      <p className="font-body font-light text-xs text-zinc-400 tracking-[0.2em] uppercase mb-10">Education</p>
 
       <div className="flex flex-col gap-12 relative">
         <div className="absolute left-0 top-2 bottom-0 w-px bg-zinc-200" />

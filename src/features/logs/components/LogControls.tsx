@@ -20,7 +20,7 @@ function Option({ label, isActive, onSelect }: { label: string; isActive: boolea
       aria-pressed={isActive}
       onClick={onSelect}
       className={`font-body text-xs tracking-wide transition-colors duration-200 cursor-pointer ${
-        isActive ? "text-zinc-900" : "text-zinc-400 hover:text-zinc-700"
+        isActive ? "text-zinc-900" : "font-light text-zinc-400 hover:text-zinc-700"
       }`}
     >
       {label}

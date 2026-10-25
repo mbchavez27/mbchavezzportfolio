@@ -9,12 +9,12 @@ export default function Contact({ items }: { items: readonly ContactItem[] }) {
   return (
     <section className="bg-zinc-950 py-32 px-6 sm:px-10 md:px-16">
       <motion.div {...revealOnScroll({ y: 30 })} className="max-w-2xl">
-        <p className="font-body text-xs text-zinc-600 tracking-[0.2em] uppercase mb-6">Contact</p>
+        <p className="font-body font-light text-xs text-zinc-600 tracking-[0.2em] uppercase mb-6">Contact</p>
         <h2 className="font-display text-4xl md:text-5xl font-semibold text-white leading-tight mb-6">
           Let's Build Something Together
         </h2>
         <div className="w-8 h-px bg-primary mb-8" />
-        <p className="font-body text-zinc-400 text-base leading-relaxed mb-12">
+        <p className="font-body font-light text-zinc-400 text-base leading-relaxed mb-12">
           From AI research to software development and live productions, I'm always open to meaningful collaborations
           and new opportunities.
         </p>
@@ -36,8 +36,8 @@ export default function Contact({ items }: { items: readonly ContactItem[] }) {
                 />
               </div>
               <div>
-                <p className="font-body text-xs text-zinc-600 mb-1 tracking-wide uppercase">{link.label}</p>
-                <p className="font-body text-sm text-zinc-300 group-hover:text-white transition-colors duration-200 break-all">
+                <p className="font-body font-light text-xs text-zinc-600 mb-1 tracking-wide uppercase">{link.label}</p>
+                <p className="font-body font-light text-sm text-zinc-300 group-hover:text-white transition-colors duration-200 break-all">
                   {link.value}
                 </p>
               </div>

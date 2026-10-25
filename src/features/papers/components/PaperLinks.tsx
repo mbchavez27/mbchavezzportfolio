@@ -19,7 +19,7 @@ export default function PaperLinks({ links }: { links: readonly PaperLink[] }) {
             href={link.href}
             target="_blank"
             rel="noreferrer"
-            className="font-body inline-flex items-center gap-1.5 text-xs border border-zinc-200 text-zinc-500 px-3 py-1.5 hover:border-primary hover:text-zinc-900 transition-colors duration-200"
+            className="font-body font-light inline-flex items-center gap-1.5 text-xs border border-zinc-200 text-zinc-500 px-3 py-1.5 hover:border-primary hover:text-zinc-900 transition-colors duration-200"
           >
             <Icon size={12} />
             {label}

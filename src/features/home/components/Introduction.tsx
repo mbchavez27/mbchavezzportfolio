@@ -25,7 +25,7 @@ export default function Introduction({ portraitSrc, callToAction, socialLinks, o
       <div className="bg-zinc-950 relative flex flex-col px-6 sm:px-10 md:px-16 py-20 md:py-0 gap-5 justify-center">
         <motion.p
           {...revealOnLoad({ y: 16, delay: 0.1 })}
-          className="font-body text-zinc-400 text-xl md:text-2xl leading-relaxed mb-1"
+          className="font-body font-light text-zinc-400 text-xl md:text-2xl leading-relaxed mb-1"
         >
           AI researcher, software engineer, <br className="hidden lg:inline" />and technical operator.
         </motion.p>
@@ -41,7 +41,7 @@ export default function Introduction({ portraitSrc, callToAction, socialLinks, o
 
         <motion.p
           {...revealOnLoad({ delay: 0.55, duration: 0.5 })}
-          className="font-body text-zinc-500 text-sm tracking-[0.18em] uppercase"
+          className="font-body font-light text-zinc-500 text-sm tracking-[0.18em] uppercase"
         >
           Max Benedict Chavez
         </motion.p>
@@ -74,7 +74,7 @@ export default function Introduction({ portraitSrc, callToAction, socialLinks, o
           aria-label="Scroll down"
           className="group mt-4 self-start flex flex-col items-start gap-2 cursor-pointer md:mt-0 md:absolute md:bottom-10 md:left-16"
         >
-          <span className="font-body text-zinc-700 group-hover:text-zinc-400 text-xs tracking-widest uppercase transition-colors duration-200">
+          <span className="font-body font-light text-zinc-700 group-hover:text-zinc-400 text-xs tracking-widest uppercase transition-colors duration-200">
             Scroll
           </span>
           <span className="block w-px h-12 bg-gradient-to-b from-primary to-transparent origin-top group-hover:scale-y-125 transition-transform duration-300" />

@@ -6,7 +6,7 @@ const components: Components = {
   img: ({ src, alt, title }) => (
     <span className="block my-8">
       <img src={typeof src === "string" ? src : undefined} alt={alt ?? ""} loading="lazy" className="mx-auto my-0 max-h-[75vh] w-auto max-w-full" />
-      {title && <span className="block mt-3 text-center text-xs text-zinc-400">{title}</span>}
+      {title && <span className="block mt-3 text-center text-xs font-light text-zinc-400">{title}</span>}
     </span>
   ),
 };

@@ -24,10 +24,10 @@ export default function HatCard({ hat, position }: Props) {
         </div>
         <div className="absolute inset-0 bg-zinc-950/65 group-hover:bg-zinc-950/80 transition-colors duration-500" />
         <div className="relative z-10 flex flex-col justify-end h-full min-h-96 p-8">
-          <span className="font-body block text-xs tracking-widest mb-4 text-zinc-400">{formatIndex(position)}</span>
+          <span className="font-body font-light block text-xs tracking-widest mb-4 text-zinc-400">{formatIndex(position)}</span>
           <h3 className="font-display text-xl font-semibold text-white mb-5">{hat.role}</h3>
           <RevealOnHover>
-            <p className="font-body text-sm text-zinc-400 leading-relaxed mb-4">{hat.description}</p>
+            <p className="font-body font-light text-sm text-zinc-400 leading-relaxed mb-4">{hat.description}</p>
             <TagList tags={hat.tags} variant="dark" />
           </RevealOnHover>
           <div className="flex items-center gap-2 text-zinc-400 group-hover:text-white transition-colors duration-300 mt-5">

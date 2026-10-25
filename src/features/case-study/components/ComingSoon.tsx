@@ -31,7 +31,7 @@ export default function ComingSoon({ projectTitle }: { projectTitle?: string }) 
         </motion.h1>
 
         {projectTitle && (
-          <motion.p {...revealOnLoad({ delay: 0.2, duration: 0.5 })} className="font-body text-sm text-zinc-500 mb-3">
+          <motion.p {...revealOnLoad({ delay: 0.2, duration: 0.5 })} className="font-body font-light text-sm text-zinc-500 mb-3">
             {projectTitle}
           </motion.p>
         )}
@@ -40,7 +40,7 @@ export default function ComingSoon({ projectTitle }: { projectTitle?: string }) 
 
         <motion.p
           {...revealOnLoad({ delay: 0.35, duration: 0.5 })}
-          className="font-body text-zinc-500 text-sm leading-relaxed mb-12"
+          className="font-body font-light text-zinc-500 text-sm leading-relaxed mb-12"
         >
           This case study is currently being written. Check back soon for a full breakdown of the process, decisions,
           and outcomes.
@@ -49,7 +49,7 @@ export default function ComingSoon({ projectTitle }: { projectTitle?: string }) 
         <motion.div {...revealOnLoad({ y: 8, delay: 0.45, duration: 0.5 })}>
           <Link
             to="/projects"
-            className="font-body inline-flex items-center gap-2 text-xs text-zinc-500 hover:text-white transition-colors duration-200 tracking-widest uppercase"
+            className="font-body font-light inline-flex items-center gap-2 text-xs text-zinc-500 hover:text-white transition-colors duration-200 tracking-widest uppercase"
           >
             <ArrowLeft size={12} />
             Back to Engineering

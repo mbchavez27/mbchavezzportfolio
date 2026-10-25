@@ -30,14 +30,14 @@ export default function ProjectCard({ project, caseStudyHref, position }: Props)
         <div className="absolute inset-0 bg-zinc-950/65 group-hover:bg-zinc-950/80 transition-colors duration-500" />
 
         <div className="relative z-10 flex flex-col justify-end h-full min-h-96 p-8">
-          <span className="font-body block text-xs tracking-widest mb-4 text-zinc-600">{formatIndex(position)}</span>
+          <span className="font-body font-light block text-xs tracking-widest mb-4 text-zinc-600">{formatIndex(position)}</span>
           <h3 className="font-display text-xl font-semibold text-white mb-1">{project.title}</h3>
-          <p className="font-body text-xs text-zinc-500 mb-1">{project.role}</p>
-          <p className="font-body text-xs tracking-widest uppercase text-zinc-600 mb-5">
+          <p className="font-body font-light text-xs text-zinc-500 mb-1">{project.role}</p>
+          <p className="font-body font-light text-xs tracking-widest uppercase text-zinc-600 mb-5">
             <span className="text-primary">@</span> {project.domain}
           </p>
           <RevealOnHover>
-            <p className="font-body text-sm text-zinc-400 leading-relaxed mb-4">{project.summary}</p>
+            <p className="font-body font-light text-sm text-zinc-400 leading-relaxed mb-4">{project.summary}</p>
             <TagList tags={project.tags} variant="dark" />
           </RevealOnHover>
           <div className="flex items-center gap-2 text-zinc-500 group-hover:text-white transition-colors duration-300 mt-5">

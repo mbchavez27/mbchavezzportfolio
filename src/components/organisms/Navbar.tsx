@@ -60,7 +60,7 @@ export default function Navbar() {
               <div key={item.label} role="group" aria-labelledby={`${MOBILE_MENU_ID}-${item.label}`}>
                 <p
                   id={`${MOBILE_MENU_ID}-${item.label}`}
-                  className="font-body text-xs tracking-widest uppercase text-zinc-600"
+                  className="font-body font-light text-xs tracking-widest uppercase text-zinc-600"
                 >
                   {item.label}
                 </p>

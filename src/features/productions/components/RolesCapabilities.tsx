@@ -6,7 +6,7 @@ export default function RolesCapabilities({ capabilities }: { capabilities: read
   return (
     <section className="bg-zinc-950 border-t border-zinc-800 py-24 px-6 sm:px-10 md:px-24 lg:px-32">
       <motion.div {...revealOnScroll()} className="mb-16">
-        <p className="font-body text-xs text-zinc-600 tracking-[0.2em] uppercase mb-5">Roles & Capabilities</p>
+        <p className="font-body font-light text-xs text-zinc-600 tracking-[0.2em] uppercase mb-5">Roles & Capabilities</p>
       </motion.div>
 
       <div className="flex flex-col divide-y divide-zinc-800">
@@ -17,7 +17,7 @@ export default function RolesCapabilities({ capabilities }: { capabilities: read
             className="grid grid-cols-1 md:grid-cols-[220px_1fr] gap-4 py-8"
           >
             <p className="font-display text-sm font-semibold text-white">{capability.label}</p>
-            <p className="font-body text-sm text-zinc-400">{capability.description}</p>
+            <p className="font-body font-light text-sm text-zinc-400">{capability.description}</p>
           </motion.div>
         ))}
       </div>

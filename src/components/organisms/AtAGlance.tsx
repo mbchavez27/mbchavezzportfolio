@@ -24,7 +24,7 @@ export default function AtAGlance({ title, stats, tagGroups }: Props) {
       <AccentRule />
 
       <div className="px-6 sm:px-10 md:px-24 lg:px-32 pt-16 pb-5 border-b border-zinc-100">
-        <p className="font-body text-xs text-zinc-400 tracking-[0.2em] uppercase">{title}</p>
+        <p className="font-body font-light text-xs text-zinc-400 tracking-[0.2em] uppercase">{title}</p>
       </div>
 
       <div
@@ -37,7 +37,7 @@ export default function AtAGlance({ title, stats, tagGroups }: Props) {
             className="px-6 sm:px-10 md:px-24 lg:px-32 py-10"
           >
             <p className="font-display text-4xl font-semibold text-zinc-900 mb-1">{stat.value}</p>
-            <p className="font-body text-xs text-zinc-400">{stat.label}</p>
+            <p className="font-body font-light text-xs text-zinc-400">{stat.label}</p>
           </motion.div>
         ))}
       </div>
@@ -47,7 +47,7 @@ export default function AtAGlance({ title, stats, tagGroups }: Props) {
           key={group.label}
           className="px-6 sm:px-10 md:px-24 lg:px-32 py-5 border-t border-zinc-100 flex flex-wrap items-center gap-2"
         >
-          <p className="font-body text-xs text-zinc-400 tracking-wide mr-2">{group.label}</p>
+          <p className="font-body font-light text-xs text-zinc-400 tracking-wide mr-2">{group.label}</p>
           {group.tags.map((tag) => (
             <Tag key={tag} label={tag} variant="light" />
           ))}

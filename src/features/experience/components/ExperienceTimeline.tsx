@@ -39,7 +39,7 @@ export default function ExperienceTimeline({ entries }: { entries: readonly Posi
               {entry.highlights.length > 0 && (
                 <ul className="flex flex-col gap-2 mt-5">
                   {entry.highlights.map((highlight) => (
-                    <li key={highlight} className="font-body flex gap-3 text-sm text-zinc-500 leading-relaxed">
+                    <li key={highlight} className="font-body font-light flex gap-3 text-sm text-zinc-500 leading-relaxed">
                       <span className="text-primary mt-1.5 shrink-0">—</span>
                       {highlight}
                     </li>
