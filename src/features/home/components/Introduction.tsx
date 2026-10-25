@@ -1,8 +1,11 @@
 import { motion } from "motion/react";
 import { Link } from "react-router";
+import { ageOn } from "@/lib/format";
 import { drawRule, revealOnLoad } from "@/lib/motion";
 import RotatingRoles from "./RotatingRoles";
 import type { CallToAction, ContactLink } from "../domain/home.domain";
+
+const BIRTH_DATE = new Date(2005, 3, 23); // April 23, 2005 (months are 0-based)
 
 type Props = {
   portraitSrc: string;
@@ -24,8 +27,15 @@ export default function Introduction({ portraitSrc, callToAction, socialLinks, o
       </div>
 
       <div className="bg-zinc-950 relative flex flex-col px-6 sm:px-10 md:px-16 py-20 md:py-0 gap-5 justify-center">
-        <motion.h1
+        <motion.p
           {...revealOnLoad({ y: 16, delay: 0.1 })}
+          className="font-body font-light text-zinc-500 text-sm tracking-wide -mb-2"
+        >
+          Est. {BIRTH_DATE.getFullYear()} &middot; {ageOn(BIRTH_DATE, new Date())} years in
+        </motion.p>
+
+        <motion.h1
+          {...revealOnLoad({ y: 16, delay: 0.2 })}
           className="font-display text-white text-3xl md:text-4xl font-semibold leading-snug"
         >
           <RotatingRoles />
