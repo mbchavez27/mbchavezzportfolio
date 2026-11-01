@@ -101,5 +101,14 @@ A missing or malformed header stops `npm run dev` and fails `npm run build` (and
 
 ### CI and dependency updates
 
-- GitHub Actions (`.github/workflows/ci.yml`) runs the typecheck and build on every push to `main` and on every pull request.
+- GitHub Actions (`.github/workflows/ci.yml`) runs the typecheck and build on every push to `main` and on every pull request. On `main`, it then deploys to Cloudflare Pages through the `production` environment.
+- Publishing a GitHub release (`.github/workflows/release.yml`) builds the site into an nginx image and pushes it to `ghcr.io/mbchavez27/mbchavezzportfolio`.
 - Dependabot opens weekly PRs for npm packages and GitHub Actions.
+
+### Running the container
+
+```sh
+docker run --rm -p 8080:80 ghcr.io/mbchavez27/mbchavezzportfolio:latest
+```
+
+Then open http://localhost:8080. To build it yourself instead, run `docker build -t mbchavezzportfolio .`.
