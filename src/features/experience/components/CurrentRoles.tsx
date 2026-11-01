@@ -21,7 +21,7 @@ export default function CurrentRoles({ entries }: { entries: readonly CurrentRol
       <motion.div {...revealOnScroll()} className="px-6 sm:px-10 md:px-16 mb-16">
         <p className="font-body font-light text-xs text-zinc-400 tracking-[0.2em] uppercase mb-4">Currently</p>
         <h2 className="font-display text-2xl md:text-3xl font-semibold text-zinc-900">
-          Where I'm spending my time now.
+          What Keeps Me Busy
         </h2>
       </motion.div>
 
@@ -47,7 +47,7 @@ export default function CurrentRoles({ entries }: { entries: readonly CurrentRol
               </div>
 
               <div>
-                <h3 className="font-display text-2xl md:text-4xl font-semibold text-zinc-900 group-hover:text-primary transition-colors duration-200 mb-2">
+                <h3 className="font-display text-xl md:text-2xl font-semibold text-zinc-900 group-hover:text-primary transition-colors duration-200 mb-2">
                   {entry.role}
                 </h3>
                 <p className="font-body font-light text-sm text-zinc-500">
