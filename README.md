@@ -13,7 +13,7 @@ Personal portfolio site, built as a client-side React app and deployed on Cloudf
 - [Lucide](https://lucide.dev/) icons
 - [Zod](https://zod.dev/) (`zod/mini`) to validate URL params and log headers
 - [react-markdown](https://github.com/remarkjs/react-markdown) + GFM and [Tailwind Typography](https://github.com/tailwindlabs/tailwindcss-typography) for log posts
-- [Cloudflare Workers](https://developers.cloudflare.com/workers/) static assets for hosting, via `@cloudflare/vite-plugin` and Wrangler
+- [Cloudflare Pages](https://developers.cloudflare.com/pages/) for hosting, deployed with Wrangler
 
 ### Architecture
 
@@ -64,7 +64,7 @@ npm install
 | `npm run typecheck` | Type-check the project with `tsc`                               |
 | `npm run build`     | Build for production into `dist/`                               |
 | `npm run preview`   | Serve the production build locally                              |
-| `npm run deploy`    | Build and deploy to Cloudflare Workers (needs `wrangler login`) |
+| `npm run deploy`    | Build and deploy to Cloudflare Pages (needs `wrangler login`)   |
 
 Restart `npm run dev` after installing or upgrading dependencies. Vite reloads config changes, but not packages that change on disk.
 
