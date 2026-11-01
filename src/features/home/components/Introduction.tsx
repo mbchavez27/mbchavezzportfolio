@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "motion/react";
 import { Link } from "react-router";
 import { ageOn } from "@/lib/format";
@@ -16,9 +17,15 @@ type Props = {
 };
 
 export default function Introduction({ portraitSrc, hoverPortraitSrc, callToAction, socialLinks, onScrollDown }: Props) {
+  // Touch screens have no hover, so a tap flips between the two portraits instead.
+  const [showHoverPortrait, setShowHoverPortrait] = useState(false);
+
   return (
     <section className="pt-14 min-h-screen grid grid-cols-1 md:grid-cols-2">
-      <div className="group relative min-h-64 md:min-h-full bg-zinc-900 overflow-hidden">
+      <div
+        onPointerUp={(event) => event.pointerType !== "mouse" && setShowHoverPortrait((shown) => !shown)}
+        className="group relative min-h-64 md:min-h-full bg-zinc-900 overflow-hidden"
+      >
         <img
           src={portraitSrc}
           alt="Max Benedict Chavez"
@@ -27,7 +34,7 @@ export default function Introduction({ portraitSrc, hoverPortraitSrc, callToActi
         <img
           src={hoverPortraitSrc}
           alt=""
-          className="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+          className={`absolute inset-0 w-full h-full object-cover object-center group-hover:opacity-100 transition-opacity duration-700 ${showHoverPortrait ? "opacity-100" : "opacity-0"}`}
         />
         <div className="absolute inset-0 bg-black/40" />
       </div>
