@@ -16,8 +16,8 @@ export default function LatestLogs({ entries }: { entries: readonly LatestLogEnt
   if (entries.length === 0) return null;
 
   return (
-    <section className="bg-white border-t border-zinc-100 pt-24 pb-16">
-      <motion.div {...revealOnScroll()} className="px-6 sm:px-10 md:px-16 mb-12">
+    <section className="bg-white border-t border-zinc-100 pt-8 pb-10">
+      <motion.div {...revealOnScroll()} className="px-6 sm:px-10 md:px-16 mb-6">
         <p className="font-body font-light text-xs text-zinc-400 tracking-[0.2em] uppercase mb-4">Logs</p>
         <h2 className="font-display text-2xl md:text-3xl font-semibold text-zinc-900">
           Notes from the work in progress.
@@ -29,7 +29,7 @@ export default function LatestLogs({ entries }: { entries: readonly LatestLogEnt
           <motion.li key={entry.slug} {...revealOnScroll({ x: -24, y: 0, delay: i * 0.08, duration: 0.5 })}>
             <Link
               to={entry.href}
-              className="group grid grid-cols-1 md:grid-cols-[160px_1fr_auto] gap-2 md:gap-8 items-center py-6 px-6 sm:px-10 md:px-16 hover:bg-zinc-50 transition-colors duration-200"
+              className="group grid grid-cols-1 md:grid-cols-[160px_1fr_auto] gap-2 md:gap-8 items-center py-5 px-6 sm:px-10 md:px-16 hover:bg-zinc-50 transition-colors duration-200"
             >
               <p className="font-body font-light text-xs text-zinc-400 tracking-wide">
                 {entry.dateLabel}
@@ -47,7 +47,7 @@ export default function LatestLogs({ entries }: { entries: readonly LatestLogEnt
         ))}
       </ul>
 
-      <div className="px-6 sm:px-10 md:px-16 mt-10 flex justify-end">
+      <div className="px-6 sm:px-10 md:px-16 mt-6 flex justify-end">
         <Link
           to={LOGS_PATH}
           className="group flex items-center gap-2 text-zinc-500 hover:text-primary transition-colors duration-300"

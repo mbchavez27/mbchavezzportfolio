@@ -6,7 +6,7 @@ import type { Highlight } from "../domain/home.domain";
 
 export default function Highlights({ highlights }: { highlights: readonly Highlight[] }) {
   return (
-    <section className="bg-white border-t border-zinc-100 py-24">
+    <section className="bg-white border-t border-zinc-100 pt-24 pb-12">
       <div className="px-6 sm:px-10 md:px-16 mb-16">
         <h2 className="font-display text-2xl md:text-3xl font-semibold text-zinc-900">
           A showcase of my work across three disciplines.
