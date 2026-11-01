@@ -1,4 +1,5 @@
 import Navbar from "@/components/organisms/Navbar";
+import { CurrentRolesContainer } from "@/features/experience";
 import {
   ContactContainer,
   HatSelectorContainer,
@@ -12,6 +13,7 @@ export default function HomePage() {
       <Navbar />
       <main>
         <IntroductionContainer />
+        <CurrentRolesContainer />
         <HatSelectorContainer />
         <HighlightsContainer />
         <ContactContainer />
