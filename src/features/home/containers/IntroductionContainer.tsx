@@ -1,3 +1,4 @@
+import portraitBackImg from "@/assets/home/portrait-back.jpg";
 import portraitImg from "@/assets/home/portrait.jpg";
 import { preferredScrollBehavior } from "@/lib/scroll";
 import { HAT_SELECTOR_ID } from "../components/HatSelector";
@@ -10,6 +11,7 @@ export default function IntroductionContainer() {
 
   return <Introduction
       portraitSrc={portraitImg}
+      hoverPortraitSrc={portraitBackImg}
       callToAction={heroCallToAction}
       socialLinks={socialLinks}
       onScrollDown={scrollToHats}

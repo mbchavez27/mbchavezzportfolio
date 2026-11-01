@@ -9,19 +9,25 @@ const BIRTH_DATE = new Date(2005, 3, 23); // April 23, 2005 (months are 0-based)
 
 type Props = {
   portraitSrc: string;
+  hoverPortraitSrc: string;
   callToAction: CallToAction;
   socialLinks: readonly ContactLink[];
   onScrollDown: () => void;
 };
 
-export default function Introduction({ portraitSrc, callToAction, socialLinks, onScrollDown }: Props) {
+export default function Introduction({ portraitSrc, hoverPortraitSrc, callToAction, socialLinks, onScrollDown }: Props) {
   return (
     <section className="pt-14 min-h-screen grid grid-cols-1 md:grid-cols-2">
-      <div className="relative min-h-64 md:min-h-full bg-zinc-900 overflow-hidden">
+      <div className="group relative min-h-64 md:min-h-full bg-zinc-900 overflow-hidden">
         <img
           src={portraitSrc}
           alt="Max Benedict Chavez"
           className="absolute inset-0 w-full h-full object-cover object-center"
+        />
+        <img
+          src={hoverPortraitSrc}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 transition-opacity duration-700"
         />
         <div className="absolute inset-0 bg-black/40" />
       </div>
