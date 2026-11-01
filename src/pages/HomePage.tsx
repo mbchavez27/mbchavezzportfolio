@@ -6,6 +6,7 @@ import {
   HighlightsContainer,
   IntroductionContainer,
 } from "@/features/home";
+import { LatestLogsContainer } from "@/features/logs";
 
 export default function HomePage() {
   return (
@@ -16,6 +17,7 @@ export default function HomePage() {
         <CurrentRolesContainer />
         <HatSelectorContainer />
         <HighlightsContainer />
+        <LatestLogsContainer />
         <ContactContainer />
       </main>
     </div>
