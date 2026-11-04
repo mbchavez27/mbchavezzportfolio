@@ -3,7 +3,7 @@ import { yearMonth } from "../domain/tenure.domain";
 
 export const positions: readonly Position[] = [
   {
-    role: "Retail Tech Intern",
+    role: "DevOps Engineer Intern",
     organization: "ING Hubs Philippines",
     employmentType: "Internship",
     tenure: { start: yearMonth(2026, 10) },
