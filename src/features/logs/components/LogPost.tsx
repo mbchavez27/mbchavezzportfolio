@@ -17,9 +17,9 @@ type Props = {
 
 export default function LogPost({ title, dateLabel, tags, body, backHref }: Props) {
   return (
-    <motion.article {...revealOnLoad({ y: 20 })} className="px-6 sm:px-10 pb-32">
-      {/* One centered reading column: back link, header, and body share the same width. */}
-      <div className="max-w-3xl mx-auto">
+    <motion.article {...revealOnLoad({ y: 20 })} className="page-container pb-16">
+      {/* The site column is already reading width: back link, header, and body share it. */}
+      <div>
         <Link
           to={backHref}
           className="font-body font-light inline-flex items-center gap-2 text-xs text-zinc-400 hover:text-zinc-900 tracking-widest uppercase transition-colors duration-200 mb-10"
