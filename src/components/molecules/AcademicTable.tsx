@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { motion } from "motion/react";
 import { revealOnScroll } from "@/lib/motion";
+import Abstract from "@/components/atoms/Abstract";
 
 export type TableRow = { readonly label: string; readonly value: ReactNode };
 
@@ -28,13 +29,7 @@ export default function AcademicTable({ number, caption, abstract, columns, rows
 
   return (
     <motion.div {...revealOnScroll()}>
-      {abstract && (
-        <p className="font-body font-light text-sm text-zinc-600 leading-relaxed mb-5">
-          <span className="font-semibold text-zinc-900 [font-variant:small-caps] tracking-wide">abstract</span>
-          <span className="text-zinc-400"> — </span>
-          {abstract}
-        </p>
-      )}
+      {abstract && <Abstract>{abstract}</Abstract>}
 
       <table className="w-full border-collapse font-body text-sm">
         <caption className="caption-top text-left pb-2 text-zinc-700">
