@@ -17,8 +17,8 @@ export type PositionEntry = {
 export default function ExperienceTimeline({ entries }: { entries: readonly PositionEntry[] }) {
   return (
     <section>
-        <SectionHeading number="1" title="Work Experience" />
-        <EntryList>
+      <SectionHeading number="1" title="Work Experience" />
+      <EntryList>
         {entries.map((entry, i) => (
           <EntryRow
             key={`${entry.role}@${entry.organization}`}
