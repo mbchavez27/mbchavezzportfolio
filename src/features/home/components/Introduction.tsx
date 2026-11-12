@@ -21,21 +21,21 @@ export default function Introduction({ portraitSrc, hoverPortraitSrc, callToActi
 
   return (
     <section className="bg-zinc-950">
-      <div className="page-container min-h-[calc(100svh-3.5rem)] lg:min-h-[calc(100svh-6rem)] flex flex-col items-center justify-center text-center gap-6 py-16 md:py-24">
+      <div className="page-container min-h-[calc(100svh-3.5rem)] lg:min-h-[calc(100svh-6rem)] flex flex-col items-center justify-center text-center gap-5 py-16 md:py-24">
         <motion.div
           {...revealOnLoad({ y: 16 })}
           onPointerUp={(event) => event.pointerType !== "mouse" && setShowHoverPortrait((shown) => !shown)}
-          className="group relative w-52 sm:w-64 md:w-72 aspect-[3/4] bg-zinc-900 overflow-hidden mb-4"
+          className="group relative w-44 sm:w-52 md:w-60 aspect-square rounded-2xl bg-zinc-900 overflow-hidden mb-2"
         >
           <img
             src={portraitSrc}
             alt="Max Benedict Chavez"
-            className="absolute inset-0 w-full h-full object-cover object-center"
+            className="absolute inset-0 w-full h-full object-cover object-[center_70%]"
           />
           <img
             src={hoverPortraitSrc}
             alt=""
-            className={`absolute inset-0 w-full h-full object-cover object-center group-hover:opacity-100 transition-opacity duration-700 ${showHoverPortrait ? "opacity-100" : "opacity-0"}`}
+            className={`absolute inset-0 w-full h-full object-cover object-[center_70%] group-hover:opacity-100 transition-opacity duration-700 ${showHoverPortrait ? "opacity-100" : "opacity-0"}`}
           />
           <div className="absolute inset-0 bg-black/20" />
         </motion.div>
@@ -49,7 +49,7 @@ export default function Introduction({ portraitSrc, hoverPortraitSrc, callToActi
 
         <motion.h1
           {...revealOnLoad({ y: 16, delay: 0.3 })}
-          className="font-display text-white text-4xl md:text-6xl font-semibold leading-snug"
+          className="font-display text-white text-3xl md:text-5xl font-semibold leading-snug"
         >
           <RotatingRoles />
         </motion.h1>
