@@ -5,7 +5,7 @@ import { FeaturedProjectsContainer, ProjectsAtAGlanceContainer, TechnicalStackCo
 export default function ProjectsPage() {
   return (
     <PageShell>
-      <PageHero eyebrow="Engineering" />
+      <PageHero title="Engineering" />
       <ProjectsAtAGlanceContainer />
       <FeaturedProjectsContainer />
       <TechnicalStackContainer />

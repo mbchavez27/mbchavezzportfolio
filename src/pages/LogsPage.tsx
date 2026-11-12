@@ -6,9 +6,7 @@ import { LogListContainer } from "@/features/logs";
 export default function LogsPage() {
   return (
     <PageShell>
-      <PageHero eyebrow="Logs">
-        A collection of notes, reflections, <br className="hidden md:inline" />and things I've learned along the way.
-      </PageHero>
+      <PageHero title="Logs" />
       <div className="page-container">
         <AccentRule />
       </div>

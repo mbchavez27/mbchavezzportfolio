@@ -9,7 +9,7 @@ import {
 export default function ProductionsPage() {
   return (
     <PageShell>
-      <PageHero eyebrow="Productions" />
+      <PageHero title="Productions" />
       <ProductionsAtAGlanceContainer />
       <FeaturedProductionsContainer />
       <RolesCapabilitiesContainer />

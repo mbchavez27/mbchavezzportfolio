@@ -5,7 +5,7 @@ import { ResearchAtAGlanceContainer, ResearchWorkContainer } from "@/features/pa
 export default function PapersPage() {
   return (
     <PageShell>
-      <PageHero eyebrow="Papers" />
+      <PageHero title="Papers" />
       <ResearchAtAGlanceContainer />
       <div className="pb-16">
         <ResearchWorkContainer />
