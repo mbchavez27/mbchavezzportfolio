@@ -1,7 +1,6 @@
+import Figure, { FigureGrid } from "@/components/molecules/Figure";
 import SectionHeading from "@/components/molecules/SectionHeading";
 import type { Hat } from "../domain/home.domain";
-import { GRID_GAP } from "@/components/atoms/surfaces";
-import HatCard from "./HatCard";
 
 export const HAT_SELECTOR_ID = "three-hats";
 
@@ -12,12 +11,25 @@ export default function HatSelector({ hats }: { hats: readonly Hat[] }) {
         title="Three hats. One portfolio."
         subtitle="Choose the lens that best matches what you're looking for."
       />
-      {/* Bento: the first hat is a tall card, the other two stack beside it. */}
-      <div className={`grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 ${GRID_GAP}`}>
+      <FigureGrid>
         {hats.map((hat, i) => (
-          <HatCard key={hat.role} hat={hat} position={i} featured={i === 0} />
+          <Figure
+            key={hat.role}
+            number={i + 1}
+            position={i}
+            image={hat.image}
+            title={`${hat.role}.`}
+            to={hat.to}
+            details={
+              <>
+                {hat.description}
+                <span className="block mt-1.5 text-xs text-zinc-400">{hat.tags.join(" · ")}</span>
+              </>
+            }
+            links={[{ label: "explore", to: hat.to }]}
+          />
         ))}
-      </div>
+      </FigureGrid>
     </section>
   );
 }
