@@ -13,7 +13,7 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-black border-b border-zinc-800">
-      <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
+      <div className="page-container h-14 flex items-center justify-between">
         <Link
           to="/"
           className="font-display text-base font-semibold tracking-tight text-white hover:text-primary transition-colors duration-200"

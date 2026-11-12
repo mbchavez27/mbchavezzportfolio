@@ -3,3 +3,10 @@
 @plugin '@tailwindcss/typography';
 
 @import 'tw-animate-css';
+
+/* Centered content column; lines up with the navbar. Backgrounds stay full-bleed on the parent. */
+@utility page-container {
+  max-width: var(--container-6xl);
+  margin-inline: auto;
+  padding-inline: --spacing(6);
+}
