@@ -1,9 +1,9 @@
-import { useState } from "react";
 import { motion } from "motion/react";
 import { Link } from "react-router";
 import DarkBand from "@/components/molecules/DarkBand";
 import { ageOn } from "@/lib/format";
 import { drawRule, revealOnLoad } from "@/lib/motion";
+import GlitchPortrait from "./GlitchPortrait";
 import RotatingRoles from "./RotatingRoles";
 import type { CallToAction, ContactLink } from "../domain/home.domain";
 
@@ -17,28 +17,14 @@ type Props = {
 };
 
 export default function Introduction({ portraitSrc, hoverPortraitSrc, callToAction, socialLinks }: Props) {
-  // Touch screens have no hover, so a tap flips between the two portraits instead.
-  const [showHoverPortrait, setShowHoverPortrait] = useState(false);
-
   return (
     <DarkBand>
       <div className="page-container min-h-[calc(100svh-3.5rem)] flex flex-col items-center justify-center text-center gap-5 py-16 md:py-24">
         <motion.div
           {...revealOnLoad({ y: 16 })}
-          onPointerUp={(event) => event.pointerType !== "mouse" && setShowHoverPortrait((shown) => !shown)}
-          className="group relative w-44 sm:w-52 md:w-60 aspect-square rounded-2xl bg-zinc-900 overflow-hidden mb-2"
+          className="relative w-44 sm:w-52 md:w-60 aspect-square rounded-2xl bg-zinc-900 overflow-hidden mb-2"
         >
-          <img
-            src={portraitSrc}
-            alt="Max Benedict Chavez"
-            className="absolute inset-0 w-full h-full object-cover object-[center_70%]"
-          />
-          <img
-            src={hoverPortraitSrc}
-            alt=""
-            className={`absolute inset-0 w-full h-full object-cover object-[center_70%] group-hover:opacity-100 transition-opacity duration-700 ${showHoverPortrait ? "opacity-100" : "opacity-0"}`}
-          />
-          <div className="absolute inset-0 bg-black/20" />
+          <GlitchPortrait frontSrc={portraitSrc} backSrc={hoverPortraitSrc} alt="Max Benedict Chavez" />
         </motion.div>
 
         <motion.p

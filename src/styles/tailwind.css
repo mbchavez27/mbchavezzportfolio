@@ -16,3 +16,38 @@
     padding-inline: --spacing(16);
   }
 }
+
+/* Hero portrait glitch (GlitchPortrait): sliced, offset colour splits plus flickering scanlines. */
+@theme {
+  --animate-glitch-a: glitch-a 450ms steps(1, end) both;
+  --animate-glitch-b: glitch-b 450ms steps(1, end) both;
+  --animate-glitch-flicker: glitch-flicker 450ms linear both;
+
+  @keyframes glitch-a {
+    0% { clip-path: inset(8% 0 72% 0); translate: -10px 0; opacity: 0.9; }
+    15% { clip-path: inset(55% 0 20% 0); translate: 8px 0; }
+    30% { clip-path: inset(30% 0 48% 0); translate: -6px 0; }
+    45% { clip-path: inset(78% 0 4% 0); translate: 10px 0; }
+    60% { clip-path: inset(12% 0 60% 0); translate: -4px 0; }
+    80% { clip-path: inset(40% 0 35% 0); translate: 3px 0; opacity: 0.6; }
+    100% { clip-path: inset(0 0 0 0); translate: 0 0; opacity: 0; }
+  }
+
+  @keyframes glitch-b {
+    0% { clip-path: inset(62% 0 14% 0); translate: 10px 0; opacity: 0.9; }
+    15% { clip-path: inset(18% 0 66% 0); translate: -8px 0; }
+    30% { clip-path: inset(70% 0 10% 0); translate: 6px 0; }
+    45% { clip-path: inset(4% 0 80% 0); translate: -10px 0; }
+    60% { clip-path: inset(46% 0 30% 0); translate: 5px 0; }
+    80% { clip-path: inset(24% 0 56% 0); translate: -3px 0; opacity: 0.6; }
+    100% { clip-path: inset(0 0 0 0); translate: 0 0; opacity: 0; }
+  }
+
+  @keyframes glitch-flicker {
+    0% { opacity: 0; }
+    20% { opacity: 0.6; }
+    40% { opacity: 0.2; }
+    60% { opacity: 0.5; }
+    100% { opacity: 0; }
+  }
+}
