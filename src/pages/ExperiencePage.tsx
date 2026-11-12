@@ -5,9 +5,7 @@ import { EducationTimelineContainer, ExperienceTimelineContainer } from "@/featu
 export default function ExperiencePage() {
   return (
     <PageShell>
-      <PageHero eyebrow="Experience">
-        Experience spanning research, <br className="hidden md:inline" />engineering, and live production.
-      </PageHero>
+      <PageHero eyebrow="Experience" />
       <div className="page-container pb-16">
         <ExperienceTimelineContainer />
         <EducationTimelineContainer />
