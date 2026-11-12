@@ -8,7 +8,7 @@ export const HAT_SELECTOR_ID = "three-hats";
 export default function HatSelector({ hats }: { hats: readonly Hat[] }) {
   return (
     <section id={HAT_SELECTOR_ID} className="bg-white border-t border-zinc-100 scroll-mt-14">
-      <motion.div {...revealOnScroll()} className="max-w-6xl mx-auto px-6 pt-20 pb-10">
+      <motion.div {...revealOnScroll()} className="page-container pt-20 pb-10">
         <h2 className="font-display text-2xl md:text-3xl font-semibold text-zinc-900 mb-3">
           Three hats. One portfolio.
         </h2>

@@ -18,7 +18,7 @@ export default function CurrentRoles({ entries }: { entries: readonly CurrentRol
 
   return (
     <section className="bg-white border-t border-zinc-100 pt-24 pb-16">
-      <motion.div {...revealOnScroll()} className="px-6 sm:px-10 md:px-16 mb-16">
+      <motion.div {...revealOnScroll()} className="page-container mb-16">
         <p className="font-body font-light text-xs text-zinc-400 tracking-[0.2em] uppercase mb-4">Currently</p>
         <h2 className="font-display text-2xl md:text-3xl font-semibold text-zinc-900">
           What Keeps Me Busy
@@ -33,38 +33,40 @@ export default function CurrentRoles({ entries }: { entries: readonly CurrentRol
           >
             <Link
               to={EXPERIENCE_PATH}
-              className="group grid grid-cols-1 md:grid-cols-[160px_1fr_auto] gap-4 md:gap-8 items-center py-10 px-6 sm:px-10 md:px-16 hover:bg-zinc-50 transition-colors duration-200"
+              className="group block py-10 hover:bg-zinc-50 transition-colors duration-200"
             >
-              <div className="flex md:flex-col gap-4 md:gap-3">
-                <span className="font-body font-light text-xs text-zinc-300">{formatIndex(i)}</span>
-                <span className="flex items-center gap-2 font-body font-light text-xs text-zinc-400 tracking-wide uppercase">
-                  <span className="relative flex w-2 h-2">
-                    <span className="absolute inset-0 rounded-full bg-primary opacity-75 animate-ping" />
-                    <span className="relative w-2 h-2 rounded-full bg-primary" />
+              <div className="page-container grid grid-cols-1 md:grid-cols-[160px_1fr_auto] gap-4 md:gap-8 items-center">
+                <div className="flex md:flex-col gap-4 md:gap-3">
+                  <span className="font-body font-light text-xs text-zinc-300">{formatIndex(i)}</span>
+                  <span className="flex items-center gap-2 font-body font-light text-xs text-zinc-400 tracking-wide uppercase">
+                    <span className="relative flex w-2 h-2">
+                      <span className="absolute inset-0 rounded-full bg-primary opacity-75 animate-ping" />
+                      <span className="relative w-2 h-2 rounded-full bg-primary" />
+                    </span>
+                    Now · {entry.duration}
                   </span>
-                  Now · {entry.duration}
-                </span>
-              </div>
+                </div>
 
-              <div>
-                <h3 className="font-display text-xl md:text-2xl font-semibold text-zinc-900 group-hover:text-primary transition-colors duration-200 mb-2">
-                  {entry.role}
-                </h3>
-                <p className="font-body font-light text-sm text-zinc-500">
-                  <span className="text-primary">@</span> {entry.organization} · {entry.location}
-                </p>
-              </div>
+                <div>
+                  <h3 className="font-display text-xl md:text-2xl font-semibold text-zinc-900 group-hover:text-primary transition-colors duration-200 mb-2">
+                    {entry.role}
+                  </h3>
+                  <p className="font-body font-light text-sm text-zinc-500">
+                    <span className="text-primary">@</span> {entry.organization} · {entry.location}
+                  </p>
+                </div>
 
-              <ArrowRight
-                size={20}
-                className="hidden md:block text-zinc-300 group-hover:text-primary group-hover:translate-x-1 transition-all duration-300"
-              />
+                <ArrowRight
+                  size={20}
+                  className="hidden md:block text-zinc-300 group-hover:text-primary group-hover:translate-x-1 transition-all duration-300"
+                />
+              </div>
             </Link>
           </motion.div>
         ))}
       </div>
 
-      <div className="px-6 sm:px-10 md:px-16 mt-10 flex justify-end">
+      <div className="page-container mt-10 flex justify-end">
         <Link
           to={EXPERIENCE_PATH}
           className="group flex items-center gap-2 text-zinc-500 hover:text-primary transition-colors duration-300"
