@@ -1,7 +1,7 @@
-import { motion } from "motion/react";
 import Tag from "@/components/atoms/Tag";
-import { revealOnScroll } from "@/lib/motion";
-import TimelineEntry from "./TimelineEntry";
+import EntryRow, { EntryList } from "@/components/molecules/EntryRow";
+import SectionHeading from "@/components/molecules/SectionHeading";
+import WhenMeta from "./WhenMeta";
 
 export type SchoolingEntry = {
   readonly when: string;
@@ -14,29 +14,26 @@ export type SchoolingEntry = {
 
 export default function EducationTimeline({ entries }: { entries: readonly SchoolingEntry[] }) {
   return (
-    <motion.div {...revealOnScroll()} className="mt-24">
-      <p className="font-body font-light text-xs text-zinc-400 tracking-[0.2em] uppercase mb-10">Education</p>
-
-      <div className="flex flex-col gap-6 relative">
-        <div className="absolute left-0 top-2 bottom-0 w-px bg-zinc-200" />
-
-        {entries.map((entry) => (
-          <TimelineEntry
+    <section className="mt-10">
+      <SectionHeading title="Education" />
+      <EntryList>
+        {entries.map((entry, i) => (
+          <EntryRow
             key={entry.school}
-            when={entry.when}
+            position={i}
+            meta={<WhenMeta when={entry.when} isOngoing={entry.isOngoing} />}
             title={entry.school}
-            subtitle={entry.program}
-            location={entry.location}
-            isOngoing={entry.isOngoing}
+            subtitle={
+              <>
+                {entry.program}
+                <span className="block text-xs text-zinc-400 mt-0.5">{entry.location}</span>
+              </>
+            }
           >
-            {entry.honors && (
-              <div className="mt-2">
-                <Tag label={entry.honors} variant="light" />
-              </div>
-            )}
-          </TimelineEntry>
+            {entry.honors && <Tag label={entry.honors} variant="light" />}
+          </EntryRow>
         ))}
-      </div>
-    </motion.div>
+      </EntryList>
+    </section>
   );
 }

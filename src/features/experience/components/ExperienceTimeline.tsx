@@ -1,7 +1,6 @@
-import { motion } from "motion/react";
+import EntryRow, { EntryList } from "@/components/molecules/EntryRow";
 import TagList from "@/components/molecules/TagList";
-import { revealOnScroll } from "@/lib/motion";
-import TimelineEntry from "./TimelineEntry";
+import WhenMeta from "./WhenMeta";
 
 export type PositionEntry = {
   readonly when: string;
@@ -16,45 +15,37 @@ export type PositionEntry = {
 
 export default function ExperienceTimeline({ entries }: { entries: readonly PositionEntry[] }) {
   return (
-    <div className="relative">
-      <div className="absolute left-0 top-2 bottom-0 w-px bg-zinc-200" />
-
-      <div className="flex flex-col gap-6">
-        {entries.map((entry, i) => (
-          <motion.div
-            key={`${entry.role}@${entry.organization}`}
-            {...revealOnScroll({ x: -20, y: 0, delay: i * 0.1, duration: 0.5 })}
-          >
-            <TimelineEntry
-              when={entry.when}
-              title={entry.role}
-              subtitle={
-                <>
-                  <span className="text-primary">@</span> {entry.organization} · {entry.employmentType}
-                </>
-              }
-              location={entry.location}
-              isOngoing={entry.isOngoing}
-            >
-              {entry.highlights.length > 0 && (
-                <ul className="flex flex-col gap-2 mt-5">
-                  {entry.highlights.map((highlight) => (
-                    <li key={highlight} className="font-body font-light flex gap-3 text-sm text-zinc-500 leading-relaxed">
-                      <span className="text-primary mt-1.5 shrink-0">—</span>
-                      {highlight}
-                    </li>
-                  ))}
-                </ul>
-              )}
-              {entry.skills.length > 0 && (
-                <div className="mt-5">
-                  <TagList tags={entry.skills} variant="light" />
-                </div>
-              )}
-            </TimelineEntry>
-          </motion.div>
-        ))}
-      </div>
-    </div>
+    <EntryList className="border-t border-primary/15">
+      {entries.map((entry, i) => (
+        <EntryRow
+          key={`${entry.role}@${entry.organization}`}
+          position={i}
+          meta={<WhenMeta when={entry.when} isOngoing={entry.isOngoing} />}
+          title={entry.role}
+          subtitle={
+            <>
+              <span className="text-primary">@</span> {entry.organization} · {entry.employmentType}
+              <span className="block text-xs text-zinc-400 mt-0.5">{entry.location}</span>
+            </>
+          }
+        >
+          {entry.highlights.length > 0 && (
+            <ul className="flex flex-col gap-2">
+              {entry.highlights.map((highlight) => (
+                <li key={highlight} className="font-body font-light flex gap-3 text-sm text-zinc-500 leading-relaxed">
+                  <span className="text-primary mt-0.5 shrink-0">—</span>
+                  {highlight}
+                </li>
+              ))}
+            </ul>
+          )}
+          {entry.skills.length > 0 && (
+            <div className={entry.highlights.length > 0 ? "mt-4" : ""}>
+              <TagList tags={entry.skills} variant="light" />
+            </div>
+          )}
+        </EntryRow>
+      ))}
+    </EntryList>
   );
 }
