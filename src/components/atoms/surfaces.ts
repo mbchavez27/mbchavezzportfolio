@@ -1,10 +1,10 @@
 /** Shared card surfaces for the bento layout, so every card in the site column looks the same. */
 
-/** A light card on the white column. */
-export const CARD_LIGHT = "rounded-2xl border border-zinc-200 bg-zinc-50 transition-colors duration-300";
+/** A light card on the white column: no fill or border, just the card's shape and spacing. */
+export const CARD_LIGHT = "rounded-2xl transition-colors duration-300";
 
-/** Hover state for a light card that is a link. */
-export const CARD_LIGHT_HOVER = "hover:bg-white hover:border-primary/40";
+/** Hover state for a light card that is a link (the title's colour change carries the hover). */
+export const CARD_LIGHT_HOVER = "";
 
 /** A card inside a dark band. */
 export const CARD_DARK = "rounded-2xl border border-zinc-800 bg-zinc-900/60 transition-colors duration-300";
