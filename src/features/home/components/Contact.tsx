@@ -19,10 +19,6 @@ export default function Contact({ correspondent, items }: Props) {
             <span className="text-primary tabular-nums mr-2">5.</span>Contact
           </h2>
         </motion.div>
-        <p className="font-body font-light text-sm text-zinc-400 leading-relaxed mb-5">
-          From AI research to software development and live productions, I'm always open to meaningful collaborations
-          and new opportunities.
-        </p>
 
         <motion.div
           {...revealOnScroll()}
