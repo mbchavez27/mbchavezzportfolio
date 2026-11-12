@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import Tag from "@/components/atoms/Tag";
+import { CARD_LIGHT } from "@/components/atoms/surfaces";
 import { revealOnScroll } from "@/lib/motion";
 import type { Paper } from "../domain/papers.domain";
 import PaperLinks from "./PaperLinks";
@@ -11,8 +12,8 @@ type Props = {
 
 export default function PaperEntry({ paper, position }: Props) {
   return (
-    <motion.div {...revealOnScroll({ x: -16, y: 0, delay: position * 0.1, duration: 0.5 })} className="py-8">
-      <h3 className="font-display text-base font-semibold text-zinc-900 leading-snug mb-2">{paper.title}</h3>
+    <motion.div {...revealOnScroll({ y: 20, delay: position * 0.1, duration: 0.5 })} className={`p-6 md:p-8 ${CARD_LIGHT}`}>
+      <h3 className="font-display text-lg font-semibold text-zinc-900 leading-snug mb-2">{paper.title}</h3>
       <p className="font-body font-light text-xs text-zinc-400 italic mb-3">{paper.authors}</p>
       <p className="font-body font-light text-sm text-zinc-500 leading-relaxed mb-5">{paper.description}</p>
       <div className="flex flex-wrap items-center gap-2 mb-5">

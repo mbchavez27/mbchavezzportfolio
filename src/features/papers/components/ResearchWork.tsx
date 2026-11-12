@@ -18,7 +18,7 @@ export default function ResearchWork({ venueGroups }: { venueGroups: readonly Ve
             <p className="font-body font-light text-xs text-zinc-400 mt-0.5">{venue.acceptance}</p>
           </div>
 
-          <div className="flex flex-col divide-y divide-zinc-100">
+          <div className="flex flex-col gap-4 md:gap-5">
             {venuePapers.map((paper, i) => (
               <PaperEntry key={paper.title} paper={paper} position={i} />
             ))}
