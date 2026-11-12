@@ -1,5 +1,4 @@
 import { motion } from "motion/react";
-import Summary from "@/components/atoms/Summary";
 import SectionHeading from "@/components/molecules/SectionHeading";
 import { revealOnScroll } from "@/lib/motion";
 import type { Capability } from "../domain/productions.domain";
@@ -9,7 +8,6 @@ export default function RolesCapabilities({ capabilities }: { capabilities: read
   return (
     <section className="page-container pb-16">
       <SectionHeading number="2" title="Roles & Capabilities" />
-      <Summary>The roles I take on during live productions and what each one involves on the day of a show.</Summary>
 
       <dl className="grid grid-cols-1 md:grid-cols-2 gap-x-10">
         {capabilities.map((capability, i) => (

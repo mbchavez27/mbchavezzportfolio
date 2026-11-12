@@ -1,5 +1,4 @@
 import { motion } from "motion/react";
-import Summary from "@/components/atoms/Summary";
 import SectionHeading from "@/components/molecules/SectionHeading";
 import { revealOnScroll } from "@/lib/motion";
 import type { StackCategory } from "../domain/projects.domain";
@@ -12,10 +11,6 @@ export default function TechnicalStack({ categories }: { categories: readonly St
   return (
     <section className="page-container pb-16">
       <SectionHeading number="2" title="Technical Stack" />
-      <Summary>
-        The technologies and tools I use to build software systems, intelligent applications, and data-driven
-        solutions, grouped by where they sit in the stack.
-      </Summary>
 
       <div className={`grid grid-cols-1 sm:grid-cols-2 ${LG_COLUMNS[categories.length] ?? "lg:grid-cols-4"} gap-x-8 gap-y-8 border-t-2 border-zinc-900 border-b border-b-zinc-300 py-6`}>
         {categories.map((category, i) => (
