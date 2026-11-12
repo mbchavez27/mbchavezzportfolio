@@ -10,7 +10,7 @@ const linkDisplay = {
 
 export default function PaperLinks({ links }: { links: readonly PaperLink[] }) {
   return (
-    <div className="flex flex-wrap gap-2">
+    <div className="flex flex-wrap gap-x-4 gap-y-2">
       {links.map((link) => {
         const { label, Icon } = linkDisplay[link.kind];
         return (
@@ -19,7 +19,7 @@ export default function PaperLinks({ links }: { links: readonly PaperLink[] }) {
             href={link.href}
             target="_blank"
             rel="noreferrer"
-            className="font-body font-light inline-flex items-center gap-1.5 text-xs border border-zinc-200 text-zinc-500 px-3 py-1.5 hover:border-primary hover:text-zinc-900 transition-colors duration-200"
+            className="font-body inline-flex items-center gap-1 text-xs text-primary underline-offset-4 hover:underline"
           >
             <Icon size={12} />
             {label}

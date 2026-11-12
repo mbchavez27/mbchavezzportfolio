@@ -9,7 +9,7 @@ export default function PapersPage() {
         A collection of research contributions <br className="hidden md:inline" />in AI, machine learning, and language technologies.
       </PageHero>
       <ResearchAtAGlanceContainer />
-      <div className="pb-32">
+      <div className="pb-16">
         <ResearchWorkContainer />
       </div>
     </PageShell>

@@ -1,29 +1,48 @@
-import { motion } from "motion/react";
-import { revealOnScroll } from "@/lib/motion";
-import type { VenueGroup } from "../domain/papers.domain";
-import PaperEntry from "./PaperEntry";
+import Tag from "@/components/atoms/Tag";
+import EntryRow, { EntryList } from "@/components/molecules/EntryRow";
+import SectionHeading from "@/components/molecules/SectionHeading";
+import type { Paper, VenueGroup } from "../domain/papers.domain";
+import PaperLinks from "./PaperLinks";
+
+const PRESENTATION_LABEL: Record<Paper["presentation"], string> = {
+  oral: "Oral",
+  "full-paper": "Full paper",
+};
 
 export default function ResearchWork({ venueGroups }: { venueGroups: readonly VenueGroup[] }) {
   return (
     <div className="page-container">
-      <motion.div {...revealOnScroll()} className="mb-14">
-        <p className="font-body font-light text-xs text-zinc-400 tracking-[0.2em] uppercase mb-3">Featured Contributions</p>
-        <h2 className="font-display text-2xl md:text-3xl font-semibold text-zinc-900">Research Work</h2>
-      </motion.div>
+      <SectionHeading eyebrow="Featured Contributions" title="Research Work" />
 
-      {venueGroups.map(({ venue, papers: venuePapers }) => (
-        <motion.div key={venue.name} {...revealOnScroll()} className="mb-16 last:mb-0">
-          <div className="mb-8">
-            <h2 className="font-display text-lg font-semibold text-zinc-900">{venue.name}</h2>
-            <p className="font-body font-light text-xs text-zinc-400 mt-0.5">{venue.acceptance}</p>
-          </div>
-
-          <div className="flex flex-col gap-4 md:gap-5">
-            {venuePapers.map((paper, i) => (
-              <PaperEntry key={paper.title} paper={paper} position={i} />
+      {venueGroups.map(({ venue, papers }) => (
+        <section key={venue.name}>
+          <SectionHeading as="h3" title={venue.name} subtitle={venue.acceptance} className="pt-8 pb-2" />
+          <EntryList>
+            {papers.map((paper, i) => (
+              <EntryRow
+                key={paper.title}
+                position={i}
+                meta={<span className="uppercase">{PRESENTATION_LABEL[paper.presentation]}</span>}
+                title={paper.title}
+                subtitle={<span className="italic text-xs text-zinc-400">{paper.authors}</span>}
+                summary={paper.description}
+              >
+                <div className="flex flex-wrap items-center gap-2">
+                  {paper.areas.map((area) => (
+                    <Tag key={area} label={area} variant="light" />
+                  ))}
+                </div>
+                <div className="mt-3">
+                  {paper.links.length > 0 ? (
+                    <PaperLinks links={paper.links} />
+                  ) : (
+                    <span className="font-body font-light text-xs text-zinc-400">Links available upon publication</span>
+                  )}
+                </div>
+              </EntryRow>
             ))}
-          </div>
-        </motion.div>
+          </EntryList>
+        </section>
       ))}
     </div>
   );
