@@ -1,19 +1,36 @@
+import Figure, { FigureGrid } from "@/components/molecules/Figure";
 import SectionHeading from "@/components/molecules/SectionHeading";
-import ProjectCard, { type ProjectCardItem } from "./ProjectCard";
-import { GRID_GAP } from "@/components/atoms/surfaces";
+import type { Project } from "../domain/projects.domain";
 
-// Bento spans by position: a wide feature card, two rows of three, then a full-width closer.
-const SPANS = ["md:col-span-2", "", "", "", "", "md:col-span-3"] as const;
+export type ProjectCardItem = {
+  readonly project: Project;
+  readonly caseStudyHref: string;
+};
 
 export default function FeaturedProjects({ items }: { items: readonly ProjectCardItem[] }) {
   return (
     <section className="page-container pb-6">
       <SectionHeading title="Featured Projects" subtitle="Things I've built." />
-      <div className={`grid grid-cols-1 md:grid-cols-3 md:auto-rows-[19rem] ${GRID_GAP}`}>
-        {items.map((item, i) => (
-          <ProjectCard key={item.project.title} {...item} position={i} className={SPANS[i] ?? ""} />
+      <FigureGrid>
+        {items.map(({ project, caseStudyHref }, i) => (
+          <Figure
+            key={project.title}
+            number={i + 1}
+            position={i}
+            image={project.image}
+            title={`${project.title}.`}
+            to={caseStudyHref}
+            details={
+              <>
+                {project.role} · <span className="text-primary">@</span>
+                {project.domain}. {project.summary}
+                <span className="block mt-1.5 text-xs text-zinc-400">{project.tags.join(" · ")}</span>
+              </>
+            }
+            links={[{ label: "case study", to: caseStudyHref }]}
+          />
         ))}
-      </div>
+      </FigureGrid>
     </section>
   );
 }
