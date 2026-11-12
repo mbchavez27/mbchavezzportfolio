@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "motion/react";
 import { Link } from "react-router";
-import FullBleedBand from "@/components/molecules/FullBleedBand";
+import DarkBand from "@/components/molecules/DarkBand";
 import { ageOn } from "@/lib/format";
 import { drawRule, revealOnLoad } from "@/lib/motion";
 import RotatingRoles from "./RotatingRoles";
@@ -21,7 +21,7 @@ export default function Introduction({ portraitSrc, hoverPortraitSrc, callToActi
   const [showHoverPortrait, setShowHoverPortrait] = useState(false);
 
   return (
-    <FullBleedBand anchor="top" extendsNavbar>
+    <DarkBand anchor="top">
       <div className="page-container min-h-[calc(100svh-3.5rem)] flex flex-col items-center justify-center text-center gap-5 py-16 md:py-24">
         <motion.div
           {...revealOnLoad({ y: 16 })}
@@ -86,6 +86,6 @@ export default function Introduction({ portraitSrc, hoverPortraitSrc, callToActi
           ))}
         </motion.div>
       </div>
-    </FullBleedBand>
+    </DarkBand>
   );
 }

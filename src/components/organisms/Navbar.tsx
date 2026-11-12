@@ -1,26 +1,18 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { motion } from "motion/react";
 import { Link } from "react-router";
 import NavAnchor from "@/components/atoms/NavAnchor";
 import NavDropdown from "@/components/molecules/NavDropdown";
 import { navItems } from "@/config/links";
-import { BLEED_LAYER_CLASS, useBleedInset, useNavbarBleed } from "@/lib/full-bleed";
 
 const MOBILE_MENU_ID = "mobile-menu";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const closeMenu = () => setIsMenuOpen(false);
-  const bleedInset = useBleedInset(useNavbarBleed());
 
   return (
-    <header className="sticky top-0 z-50 isolate">
-      <motion.div
-        aria-hidden
-        style={{ left: bleedInset, right: bleedInset }}
-        className={`${BLEED_LAYER_CLASS} bg-black border-b border-zinc-800`}
-      />
+    <header className="sticky top-0 z-50 bg-black border-b border-zinc-800">
       <div className="page-container h-14 flex items-center justify-between">
         <Link
           to="/"
