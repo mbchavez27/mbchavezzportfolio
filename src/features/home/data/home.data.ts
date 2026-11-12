@@ -4,7 +4,7 @@ import aiResearcherImg from "@/assets/home/ai-researcher.jpg";
 import softwareEngineerImg from "@/assets/home/software-engineer.jpg";
 import technicalOperatorImg from "@/assets/home/technical-operator.jpg";
 import { profileLinks } from "@/config/links";
-import type { CallToAction, ContactLink, Hat, Highlight } from "../domain/home.domain";
+import type { CallToAction, ContactLink, Correspondent, Hat, Highlight } from "../domain/home.domain";
 
 export const heroCallToAction: CallToAction = {
   label: "View my experience",
@@ -87,3 +87,9 @@ const email: ContactLink = {
 
 export const socialLinks: readonly ContactLink[] = [github, linkedin, resume];
 export const contactLinks: readonly ContactLink[] = [email, linkedin, github, resume];
+
+export const correspondent: Correspondent = {
+  name: "Max Benedict Chavez",
+  affiliation: "De La Salle University",
+  location: "Manila, Philippines",
+};

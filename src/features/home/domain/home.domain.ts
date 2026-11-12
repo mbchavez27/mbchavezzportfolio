@@ -22,6 +22,13 @@ export type CallToAction = {
   readonly Icon: LucideIcon;
 };
 
+/** Who to write to, shown like the author block on a paper. */
+export type Correspondent = {
+  readonly name: string;
+  readonly affiliation: string;
+  readonly location: string;
+};
+
 export type ContactLink = {
   readonly label: string;
   readonly value: string;

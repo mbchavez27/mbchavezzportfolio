@@ -1,55 +1,56 @@
 import { motion } from "motion/react";
-import { ArrowRight } from "lucide-react";
+import Summary from "@/components/atoms/Summary";
+import SectionHeading from "@/components/molecules/SectionHeading";
 import { revealOnScroll } from "@/lib/motion";
-import type { ContactLink } from "../domain/home.domain";
+import type { ContactLink, Correspondent } from "../domain/home.domain";
 
 export type ContactItem = ContactLink & { readonly opensInNewTab: boolean };
 
-export default function Contact({ items }: { items: readonly ContactItem[] }) {
-  return (
-    <section className="bg-zinc-950 py-16">
-      <div className="page-container">
-        <motion.div {...revealOnScroll({ y: 30 })} className="max-w-2xl">
-          <p className="font-body font-light text-xs text-zinc-600 tracking-[0.2em] uppercase mb-6">Contact</p>
-          <h2 className="font-display text-2xl md:text-3xl font-semibold text-white leading-tight mb-4">
-            Let's Build Something Together
-          </h2>
-          <div className="w-8 h-px bg-primary mb-6" />
-          <p className="font-body font-light text-zinc-400 text-sm leading-relaxed mb-8">
-            From AI research to software development and live productions, I'm always open to meaningful collaborations
-            and new opportunities.
-          </p>
-        </motion.div>
+type Props = {
+  correspondent: Correspondent;
+  items: readonly ContactItem[];
+};
 
-        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 border-t border-zinc-800">
-          {items.map((link, i) => (
-            <motion.li
-              key={link.label}
-              {...revealOnScroll({ y: 12, delay: i * 0.06, duration: 0.45 })}
-              className="border-b border-zinc-800"
-            >
-              <a
-                href={link.href}
-                target={link.opensInNewTab ? "_blank" : undefined}
-                rel="noreferrer"
-                className="group flex items-center gap-4 py-3"
-              >
-                <link.Icon size={16} className="shrink-0 text-zinc-500 group-hover:text-primary transition-colors duration-200" />
-                <span className="min-w-0 flex-1">
-                  <span className="block font-body font-light text-xs text-zinc-500 tracking-wide uppercase">{link.label}</span>
-                  <span className="block font-body font-light text-sm text-zinc-300 group-hover:text-white transition-colors duration-200 break-all">
-                    {link.value}
-                  </span>
-                </span>
-                <ArrowRight
-                  size={14}
-                  className="shrink-0 text-zinc-600 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 group-hover:text-primary transition-all duration-200"
-                />
-              </a>
-            </motion.li>
+/** The closing contact section, set like the correspondence block on a paper. */
+export default function Contact({ correspondent, items }: Props) {
+  return (
+    <section className="page-container pb-16">
+      <SectionHeading number="5" title="Contact" />
+      <Summary>
+        From AI research to software development and live productions, I'm always open to meaningful collaborations
+        and new opportunities.
+      </Summary>
+
+      <motion.div
+        {...revealOnScroll()}
+        className="grid grid-cols-1 sm:grid-cols-[1fr_1.4fr] gap-x-10 gap-y-6 border-t-2 border-zinc-900 border-b border-b-zinc-300 py-5"
+      >
+        <address className="not-italic">
+          <p className="font-display font-semibold text-zinc-900">{correspondent.name}</p>
+          <p className="font-body font-light text-sm text-zinc-600 italic mt-1">{correspondent.affiliation}</p>
+          <p className="font-body font-light text-sm text-zinc-500">{correspondent.location}</p>
+        </address>
+
+        <dl className="grid grid-cols-[5.5rem_1fr] gap-x-4 gap-y-1.5">
+          {items.map((link) => (
+            <div key={link.label} className="contents">
+              <dt className="font-body text-sm text-zinc-500 [font-variant:small-caps] tracking-wide">
+                {link.label.toLowerCase()}
+              </dt>
+              <dd className="min-w-0">
+                <a
+                  href={link.href}
+                  target={link.opensInNewTab ? "_blank" : undefined}
+                  rel="noreferrer"
+                  className="font-body font-light text-sm text-zinc-800 break-all underline-offset-4 hover:underline hover:text-primary transition-colors duration-200"
+                >
+                  {link.value}
+                </a>
+              </dd>
+            </div>
           ))}
-        </ul>
-      </div>
+        </dl>
+      </motion.div>
     </section>
   );
 }
