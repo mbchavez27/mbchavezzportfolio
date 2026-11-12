@@ -34,7 +34,7 @@ export default function SiteFrame({ children }: { children: ReactNode }) {
         </motion.div>
       </div>
 
-      <div className="relative mx-auto max-w-6xl min-h-screen bg-white text-foreground overflow-clip lg:mb-10 lg:shadow-2xl">
+      <div className="relative mx-auto max-w-6xl min-h-screen bg-white text-foreground overflow-clip lg:shadow-2xl">
         <Navbar />
         <main>{children}</main>
       </div>
