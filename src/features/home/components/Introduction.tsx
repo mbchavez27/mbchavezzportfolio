@@ -21,7 +21,7 @@ export default function Introduction({ portraitSrc, hoverPortraitSrc, callToActi
   const [showHoverPortrait, setShowHoverPortrait] = useState(false);
 
   return (
-    <FullBleedBand extendsNavbar>
+    <FullBleedBand anchor="top" extendsNavbar>
       <div className="page-container min-h-[calc(100svh-3.5rem)] flex flex-col items-center justify-center text-center gap-5 py-16 md:py-24">
         <motion.div
           {...revealOnLoad({ y: 16 })}

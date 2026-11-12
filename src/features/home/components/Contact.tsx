@@ -8,7 +8,7 @@ export type ContactItem = ContactLink & { readonly opensInNewTab: boolean };
 
 export default function Contact({ items }: { items: readonly ContactItem[] }) {
   return (
-    <FullBleedBand className="py-32">
+    <FullBleedBand anchor="bottom" className="py-32">
       <div className="page-container">
         <motion.div {...revealOnScroll({ y: 30 })} className="max-w-2xl">
           <p className="font-body font-light text-xs text-zinc-600 tracking-[0.2em] uppercase mb-6">Contact</p>

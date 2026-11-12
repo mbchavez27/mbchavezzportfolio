@@ -2,7 +2,23 @@ import { useEffect, useRef, type ReactNode } from "react";
 import { motion, useMotionValueEvent, useReducedMotion, useScroll, useSpring, useTransform } from "motion/react";
 import { BLEED_LAYER_CLASS, useBleedInset, useNavbarBleed } from "@/lib/full-bleed";
 
+/**
+ * Where the band sits on the page, which decides how scrolling drives it:
+ * - "top": full width at the very top of the page, narrowing from the first pixel scrolled down
+ *   until the band has scrolled up under the navbar.
+ * - "bottom": widening from the moment the band peeks in at the bottom of the screen until the
+ *   page bottom, where it is full width.
+ */
+type Anchor = "top" | "bottom";
+
+// The navbar is 3.5rem (56px) tall and sticky, so the hero sits that far below the top of the screen.
+const OFFSETS = {
+  top: ["start 56px", "end 56px"],
+  bottom: ["start end", "end end"],
+} as const;
+
 type Props = {
+  anchor: Anchor;
   className?: string;
   /** Also widen the navbar together with this band (for a band directly under it). */
   extendsNavbar?: boolean;
@@ -10,19 +26,16 @@ type Props = {
 };
 
 /**
- * A dark section whose background widens from the site column to the full screen as it scrolls
- * into the middle of the viewport, and narrows back as it scrolls away, tracking the scroll
- * position continuously. The content stays in the column.
+ * A dark section whose background width follows the scroll position, between the site column and
+ * the full screen (see `Anchor`). The content stays in the column.
  */
-export default function FullBleedBand({ className = "", extendsNavbar = false, children }: Props) {
+export default function FullBleedBand({ anchor, className = "", extendsNavbar = false, children }: Props) {
   const ref = useRef<HTMLElement>(null);
   const prefersReducedMotion = useReducedMotion();
   const navbarBleed = useNavbarBleed();
 
-  // 0 as the band's top enters the bottom of the screen, 1 once its bottom leaves the top.
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  // Fully wide across the middle of that journey, easing open and closed at either end.
-  const rawBleed = useTransform(scrollYProgress, [0.1, 0.4, 0.6, 0.9], [0, 1, 1, 0]);
+  const { scrollYProgress } = useScroll({ target: ref, offset: [...OFFSETS[anchor]] });
+  const rawBleed = useTransform(scrollYProgress, [0, 1], anchor === "top" ? [1, 0] : [0, 1]);
   const smoothBleed = useSpring(rawBleed, { stiffness: 220, damping: 40, restDelta: 0.001 });
   const bleed = prefersReducedMotion ? rawBleed : smoothBleed;
   const inset = useBleedInset(bleed);
