@@ -22,7 +22,7 @@ type Props = {
   children?: ReactNode;
 };
 
-const TITLE_CLASS = "font-display text-base md:text-lg font-semibold text-zinc-900 leading-snug";
+const TITLE_CLASS = "font-display text-[15px] md:text-base font-semibold text-zinc-900 leading-snug";
 
 /** Wraps EntryRows in a list with faint maroon hairlines between them. */
 export function EntryList({ children, className = "" }: { children: ReactNode; className?: string }) {
@@ -51,19 +51,19 @@ export default function EntryRow({ meta, title, to, href, subtitle, summary, thu
   return (
     <motion.li
       {...revealOnScroll({ y: 12, delay: Math.min(position, 6) * 0.05, duration: 0.45 })}
-      className="grid grid-cols-1 sm:grid-cols-[7rem_1fr] gap-x-6 gap-y-1 py-5"
+      className="grid grid-cols-1 sm:grid-cols-[8rem_1fr] gap-x-6 gap-y-1 py-3.5"
     >
-      <div className="font-body font-light text-xs text-zinc-400 tracking-wide sm:pt-1">{meta}</div>
+      <div className="font-body font-light text-xs text-zinc-400 tracking-wide sm:pt-0.5">{meta}</div>
       <div className="flex gap-5">
         <div className="min-w-0 flex-1">
           {heading && <h3>{heading}</h3>}
-          {subtitle && <p className="font-body font-light text-sm text-zinc-500 mt-1">{subtitle}</p>}
+          {subtitle && <p className="font-body font-light text-sm text-zinc-500 mt-0.5">{subtitle}</p>}
           {summary && (
-            <p className={`font-body font-light text-sm text-zinc-500 leading-relaxed ${heading || subtitle ? "mt-2" : ""}`}>
+            <p className={`font-body font-light text-sm text-zinc-500 leading-relaxed ${heading || subtitle ? "mt-1.5" : ""}`}>
               {summary}
             </p>
           )}
-          {children && <div className={heading || subtitle || summary ? "mt-3" : ""}>{children}</div>}
+          {children && <div className={heading || subtitle || summary ? "mt-2.5" : ""}>{children}</div>}
         </div>
         {thumbnail && (
           <img

@@ -18,21 +18,21 @@ export default function AtAGlance({ title, stats, tagGroups }: Props) {
     <motion.div {...revealOnScroll()} className="page-container mb-6">
       <AccentRule />
 
-      <p className="font-body font-light text-xs text-zinc-400 tracking-[0.2em] uppercase pt-8 pb-5">{title}</p>
+      <p className="font-body font-light text-xs text-zinc-400 tracking-[0.2em] uppercase pt-6 pb-4">{title}</p>
 
       <div className="flex flex-wrap gap-y-4 divide-x divide-primary/15">
         {stats.map((stat) => (
           <div key={stat.label} className="pr-6 pl-6 first:pl-0">
-            <p className="font-display text-3xl font-semibold text-zinc-900">{stat.value}</p>
+            <p className="font-display text-2xl font-semibold text-zinc-900">{stat.value}</p>
             <p className="font-body font-light text-xs text-zinc-400 mt-0.5">{stat.label}</p>
           </div>
         ))}
       </div>
 
       {tagGroups.length > 0 && (
-        <dl className="mt-8 divide-y divide-primary/10 border-t border-primary/10">
+        <dl className="mt-6 divide-y divide-primary/10 border-t border-primary/10">
           {tagGroups.map((group) => (
-            <div key={group.label} className="grid grid-cols-1 sm:grid-cols-[7rem_1fr] gap-x-6 gap-y-2 py-4">
+            <div key={group.label} className="grid grid-cols-1 sm:grid-cols-[8rem_1fr] gap-x-6 gap-y-2 py-3">
               <dt className="font-body font-light text-xs text-zinc-400 tracking-wide sm:pt-1">{group.label}</dt>
               <dd className="flex flex-wrap gap-2">
                 {group.tags.map((tag) => (

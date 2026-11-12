@@ -7,15 +7,15 @@ export type ContactItem = ContactLink & { readonly opensInNewTab: boolean };
 
 export default function Contact({ items }: { items: readonly ContactItem[] }) {
   return (
-    <section className="bg-zinc-950 py-24">
+    <section className="bg-zinc-950 py-16">
       <div className="page-container">
         <motion.div {...revealOnScroll({ y: 30 })} className="max-w-2xl">
           <p className="font-body font-light text-xs text-zinc-600 tracking-[0.2em] uppercase mb-6">Contact</p>
-          <h2 className="font-display text-3xl md:text-4xl font-semibold text-white leading-tight mb-6">
+          <h2 className="font-display text-2xl md:text-3xl font-semibold text-white leading-tight mb-4">
             Let's Build Something Together
           </h2>
-          <div className="w-8 h-px bg-primary mb-8" />
-          <p className="font-body font-light text-zinc-400 text-base leading-relaxed mb-10">
+          <div className="w-8 h-px bg-primary mb-6" />
+          <p className="font-body font-light text-zinc-400 text-sm leading-relaxed mb-8">
             From AI research to software development and live productions, I'm always open to meaningful collaborations
             and new opportunities.
           </p>
@@ -32,7 +32,7 @@ export default function Contact({ items }: { items: readonly ContactItem[] }) {
                 href={link.href}
                 target={link.opensInNewTab ? "_blank" : undefined}
                 rel="noreferrer"
-                className="group flex items-center gap-4 py-4"
+                className="group flex items-center gap-4 py-3"
               >
                 <link.Icon size={16} className="shrink-0 text-zinc-500 group-hover:text-primary transition-colors duration-200" />
                 <span className="min-w-0 flex-1">

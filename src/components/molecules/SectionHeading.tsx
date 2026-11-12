@@ -16,16 +16,16 @@ type Props = {
 /** The quiet section header used across the site: a faint maroon hairline, an optional eyebrow, a title. */
 export default function SectionHeading({ title, eyebrow, subtitle, as: Heading = "h2", divider = true, className = "" }: Props) {
   return (
-    <motion.div {...revealOnScroll()} className={`${divider ? "border-t border-primary/15" : ""} pt-14 pb-6 ${className}`}>
+    <motion.div {...revealOnScroll()} className={`${divider ? "border-t border-primary/15" : ""} pt-10 pb-4 ${className}`}>
       {eyebrow && (
-        <p className="font-body font-light text-xs text-zinc-400 tracking-[0.2em] uppercase mb-3">{eyebrow}</p>
+        <p className="font-body font-light text-xs text-zinc-400 tracking-[0.2em] uppercase mb-2">{eyebrow}</p>
       )}
       <Heading
-        className={`font-display font-semibold text-zinc-900 ${Heading === "h2" ? "text-xl md:text-2xl" : "text-lg"}`}
+        className={`font-display font-semibold text-zinc-900 ${Heading === "h2" ? "text-lg md:text-xl" : "text-base"}`}
       >
         {title}
       </Heading>
-      {subtitle && <p className="font-body font-light text-sm text-zinc-400 mt-2">{subtitle}</p>}
+      {subtitle && <p className="font-body font-light text-sm text-zinc-400 mt-1">{subtitle}</p>}
     </motion.div>
   );
 }

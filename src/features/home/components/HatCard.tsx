@@ -16,7 +16,7 @@ type Props = {
 };
 
 export default function HatCard({ hat, position, featured = false }: Props) {
-  const height = featured ? "min-h-96 md:min-h-[34rem]" : "min-h-80";
+  const height = featured ? "min-h-72 md:min-h-[26rem]" : "min-h-56 md:min-h-0";
 
   return (
     <motion.div
@@ -28,9 +28,9 @@ export default function HatCard({ hat, position, featured = false }: Props) {
           <img src={hat.image} alt="" className="w-full h-full object-cover object-center" />
         </div>
         <div className="absolute inset-0 bg-zinc-950/65 group-hover:bg-zinc-950/80 transition-colors duration-500" />
-        <div className={`relative z-10 flex flex-col justify-end h-full p-8 ${height}`}>
+        <div className={`relative z-10 flex flex-col justify-end h-full p-6 ${height}`}>
           <span className="font-body font-light block text-xs tracking-widest mb-4 text-zinc-400">{formatIndex(position)}</span>
-          <h3 className={`font-display font-semibold text-white mb-5 ${featured ? "text-2xl md:text-3xl" : "text-xl"}`}>{hat.role}</h3>
+          <h3 className={`font-display font-semibold text-white mb-3 ${featured ? "text-xl md:text-2xl" : "text-lg"}`}>{hat.role}</h3>
           <RevealOnHover>
             <p className="font-body font-light text-sm text-zinc-400 leading-relaxed mb-4">{hat.description}</p>
             <TagList tags={hat.tags} variant="dark" />

@@ -15,20 +15,20 @@ export default function ProductionCard({ production, position, className = "" }:
   return (
     <motion.div
       {...revealOnScroll({ y: 24, delay: (position % 2) * 0.1, duration: 0.5 })}
-      className={`relative group min-h-80 ${CARD_MEDIA} ${className}`}
+      className={`relative group min-h-64 ${CARD_MEDIA} ${className}`}
     >
       <img src={production.image} alt="" className="absolute inset-0 w-full h-full object-cover object-center" />
       <div className="absolute inset-0 bg-zinc-950/65 group-hover:bg-zinc-950/80 transition-colors duration-500" />
 
-      <div className="relative z-10 flex flex-col justify-between gap-10 h-full p-8">
+      <div className="relative z-10 flex flex-col justify-between gap-6 h-full p-6">
         <div className="flex items-start justify-between gap-4">
           <span className="font-body font-light text-xs text-zinc-500">{formatIndex(position)}</span>
           <span className="font-body font-light text-xs text-zinc-400 tracking-wide">{production.date}</span>
         </div>
 
         <div>
-          <p className="font-display text-xl md:text-2xl font-semibold text-white mb-1">{production.title}</p>
-          <p className="font-body font-light text-sm text-zinc-400 mb-5">
+          <p className="font-display text-lg md:text-xl font-semibold text-white mb-1">{production.title}</p>
+          <p className="font-body font-light text-sm text-zinc-400 mb-3">
             {production.role} &mdash; <span className="text-zinc-500">{production.organization}</span>
           </p>
           <ul className="flex flex-col gap-1">

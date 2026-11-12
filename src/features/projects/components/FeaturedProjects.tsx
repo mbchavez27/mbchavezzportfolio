@@ -9,7 +9,7 @@ export default function FeaturedProjects({ items }: { items: readonly ProjectCar
   return (
     <section className="page-container pb-6">
       <SectionHeading title="Featured Projects" subtitle="Things I've built." />
-      <div className={`grid grid-cols-1 md:grid-cols-3 md:auto-rows-[26rem] ${GRID_GAP}`}>
+      <div className={`grid grid-cols-1 md:grid-cols-3 md:auto-rows-[19rem] ${GRID_GAP}`}>
         {items.map((item, i) => (
           <ProjectCard key={item.project.title} {...item} position={i} className={SPANS[i] ?? ""} />
         ))}
