@@ -76,29 +76,43 @@ export const projects: readonly Project[] = [
 
 export const stackCategories: readonly StackCategory[] = [
   {
-    label: "Languages & Databases",
-    items: ["Python", "TypeScript", "Java", "Go", "SQL", "PostgreSQL", "MySQL", "MongoDB"],
+    label: "Software Engineering",
+    items: [
+      "Python",
+      "TypeScript",
+      "Go",
+      "PostgreSQL",
+      "Next.js",
+      "Express.js",
+      "Docker",
+      "Google Cloud Platform (GCP)",
+      "CI/CD",
+    ],
   },
   {
-    label: "AI & Data Systems",
+    label: "AI, ML & Data Science",
     items: [
       "PyTorch",
       "Hugging Face Transformers",
       "Scikit-learn",
-      "NLP",
-      "LLMs",
-      "Embeddings",
-      "Sentiment Analysis",
       "Pandas",
       "NumPy",
+      "Transformer Architectures",
+      "LLM Fine-Tuning",
+      "Model Evaluation",
     ],
   },
   {
-    label: "Software Engineering",
-    items: ["Next.js", "React", "Express.js", "Tailwind CSS", "REST APIs", "System Design"],
-  },
-  {
-    label: "Tools & Infrastructure",
-    items: ["Git", "Docker", "Linux"],
+    label: "Research Areas",
+    items: [
+      "Computational Social Science",
+      "Large Language Models (LLMs)",
+      "Machine Translation",
+      "Text Mining",
+      "Multilingual NLP",
+      "Low-Resource NLP",
+      "Sentiment Analysis",
+      "Emotion Detection",
+    ],
   },
 ];

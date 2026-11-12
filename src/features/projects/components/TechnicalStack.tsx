@@ -4,6 +4,9 @@ import SectionHeading from "@/components/molecules/SectionHeading";
 import { revealOnScroll } from "@/lib/motion";
 import type { StackCategory } from "../domain/projects.domain";
 
+// One column per category on wide screens.
+const LG_COLUMNS: Record<number, string> = { 2: "lg:grid-cols-2", 3: "lg:grid-cols-3", 4: "lg:grid-cols-4" };
+
 /** The technical stack as a CV-style skills matrix: categories side by side, tools listed under each. */
 export default function TechnicalStack({ categories }: { categories: readonly StackCategory[] }) {
   return (
@@ -14,7 +17,7 @@ export default function TechnicalStack({ categories }: { categories: readonly St
         solutions, grouped by where they sit in the stack.
       </Summary>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-8 border-t-2 border-zinc-900 border-b border-b-zinc-300 py-6">
+      <div className={`grid grid-cols-1 sm:grid-cols-2 ${LG_COLUMNS[categories.length] ?? "lg:grid-cols-4"} gap-x-8 gap-y-8 border-t-2 border-zinc-900 border-b border-b-zinc-300 py-6`}>
         {categories.map((category, i) => (
           <motion.div
             key={category.label}
