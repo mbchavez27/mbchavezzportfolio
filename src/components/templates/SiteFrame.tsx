@@ -1,4 +1,5 @@
-import { useState, type ReactNode } from "react";
+import type { ReactNode } from "react";
+import { useMotionValue } from "motion/react";
 import redGradient from "@/assets/background/red-gradient.jpg";
 import Navbar from "@/components/organisms/Navbar";
 import { FullBleedContext } from "@/lib/full-bleed";
@@ -8,10 +9,10 @@ import { FullBleedContext } from "@/lib/full-bleed";
  * The backdrop is a fixed element rather than `background-attachment: fixed`, which iOS Safari ignores.
  */
 export default function SiteFrame({ children }: { children: ReactNode }) {
-  const [navbarExpanded, setNavbarExpanded] = useState(false);
+  const navbarBleed = useMotionValue(0);
 
   return (
-    <FullBleedContext value={{ navbarExpanded, setNavbarExpanded }}>
+    <FullBleedContext value={navbarBleed}>
       <div aria-hidden className="fixed inset-0 -z-10 bg-zinc-900">
         <img src={redGradient} alt="" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-black/40" />

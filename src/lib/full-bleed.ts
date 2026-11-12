@@ -1,23 +1,21 @@
 import { createContext, useContext } from "react";
-
-type FullBleedState = {
-  readonly navbarExpanded: boolean;
-  readonly setNavbarExpanded: (expanded: boolean) => void;
-};
-
-/** Lets a full-bleed band (the home hero) widen the navbar together with itself. */
-export const FullBleedContext = createContext<FullBleedState>({
-  navbarExpanded: false,
-  setNavbarExpanded: () => {},
-});
-
-export const useFullBleed = () => useContext(FullBleedContext);
+import { motionValue, useTransform, type MotionValue } from "motion/react";
 
 /**
- * Classes for a background layer that sits behind a band's content and animates between the
- * column's width (collapsed) and the full viewport width (expanded). Its parent must be `relative isolate`.
+ * How far the navbar's background is widened, from 0 (column width) to 1 (full screen).
+ * The home hero drives it so the two widen together.
  */
-export function bleedLayerClass(expanded: boolean): string {
-  const extent = expanded ? "left-[calc(50%-50vw)] right-[calc(50%-50vw)]" : "left-0 right-0";
-  return `absolute inset-y-0 -z-10 ${extent} transition-[left,right] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none`;
+export const FullBleedContext = createContext<MotionValue<number>>(motionValue(0));
+
+export const useNavbarBleed = () => useContext(FullBleedContext);
+
+/** Classes for a background layer behind a band's content; its parent must be `relative isolate`. */
+export const BLEED_LAYER_CLASS = "absolute inset-y-0 -z-10";
+
+/**
+ * Maps a 0–1 bleed amount to the layer's `left`/`right` inset: 0 matches the column,
+ * 1 reaches the edges of the screen.
+ */
+export function useBleedInset(bleed: MotionValue<number>): MotionValue<string> {
+  return useTransform(bleed, (amount) => `calc((50% - 50vw) * ${amount})`);
 }
