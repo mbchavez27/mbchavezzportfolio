@@ -10,7 +10,7 @@ type Props = {
 
 export default function PageHero({ eyebrow, children }: Props) {
   return (
-    <motion.div {...revealOnLoad({ y: 20 })} className="mb-10 page-container">
+    <motion.div {...revealOnLoad({ y: 20 })} className={`page-container ${children ? "mb-10" : "mb-3"}`}>
       {children ? (
         <>
           <p className="font-body font-light text-xs text-zinc-400 tracking-[0.2em] uppercase mb-4">{eyebrow}</p>
