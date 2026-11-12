@@ -1,6 +1,5 @@
 import { useState, type ReactNode } from "react";
 import redGradient from "@/assets/background/red-gradient.jpg";
-import FullBleedBand from "@/components/molecules/FullBleedBand";
 import Navbar from "@/components/organisms/Navbar";
 import { FullBleedContext } from "@/lib/full-bleed";
 
@@ -21,7 +20,7 @@ export default function SiteFrame({ children }: { children: ReactNode }) {
       <div className="relative mx-auto max-w-6xl min-h-screen bg-white text-foreground lg:mb-10 lg:shadow-2xl">
         <Navbar />
         <main>{children}</main>
-        <FullBleedBand as="footer" className="py-6" layerClassName="border-t border-zinc-800">
+        <footer className="bg-zinc-950 border-t border-zinc-800 py-6">
           <p className="page-container font-body font-light text-xs text-zinc-600">
             Background photo by James Lee on{" "}
             <a
@@ -33,7 +32,7 @@ export default function SiteFrame({ children }: { children: ReactNode }) {
               Unsplash
             </a>
           </p>
-        </FullBleedBand>
+        </footer>
       </div>
     </FullBleedContext>
   );
