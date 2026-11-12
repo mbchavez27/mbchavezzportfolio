@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router";
 import RevealOnHover from "@/components/molecules/RevealOnHover";
 import TagList from "@/components/molecules/TagList";
+import { CARD_MEDIA } from "@/components/atoms/surfaces";
 import { formatIndex } from "@/lib/format";
 import { revealOnScroll } from "@/lib/motion";
 import type { Hat } from "../domain/home.domain";
@@ -10,22 +11,26 @@ import type { Hat } from "../domain/home.domain";
 type Props = {
   hat: Hat;
   position: number;
+  /** The tall bento card spanning both rows. */
+  featured?: boolean;
 };
 
-export default function HatCard({ hat, position }: Props) {
+export default function HatCard({ hat, position, featured = false }: Props) {
+  const height = featured ? "min-h-96 md:min-h-[34rem]" : "min-h-80";
+
   return (
     <motion.div
       {...revealOnScroll({ y: 40, delay: position * 0.12, duration: 0.5 })}
-      className="relative overflow-hidden border-b md:border-b-0 md:border-r border-zinc-200 last:border-r-0"
+      className={`relative ${CARD_MEDIA} ${featured ? "md:row-span-2" : ""}`}
     >
-      <Link to={hat.to} className="block relative text-left overflow-hidden group min-h-96 w-full">
+      <Link to={hat.to} className={`block relative text-left overflow-hidden group h-full w-full ${height}`}>
         <div className="absolute inset-0 bg-zinc-200 flex items-center justify-center overflow-hidden">
           <img src={hat.image} alt="" className="w-full h-full object-cover object-center" />
         </div>
         <div className="absolute inset-0 bg-zinc-950/65 group-hover:bg-zinc-950/80 transition-colors duration-500" />
-        <div className="relative z-10 flex flex-col justify-end h-full min-h-96 p-8">
+        <div className={`relative z-10 flex flex-col justify-end h-full p-8 ${height}`}>
           <span className="font-body font-light block text-xs tracking-widest mb-4 text-zinc-400">{formatIndex(position)}</span>
-          <h3 className="font-display text-xl font-semibold text-white mb-5">{hat.role}</h3>
+          <h3 className={`font-display font-semibold text-white mb-5 ${featured ? "text-2xl md:text-3xl" : "text-xl"}`}>{hat.role}</h3>
           <RevealOnHover>
             <p className="font-body font-light text-sm text-zinc-400 leading-relaxed mb-4">{hat.description}</p>
             <TagList tags={hat.tags} variant="dark" />
