@@ -6,6 +6,8 @@ export type TagGroup = { readonly label: string; readonly tags: readonly string[
 
 type Props = {
   title: string;
+  /** A short paragraph describing what the table summarises, set above it like a paper's abstract. */
+  abstract: string;
   stats: readonly Stat[];
   tagGroups: readonly TagGroup[];
 };
@@ -14,13 +16,19 @@ const CELL = "py-1.5 align-top";
 const HEADER = "pb-1.5 pt-2 font-normal text-zinc-500 [font-variant:small-caps] tracking-wide";
 
 /** Summary at the top of a page, set as a captioned academic (booktabs-style) table. */
-export default function AtAGlance({ title, stats, tagGroups }: Props) {
+export default function AtAGlance({ title, abstract, stats, tagGroups }: Props) {
   const lastIndex = stats.length + tagGroups.length - 1;
   const bottomRule = (index: number) => (index === lastIndex ? "border-b-2 border-zinc-900" : "");
 
   return (
     <motion.div {...revealOnScroll()} className="page-container mb-6">
-      <table className="w-full max-w-3xl border-collapse font-body text-sm">
+      <p className="font-body font-light text-sm text-zinc-600 leading-relaxed mb-5">
+        <span className="font-semibold text-zinc-900 [font-variant:small-caps] tracking-wide">abstract</span>
+        <span className="text-zinc-400"> — </span>
+        {abstract}
+      </p>
+
+      <table className="w-full border-collapse font-body text-sm">
         <caption className="caption-top text-left pb-2 text-zinc-700">
           <span className="font-semibold text-primary">Table 1.</span> {title}.
         </caption>
