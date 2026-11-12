@@ -40,7 +40,7 @@ export default function AtAGlance({ title, stats, tagGroups }: Props) {
       </div>
 
       {tagGroups.length > 0 && (
-        <div className={`mt-4 md:mt-5 px-8 py-2 ${CARD_LIGHT} divide-y divide-zinc-200`}>
+        <div className={`mt-4 md:mt-5 px-8 py-2 ${CARD_LIGHT} divide-y divide-primary/10`}>
           {tagGroups.map((group) => (
             <div key={group.label} className="py-4 flex flex-wrap items-center gap-2">
               <p className="font-body font-light text-xs text-zinc-400 tracking-wide mr-2">{group.label}</p>
