@@ -5,9 +5,7 @@ import { ResearchAtAGlanceContainer, ResearchWorkContainer } from "@/features/pa
 export default function PapersPage() {
   return (
     <PageShell>
-      <PageHero eyebrow="Papers">
-        A collection of research contributions <br className="hidden md:inline" />in AI, machine learning, and language technologies.
-      </PageHero>
+      <PageHero eyebrow="Papers" />
       <ResearchAtAGlanceContainer />
       <div className="pb-16">
         <ResearchWorkContainer />

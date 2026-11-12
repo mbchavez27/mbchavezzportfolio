@@ -9,9 +9,7 @@ import {
 export default function ProductionsPage() {
   return (
     <PageShell>
-      <PageHero eyebrow="Productions">
-        A collection of live events, <br className="hidden md:inline" />technical experiences, and productions I've supported.
-      </PageHero>
+      <PageHero eyebrow="Productions" />
       <ProductionsAtAGlanceContainer />
       <FeaturedProductionsContainer />
       <RolesCapabilitiesContainer />
