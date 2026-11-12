@@ -5,7 +5,7 @@ import type { Production } from "../domain/productions.domain";
 export default function FeaturedProductions({ productions }: { productions: readonly Production[] }) {
   return (
     <section className="page-container pb-6">
-      <SectionHeading title="Featured Productions" subtitle="Selected productions and live events I've supported." />
+      <SectionHeading number="1" title="Featured Productions" subtitle="Selected productions and live events I've supported." />
       <FigureGrid>
         {productions.map((production, i) => (
           <Figure

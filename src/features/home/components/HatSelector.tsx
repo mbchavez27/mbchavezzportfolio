@@ -8,6 +8,7 @@ export default function HatSelector({ hats }: { hats: readonly Hat[] }) {
   return (
     <section id={HAT_SELECTOR_ID} className="page-container pb-6 scroll-mt-14">
       <SectionHeading
+        number="2"
         title="Three hats. One portfolio."
         subtitle="Choose the lens that best matches what you're looking for."
       />

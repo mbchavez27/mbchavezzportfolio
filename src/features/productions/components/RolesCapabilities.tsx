@@ -5,7 +5,7 @@ import type { Capability } from "../domain/productions.domain";
 export default function RolesCapabilities({ capabilities }: { capabilities: readonly Capability[] }) {
   return (
     <section className="page-container pb-16">
-      <SectionHeading title="Roles & Capabilities" />
+      <SectionHeading number="2" title="Roles & Capabilities" />
       <EntryList>
         {capabilities.map((capability, i) => (
           <EntryRow

@@ -22,7 +22,7 @@ type Props = {
 export default function LogList({ entries, controls }: Props) {
   return (
     <section className="page-container pb-16">
-      <SectionHeading title="Entries" divider={false} className="pt-8" />
+      <SectionHeading number="1" title="Entries" divider={false} className="pt-8" />
 
       {controls}
 

@@ -6,7 +6,7 @@ import type { Highlight } from "../domain/home.domain";
 export default function Highlights({ highlights }: { highlights: readonly Highlight[] }) {
   return (
     <section className="page-container pb-6">
-      <SectionHeading eyebrow="Selected work" title="A showcase of my work across three disciplines." />
+      <SectionHeading number="3" eyebrow="Selected work" title="A showcase of my work across three disciplines." />
       <EntryList>
         {highlights.map((highlight, i) => (
           <EntryRow

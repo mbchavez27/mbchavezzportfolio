@@ -10,7 +10,7 @@ export type ProjectCardItem = {
 export default function FeaturedProjects({ items }: { items: readonly ProjectCardItem[] }) {
   return (
     <section className="page-container pb-6">
-      <SectionHeading title="Featured Projects" subtitle="Things I've built." />
+      <SectionHeading number="1" title="Featured Projects" subtitle="Things I've built." />
       <FigureGrid>
         {items.map(({ project, caseStudyHref }, i) => (
           <Figure
