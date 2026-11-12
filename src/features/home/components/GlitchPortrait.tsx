@@ -1,9 +1,12 @@
 import { useEffect, useRef, useState, type PointerEvent } from "react";
 import { useReducedMotion } from "motion/react";
 
-const GLITCH_MS = 450;
+const GLITCH_MS = 650;
 const IMAGE_CLASS = "absolute inset-0 w-full h-full object-cover object-[center_70%]";
-const SCANLINES = "repeating-linear-gradient(0deg, rgba(0,0,0,0.35) 0px, rgba(0,0,0,0.35) 1px, transparent 1px, transparent 3px)";
+const SCANLINES = "repeating-linear-gradient(0deg, rgba(0,0,0,0.45) 0px, rgba(0,0,0,0.45) 1px, transparent 1px, transparent 3px)";
+// Two bright horizontal noise bars; the animation jumps them up and down via background-position.
+const NOISE_BARS =
+  "linear-gradient(transparent 0%, transparent 46%, rgba(255,255,255,0.85) 47%, rgba(255,255,255,0.85) 49%, transparent 50%, transparent 78%, rgba(255,60,60,0.7) 79%, rgba(255,60,60,0.7) 80%, transparent 81%)";
 
 type Props = {
   frontSrc: string;
@@ -13,7 +16,8 @@ type Props = {
 
 /**
  * The hero portrait. Hovering (or tapping, on touch screens) swaps to the back photo through a short
- * RGB-split, sliced, scanlined glitch, echoing the scrambling roles text. Fills its positioned parent.
+ * glitch (the old photo tearing away, RGB-split slices, a shake, a flash, noise bars and scanlines),
+ * echoing the scrambling roles text. Fills its positioned parent.
  */
 export default function GlitchPortrait({ frontSrc, backSrc, alt }: Props) {
   const prefersReducedMotion = useReducedMotion();
@@ -39,6 +43,7 @@ export default function GlitchPortrait({ frontSrc, backSrc, alt }: Props) {
   const onTap = (event: PointerEvent) => event.pointerType !== "mouse" && show(!showBack);
 
   const target = showBack ? backSrc : frontSrc;
+  const previous = showBack ? frontSrc : backSrc;
   // Instant swap under the glitch; a plain quick fade for reduced-motion visitors.
   const fade = prefersReducedMotion ? "transition-opacity duration-200" : "";
 
@@ -49,12 +54,24 @@ export default function GlitchPortrait({ frontSrc, backSrc, alt }: Props) {
       onPointerUp={onTap}
       className="absolute inset-0"
     >
-      {/* Both stay mounted so the back photo is loaded before the first hover. */}
-      <img src={frontSrc} alt={alt} className={`${IMAGE_CLASS} ${fade} ${showBack ? "opacity-0" : "opacity-100"}`} />
-      <img src={backSrc} alt="" className={`${IMAGE_CLASS} ${fade} ${showBack ? "opacity-100" : "opacity-0"}`} />
+      {/* The whole picture shakes and its colours jolt while glitching. */}
+      <div key={`photos-${glitchKey}`} className={`absolute inset-0 ${glitching ? "animate-glitch-shake" : ""}`}>
+        {/* Both stay mounted so the back photo is loaded before the first hover. */}
+        <img
+          src={frontSrc}
+          alt={alt}
+          className={`${IMAGE_CLASS} ${fade} ${glitching ? "animate-glitch-jolt" : ""} ${showBack ? "opacity-0" : "opacity-100"}`}
+        />
+        <img
+          src={backSrc}
+          alt=""
+          className={`${IMAGE_CLASS} ${fade} ${glitching ? "animate-glitch-jolt" : ""} ${showBack ? "opacity-100" : "opacity-0"}`}
+        />
+      </div>
 
       {glitching && (
         <div key={glitchKey} aria-hidden className="absolute inset-0 pointer-events-none">
+          <img src={previous} alt="" className={`${IMAGE_CLASS} animate-glitch-tear`} />
           <img
             src={target}
             alt=""
@@ -65,7 +82,12 @@ export default function GlitchPortrait({ frontSrc, backSrc, alt }: Props) {
             alt=""
             className={`${IMAGE_CLASS} mix-blend-screen animate-glitch-b [filter:sepia(1)_saturate(6)_hue-rotate(140deg)]`}
           />
+          <div
+            className="absolute inset-0 mix-blend-screen animate-glitch-bars"
+            style={{ backgroundImage: NOISE_BARS, backgroundSize: "100% 200%" }}
+          />
           <div className="absolute inset-0 animate-glitch-flicker" style={{ backgroundImage: SCANLINES }} />
+          <div className="absolute inset-0 bg-white animate-glitch-flash" />
         </div>
       )}
 
