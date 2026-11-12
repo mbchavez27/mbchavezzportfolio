@@ -1,4 +1,4 @@
-import EntryRow, { EntryList } from "@/components/molecules/EntryRow";
+import AcademicTable from "@/components/molecules/AcademicTable";
 import SectionHeading from "@/components/molecules/SectionHeading";
 import type { Capability } from "../domain/productions.domain";
 
@@ -6,16 +6,13 @@ export default function RolesCapabilities({ capabilities }: { capabilities: read
   return (
     <section className="page-container pb-16">
       <SectionHeading number="2" title="Roles & Capabilities" />
-      <EntryList>
-        {capabilities.map((capability, i) => (
-          <EntryRow
-            key={capability.label}
-            position={i}
-            meta={<span className="uppercase">{capability.label}</span>}
-            summary={capability.description}
-          />
-        ))}
-      </EntryList>
+      <AcademicTable
+        number={2}
+        caption="Production roles and responsibilities"
+        abstract="The roles I take on during live productions and what each one involves on the day of a show."
+        columns={["role", "responsibility"]}
+        rows={capabilities.map((capability) => ({ label: capability.label, value: capability.description }))}
+      />
     </section>
   );
 }
