@@ -19,7 +19,7 @@ export default function ExperienceTimeline({ entries }: { entries: readonly Posi
     <div className="relative">
       <div className="absolute left-0 top-2 bottom-0 w-px bg-zinc-200" />
 
-      <div className="flex flex-col gap-16">
+      <div className="flex flex-col gap-6">
         {entries.map((entry, i) => (
           <motion.div
             key={`${entry.role}@${entry.organization}`}
