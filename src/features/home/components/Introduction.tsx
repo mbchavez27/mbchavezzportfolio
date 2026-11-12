@@ -21,7 +21,7 @@ export default function Introduction({ portraitSrc, hoverPortraitSrc, callToActi
 
   return (
     <section className="bg-zinc-950">
-      <div className="page-container min-h-[calc(100svh-3.5rem)] lg:min-h-[calc(100svh-6rem)] flex flex-col items-center justify-center text-center gap-5 py-16 md:py-24">
+      <div className="page-container min-h-[calc(100svh-3.5rem)] flex flex-col items-center justify-center text-center gap-5 py-16 md:py-24">
         <motion.div
           {...revealOnLoad({ y: 16 })}
           onPointerUp={(event) => event.pointerType !== "mouse" && setShowHoverPortrait((shown) => !shown)}

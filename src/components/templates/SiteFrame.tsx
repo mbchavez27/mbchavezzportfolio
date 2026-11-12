@@ -14,7 +14,7 @@ export default function SiteFrame({ children }: { children: ReactNode }) {
         <div className="absolute inset-0 bg-black/40" />
       </div>
 
-      <div className="relative mx-auto max-w-6xl min-h-screen bg-white text-foreground overflow-clip lg:my-10 lg:shadow-2xl">
+      <div className="relative mx-auto max-w-6xl min-h-screen bg-white text-foreground overflow-clip lg:mb-10 lg:shadow-2xl">
         <Navbar />
         <main>{children}</main>
       </div>
