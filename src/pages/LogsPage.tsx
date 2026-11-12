@@ -9,7 +9,9 @@ export default function LogsPage() {
       <PageHero eyebrow="Logs">
         A collection of notes, reflections, <br className="hidden md:inline" />and things I've learned along the way.
       </PageHero>
-      <AccentRule />
+      <div className="page-container">
+        <AccentRule />
+      </div>
       <LogListContainer />
     </PageShell>
   );

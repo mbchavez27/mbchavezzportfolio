@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { motion } from "motion/react";
 import { Link } from "react-router";
 import Tag from "@/components/atoms/Tag";
+import { CARD_LIGHT, CARD_LIGHT_HOVER, GRID_GAP } from "@/components/atoms/surfaces";
 import { revealOnScroll } from "@/lib/motion";
 
 export type LogListEntry = {
@@ -37,10 +38,10 @@ export default function LogList({ entries, controls }: Props) {
           No logs yet. The first one is on its way.
         </p>
       ) : (
-        <ul className="flex flex-col divide-y divide-zinc-100 border-t border-zinc-100">
+        <ul className={`grid grid-cols-1 md:grid-cols-2 ${GRID_GAP}`}>
           {entries.map((entry, i) => (
-            <motion.li key={entry.slug} {...revealOnScroll({ x: -16, y: 0, delay: i * 0.08, duration: 0.5 })}>
-              <Link to={entry.href} className="group block py-8">
+            <motion.li key={entry.slug} {...revealOnScroll({ y: 20, delay: (i % 2) * 0.08, duration: 0.5 })}>
+              <Link to={entry.href} className={`group flex flex-col h-full p-6 md:p-8 ${CARD_LIGHT} ${CARD_LIGHT_HOVER}`}>
                 <p className="font-body font-light text-xs text-zinc-400 tracking-wide mb-3">
                   {entry.dateLabel}
                   {entry.draft && <span className="ml-2 text-primary uppercase tracking-widest">Draft</span>}
@@ -48,7 +49,7 @@ export default function LogList({ entries, controls }: Props) {
                 <h3 className="font-display text-xl md:text-2xl font-semibold text-zinc-900 group-hover:text-primary transition-colors duration-200 mb-2">
                   {entry.title}
                 </h3>
-                <p className="font-body font-light text-sm text-zinc-500 leading-relaxed mb-4">{entry.summary}</p>
+                <p className="font-body font-light text-sm text-zinc-500 leading-relaxed mb-5 grow">{entry.summary}</p>
                 {entry.tags.length > 0 && (
                   <div className="flex flex-wrap gap-2">
                     {entry.tags.map((tag) => (
