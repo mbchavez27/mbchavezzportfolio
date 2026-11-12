@@ -1,30 +1,18 @@
-import EntryRow, { EntryList } from "@/components/molecules/EntryRow";
+import AcademicTable from "@/components/molecules/AcademicTable";
 import SectionHeading from "@/components/molecules/SectionHeading";
 import type { StackCategory } from "../domain/projects.domain";
 
 export default function TechnicalStack({ categories }: { categories: readonly StackCategory[] }) {
   return (
     <section className="page-container pb-16">
-      <SectionHeading
-        number="2"
-        title="The technologies and tools I use to build software systems, intelligent applications, and data-driven solutions."
+      <SectionHeading number="2" title="Technical Stack" />
+      <AcademicTable
+        number={2}
+        caption="Technical stack by category"
+        abstract="The technologies and tools I use to build software systems, intelligent applications, and data-driven solutions, grouped by where they sit in the stack."
+        columns={["category", "tools"]}
+        rows={categories.map((category) => ({ label: category.label, value: category.items.join(", ") }))}
       />
-      <EntryList>
-        {categories.map((category, i) => (
-          <EntryRow key={category.label} position={i} meta={<span className="uppercase">{category.label}</span>}>
-            <div className="flex flex-wrap gap-2">
-              {category.items.map((item) => (
-                <span
-                  key={item}
-                  className="font-body font-light text-sm text-zinc-600 border border-primary/15 rounded-full px-3 py-0.5 hover:border-primary hover:text-zinc-900 transition-colors duration-200"
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
-          </EntryRow>
-        ))}
-      </EntryList>
     </section>
   );
 }
