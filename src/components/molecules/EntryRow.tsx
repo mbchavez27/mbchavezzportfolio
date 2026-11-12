@@ -58,7 +58,11 @@ export default function EntryRow({ meta, title, to, href, subtitle, summary, thu
         <div className="min-w-0 flex-1">
           {heading && <h3>{heading}</h3>}
           {subtitle && <p className="font-body font-light text-sm text-zinc-500 mt-1">{subtitle}</p>}
-          {summary && <p className="font-body font-light text-sm text-zinc-500 leading-relaxed mt-2">{summary}</p>}
+          {summary && (
+            <p className={`font-body font-light text-sm text-zinc-500 leading-relaxed ${heading || subtitle ? "mt-2" : ""}`}>
+              {summary}
+            </p>
+          )}
           {children && <div className={heading || subtitle || summary ? "mt-3" : ""}>{children}</div>}
         </div>
         {thumbnail && (
