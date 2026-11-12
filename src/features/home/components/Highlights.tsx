@@ -31,7 +31,6 @@ export default function Highlights({ highlights }: { highlights: readonly Highli
           const Icon = DISCIPLINE_ICONS[i] ?? Sparkles;
           const metric = `${highlight.metric.value} ${highlight.metric.label.toLowerCase()}`;
 
-
           return (
             <motion.li
               key={highlight.title}
