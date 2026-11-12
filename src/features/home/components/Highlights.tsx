@@ -20,7 +20,7 @@ function Tags({ tags }: { tags: readonly string[] }) {
   return <p className="font-body font-light text-xs text-zinc-400 mt-1.5">{tags.join(" · ")}</p>;
 }
 
-/** Selected highlights as a numbered, paper-style contributions list; the first is featured. */
+/** Selected highlights as a numbered, paper-style contributions list with a discipline icon per item. */
 export default function Highlights({ highlights }: { highlights: readonly Highlight[] }) {
   return (
     <section className="page-container pb-6">
@@ -31,28 +31,6 @@ export default function Highlights({ highlights }: { highlights: readonly Highli
           const Icon = DISCIPLINE_ICONS[i] ?? Sparkles;
           const metric = `${highlight.metric.value} ${highlight.metric.label.toLowerCase()}`;
 
-          if (i === 0) {
-            return (
-              <motion.li
-                key={highlight.title}
-                {...revealOnScroll({ y: 10, duration: 0.45 })}
-                className="grid grid-cols-[1.75rem_1fr] mb-8!"
-              >
-                <span className="font-display font-semibold text-primary tabular-nums md:text-lg">1.</span>
-                <div className="border-l-2 border-primary pl-5 py-1">
-                  <Category highlight={highlight} Icon={Icon} />
-                  <p className="font-display text-xl md:text-2xl font-semibold text-zinc-900">{metric}</p>
-                  <p className="font-display text-base md:text-lg font-semibold text-zinc-900 leading-snug mt-1">
-                    {highlight.title}
-                  </p>
-                  <p className="font-body font-light text-[15px] text-zinc-600 leading-relaxed mt-1.5">
-                    {highlight.description}
-                  </p>
-                  <Tags tags={highlight.tags} />
-                </div>
-              </motion.li>
-            );
-          }
 
           return (
             <motion.li
