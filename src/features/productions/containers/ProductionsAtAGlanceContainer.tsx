@@ -5,7 +5,7 @@ export default function ProductionsAtAGlanceContainer() {
   return (
     <AtAGlance
       title="Production Highlights"
-      abstract="A snapshot of my live production work: the events I have supported and how long I have been doing it, along with the technical disciplines I cover and the kinds of events they serve."
+      summary="A snapshot of my live production work: the events I have supported and how long I have been doing it, along with the technical disciplines I cover and the kinds of events they serve."
       stats={productionStats}
       tagGroups={productionTagGroups}
     />

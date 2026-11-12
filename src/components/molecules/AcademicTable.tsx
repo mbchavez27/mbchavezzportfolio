@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { motion } from "motion/react";
 import { revealOnScroll } from "@/lib/motion";
-import Abstract from "@/components/atoms/Abstract";
+import Summary from "@/components/atoms/Summary";
 
 export type TableRow = { readonly label: string; readonly value: ReactNode };
 
@@ -9,8 +9,8 @@ type Props = {
   /** The table's number on its page ("Table 2."). */
   number: number;
   caption: string;
-  /** A short paragraph describing what the table summarises, set above it like a paper's abstract. */
-  abstract?: string;
+  /** A short paragraph describing what the table summarises, set above it. */
+  summary?: string;
   /** Header labels for the label and value columns, shown in small caps. */
   columns: readonly [string, string];
   rows: readonly TableRow[];
@@ -23,13 +23,13 @@ const CELL = "py-1.5 align-top";
 const HEADER = "pb-1.5 pt-2 font-normal text-zinc-500 [font-variant:small-caps] tracking-wide";
 
 /** A captioned, booktabs-style table: thick top and bottom rules, a thin rule under the header. */
-export default function AcademicTable({ number, caption, abstract, columns, rows, valueAlign = "left", breakBefore }: Props) {
+export default function AcademicTable({ number, caption, summary, columns, rows, valueAlign = "left", breakBefore }: Props) {
   const align = valueAlign === "right" ? "text-right" : "text-left";
   const lastIndex = rows.length - 1;
 
   return (
     <motion.div {...revealOnScroll()}>
-      {abstract && <Abstract>{abstract}</Abstract>}
+      {summary && <Summary>{summary}</Summary>}
 
       <table className="w-full border-collapse font-body text-sm">
         <caption className="caption-top text-left pb-2 text-zinc-700">
