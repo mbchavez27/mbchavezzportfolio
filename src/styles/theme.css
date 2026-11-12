@@ -140,6 +140,8 @@
 
   html {
     font-size: var(--font-size);
+    /* Full-bleed bands reach 100vw (which includes the scrollbar); clip it without breaking sticky. */
+    overflow-x: clip;
   }
 
   h1 {

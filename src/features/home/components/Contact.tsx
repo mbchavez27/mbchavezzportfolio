@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
+import FullBleedBand from "@/components/molecules/FullBleedBand";
 import { revealOnScroll } from "@/lib/motion";
 import type { ContactLink } from "../domain/home.domain";
 
@@ -7,7 +8,7 @@ export type ContactItem = ContactLink & { readonly opensInNewTab: boolean };
 
 export default function Contact({ items }: { items: readonly ContactItem[] }) {
   return (
-    <section className="bg-zinc-950 py-32">
+    <FullBleedBand className="py-32">
       <div className="page-container">
         <motion.div {...revealOnScroll({ y: 30 })} className="max-w-2xl">
           <p className="font-body font-light text-xs text-zinc-600 tracking-[0.2em] uppercase mb-6">Contact</p>
@@ -47,6 +48,6 @@ export default function Contact({ items }: { items: readonly ContactItem[] }) {
           </div>
         </motion.div>
       </div>
-    </section>
+    </FullBleedBand>
   );
 }
