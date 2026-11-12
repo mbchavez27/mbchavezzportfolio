@@ -22,7 +22,7 @@ type Props = {
 
 export default function LogList({ entries, controls }: Props) {
   return (
-    <section className="px-6 sm:px-10 md:px-24 lg:px-32 pt-16 pb-32">
+    <section className="page-container pt-16 pb-32">
       <motion.h2
         {...revealOnScroll()}
         className="font-display text-2xl md:text-3xl font-semibold text-zinc-900 mb-6"
