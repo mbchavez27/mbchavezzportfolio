@@ -10,7 +10,7 @@ export default function SiteFrame({ children }: { children: ReactNode }) {
   return (
     <>
       <div aria-hidden className="fixed inset-0 -z-10 bg-zinc-900">
-        <img src={cityNight} alt="" className="absolute inset-0 w-full h-full object-cover object-[center_75%]" />
+        <img src={cityNight} alt="" className="absolute inset-0 w-full h-full object-cover object-[center_70%]" />
         <div className="absolute inset-0 bg-black/40" />
       </div>
 
