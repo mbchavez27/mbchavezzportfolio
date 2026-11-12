@@ -20,19 +20,6 @@ export default function SiteFrame({ children }: { children: ReactNode }) {
       <div className="relative mx-auto max-w-6xl min-h-screen bg-white text-foreground lg:mb-10 lg:shadow-2xl">
         <Navbar />
         <main>{children}</main>
-        <footer className="bg-zinc-950 border-t border-zinc-800 py-6">
-          <p className="page-container font-body font-light text-xs text-zinc-600">
-            Background photo by James Lee on{" "}
-            <a
-              href="https://unsplash.com/photos/YpDkIh137ws"
-              target="_blank"
-              rel="noreferrer"
-              className="underline underline-offset-4 hover:text-zinc-300 transition-colors duration-200"
-            >
-              Unsplash
-            </a>
-          </p>
-        </footer>
       </div>
     </FullBleedContext>
   );
