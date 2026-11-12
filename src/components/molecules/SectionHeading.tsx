@@ -8,13 +8,15 @@ type Props = {
   subtitle?: ReactNode;
   /** Heading level; sections use h2, groups inside a section (e.g. a venue) use h3. */
   as?: "h2" | "h3";
+  /** Draw the hairline above; off for a section that directly follows a dark band. */
+  divider?: boolean;
   className?: string;
 };
 
 /** The quiet section header used across the site: a faint maroon hairline, an optional eyebrow, a title. */
-export default function SectionHeading({ title, eyebrow, subtitle, as: Heading = "h2", className = "" }: Props) {
+export default function SectionHeading({ title, eyebrow, subtitle, as: Heading = "h2", divider = true, className = "" }: Props) {
   return (
-    <motion.div {...revealOnScroll()} className={`border-t border-primary/15 pt-14 pb-6 ${className}`}>
+    <motion.div {...revealOnScroll()} className={`${divider ? "border-t border-primary/15" : ""} pt-14 pb-6 ${className}`}>
       {eyebrow && (
         <p className="font-body font-light text-xs text-zinc-400 tracking-[0.2em] uppercase mb-3">{eyebrow}</p>
       )}
