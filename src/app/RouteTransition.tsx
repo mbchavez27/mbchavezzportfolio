@@ -47,7 +47,7 @@ export default function RouteTransition() {
           initial={{ opacity: 1 }}
           animate={{ opacity: [1, 1, 0], transitionEnd: { display: "none" } }}
           transition={{ duration: 1, times: [0, 0.55, 1], ease: "easeInOut" }}
-          className="fixed inset-x-0 bottom-0 top-14 mx-auto max-w-6xl z-40 flex items-center justify-center bg-black pointer-events-none"
+          className="fixed inset-x-0 bottom-0 top-14 mx-auto max-w-3xl z-40 flex items-center justify-center bg-black pointer-events-none"
         >
           <motion.span
             initial={{ opacity: 0, y: 10 }}
@@ -66,7 +66,7 @@ export default function RouteTransition() {
         initial={{ scaleX: 0, opacity: 1 }}
         animate={{ scaleX: 1, opacity: [1, 1, 0] }}
         transition={{ scaleX: { duration: 0.6, ease: "easeInOut" }, opacity: { duration: 0.9, times: [0, 0.7, 1] } }}
-        className="fixed inset-x-0 top-14 mx-auto max-w-6xl z-[60] h-px bg-primary origin-left pointer-events-none"
+        className="fixed inset-x-0 top-14 mx-auto max-w-3xl z-[60] h-px bg-primary origin-left pointer-events-none"
       />
     </>
   );
