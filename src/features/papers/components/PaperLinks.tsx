@@ -1,31 +1,31 @@
-import { BookOpen, ExternalLink, FileText, Link as LinkIcon } from "lucide-react";
 import type { PaperLink } from "../domain/papers.domain";
 
-const linkDisplay = {
-  paper: { label: "View Paper", Icon: ExternalLink },
-  conference: { label: "Conference", Icon: BookOpen },
-  doi: { label: "DOI", Icon: LinkIcon },
-  pdf: { label: "PDF", Icon: FileText },
-} as const;
+const LINK_LABEL: Record<PaperLink["kind"], string> = {
+  paper: "Paper",
+  conference: "Conference",
+  doi: "DOI",
+  pdf: "PDF",
+};
 
+/** Bracketed reference links, e.g. [Paper] [DOI]; a muted note until the paper is published. */
 export default function PaperLinks({ links }: { links: readonly PaperLink[] }) {
+  if (links.length === 0) {
+    return <span className="font-body font-light text-xs text-zinc-400">[links upon publication]</span>;
+  }
+
   return (
-    <div className="flex flex-wrap gap-x-4 gap-y-2">
-      {links.map((link) => {
-        const { label, Icon } = linkDisplay[link.kind];
-        return (
-          <a
-            key={link.kind}
-            href={link.href}
-            target="_blank"
-            rel="noreferrer"
-            className="font-body inline-flex items-center gap-1 text-xs text-primary underline-offset-4 hover:underline"
-          >
-            <Icon size={12} />
-            {label}
-          </a>
-        );
-      })}
-    </div>
+    <span className="flex flex-wrap gap-x-3 gap-y-1">
+      {links.map((link) => (
+        <a
+          key={link.kind}
+          href={link.href}
+          target="_blank"
+          rel="noreferrer"
+          className="font-body text-xs text-primary underline-offset-4 hover:underline"
+        >
+          [{LINK_LABEL[link.kind]}]
+        </a>
+      ))}
+    </span>
   );
 }

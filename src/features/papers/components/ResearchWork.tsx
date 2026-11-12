@@ -1,6 +1,6 @@
-import Tag from "@/components/atoms/Tag";
 import EntryRow, { EntryList } from "@/components/molecules/EntryRow";
 import SectionHeading from "@/components/molecules/SectionHeading";
+import { splitAuthors, venueYear } from "../domain/citation";
 import type { Paper, VenueGroup } from "../domain/papers.domain";
 import PaperLinks from "./PaperLinks";
 
@@ -8,6 +8,20 @@ const PRESENTATION_LABEL: Record<Paper["presentation"], string> = {
   oral: "Oral",
   "full-paper": "Full paper",
 };
+
+/** One paper as a reference: Authors (Year). Title. In Venue. */
+function Citation({ paper }: { paper: Paper }) {
+  const { before, owner, after } = splitAuthors(paper.authors);
+  return (
+    <p className="font-body text-sm text-zinc-700 leading-relaxed">
+      {before}
+      {owner && <strong className="font-semibold text-zinc-900">{owner}</strong>}
+      {after} ({venueYear(paper.venue.name)}).{" "}
+      <span className="font-display font-semibold text-zinc-900">{paper.title}</span>. In{" "}
+      <em>{paper.venue.name}</em>.
+    </p>
+  );
+}
 
 export default function ResearchWork({ venueGroups }: { venueGroups: readonly VenueGroup[] }) {
   return (
@@ -23,21 +37,12 @@ export default function ResearchWork({ venueGroups }: { venueGroups: readonly Ve
                 key={paper.title}
                 position={i}
                 meta={<span className="uppercase">{PRESENTATION_LABEL[paper.presentation]}</span>}
-                title={paper.title}
-                subtitle={<span className="italic text-xs text-zinc-400">{paper.authors}</span>}
-                summary={paper.description}
               >
-                <div className="flex flex-wrap items-center gap-2">
-                  {paper.areas.map((area) => (
-                    <Tag key={area} label={area} variant="light" />
-                  ))}
-                </div>
-                <div className="mt-3">
-                  {paper.links.length > 0 ? (
-                    <PaperLinks links={paper.links} />
-                  ) : (
-                    <span className="font-body font-light text-xs text-zinc-400">Links available upon publication</span>
-                  )}
+                <Citation paper={paper} />
+                <p className="font-body font-light text-sm text-zinc-500 leading-relaxed mt-1.5">{paper.description}</p>
+                <p className="font-body font-light text-xs text-zinc-400 mt-2">Areas: {paper.areas.join(" · ")}</p>
+                <div className="mt-2">
+                  <PaperLinks links={paper.links} />
                 </div>
               </EntryRow>
             ))}
