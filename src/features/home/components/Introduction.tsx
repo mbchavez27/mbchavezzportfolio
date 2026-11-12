@@ -21,7 +21,7 @@ export default function Introduction({ portraitSrc, hoverPortraitSrc, callToActi
   const [showHoverPortrait, setShowHoverPortrait] = useState(false);
 
   return (
-    <section className="pt-14 min-h-screen grid grid-cols-1 md:grid-cols-2">
+    <section className="min-h-screen grid grid-cols-1 md:grid-cols-2">
       <div
         onPointerUp={(event) => event.pointerType !== "mouse" && setShowHoverPortrait((shown) => !shown)}
         className="group relative min-h-64 md:min-h-full bg-zinc-900 overflow-hidden"

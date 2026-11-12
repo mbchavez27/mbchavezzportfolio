@@ -1,4 +1,4 @@
-import Navbar from "@/components/organisms/Navbar";
+import SiteFrame from "@/components/templates/SiteFrame";
 import { CurrentRolesContainer } from "@/features/experience";
 import {
   ContactContainer,
@@ -10,16 +10,13 @@ import { LatestLogsContainer } from "@/features/logs";
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <Navbar />
-      <main>
-        <IntroductionContainer />
-        <CurrentRolesContainer />
-        <HatSelectorContainer />
-        <HighlightsContainer />
-        <LatestLogsContainer />
-        <ContactContainer />
-      </main>
-    </div>
+    <SiteFrame>
+      <IntroductionContainer />
+      <CurrentRolesContainer />
+      <HatSelectorContainer />
+      <HighlightsContainer />
+      <LatestLogsContainer />
+      <ContactContainer />
+    </SiteFrame>
   );
 }

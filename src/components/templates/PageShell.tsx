@@ -1,12 +1,11 @@
 import type { ReactNode } from "react";
-import Navbar from "@/components/organisms/Navbar";
+import SiteFrame from "./SiteFrame";
 
-/** Layout for the content pages: fixed navbar plus main offset below it. */
+/** Layout for the content pages: the site frame with breathing room below the navbar. */
 export default function PageShell({ children }: { children: ReactNode }) {
   return (
-    <div className="min-h-screen bg-white text-foreground">
-      <Navbar />
-      <main className="pt-28">{children}</main>
-    </div>
+    <SiteFrame>
+      <div className="pt-14">{children}</div>
+    </SiteFrame>
   );
 }
