@@ -15,7 +15,7 @@ export default function SiteFrame({ children }: { children: ReactNode }) {
   const bottom = useMotionValue(0);
   const prefersReducedMotion = useReducedMotion();
   const rawRedAmount = useTransform([top, bottom], ([t = 0, b = 0]: number[]) => 1 - Math.max(t, b));
-  const smoothRedAmount = useSpring(rawRedAmount, { stiffness: 220, damping: 40, restDelta: 0.001 });
+  const smoothRedAmount = useSpring(rawRedAmount, { stiffness: 320, damping: 42, mass: 0.6, restDelta: 0.001 });
   const redAmount = prefersReducedMotion ? rawRedAmount : smoothRedAmount;
   const leftCurtainX = useTransform(redAmount, [0, 1], ["-100%", "0%"]);
   const rightCurtainX = useTransform(redAmount, [0, 1], ["100%", "0%"]);
@@ -24,11 +24,11 @@ export default function SiteFrame({ children }: { children: ReactNode }) {
     <BackdropContext value={{ top, bottom }}>
       <div aria-hidden className="fixed inset-0 -z-10 overflow-hidden bg-zinc-950">
         {/* Each curtain shows its own half of the full-screen image and carries it as it slides. */}
-        <motion.div style={{ x: leftCurtainX }} className="absolute inset-y-0 left-0 w-1/2 overflow-hidden">
+        <motion.div style={{ x: leftCurtainX }} className="absolute inset-y-0 left-0 w-1/2 overflow-hidden will-change-transform">
           <img src={redGradient} alt="" className="absolute inset-y-0 left-0 w-screen h-full max-w-none object-cover" />
           <div className="absolute inset-0 bg-black/40" />
         </motion.div>
-        <motion.div style={{ x: rightCurtainX }} className="absolute inset-y-0 right-0 w-1/2 overflow-hidden">
+        <motion.div style={{ x: rightCurtainX }} className="absolute inset-y-0 right-0 w-1/2 overflow-hidden will-change-transform">
           <img src={redGradient} alt="" className="absolute inset-y-0 right-0 w-screen h-full max-w-none object-cover" />
           <div className="absolute inset-0 bg-black/40" />
         </motion.div>

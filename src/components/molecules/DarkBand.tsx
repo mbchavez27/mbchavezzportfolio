@@ -1,5 +1,5 @@
 import { useEffect, useRef, type ReactNode } from "react";
-import { useMotionValueEvent, useScroll, useTransform } from "motion/react";
+import { easeInOut, useMotionValueEvent, useScroll, useTransform } from "motion/react";
 import { useBackdropDarkness } from "@/lib/backdrop";
 
 /**
@@ -29,7 +29,13 @@ export default function DarkBand({ anchor, className = "", children }: Props) {
   const darkness = useBackdropDarkness()[anchor];
 
   const { scrollYProgress } = useScroll({ target: ref, offset: [...OFFSETS[anchor]] });
-  const amount = useTransform(scrollYProgress, [0, 1], anchor === "top" ? [1, 0] : [0, 1]);
+  // Finish within the first ~40% of the band's scroll so the change feels quick, eased at both ends.
+  const amount = useTransform(
+    scrollYProgress,
+    [0, 0.4],
+    anchor === "top" ? [1, 0] : [0, 1],
+    { ease: easeInOut },
+  );
 
   useMotionValueEvent(amount, "change", (value) => darkness.set(value));
 
