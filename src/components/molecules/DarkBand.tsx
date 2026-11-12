@@ -29,10 +29,10 @@ export default function DarkBand({ anchor, className = "", children }: Props) {
   const darkness = useBackdropDarkness()[anchor];
 
   const { scrollYProgress } = useScroll({ target: ref, offset: [...OFFSETS[anchor]] });
-  // Finish within the first ~40% of the band's scroll so the change feels quick, eased at both ends.
+  // Finish within the first ~25% of the band's scroll so the change feels quick, eased at both ends.
   const amount = useTransform(
     scrollYProgress,
-    [0, 0.4],
+    [0, 0.25],
     anchor === "top" ? [1, 0] : [0, 1],
     { ease: easeInOut },
   );

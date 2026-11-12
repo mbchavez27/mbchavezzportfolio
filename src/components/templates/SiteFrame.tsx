@@ -15,7 +15,7 @@ export default function SiteFrame({ children }: { children: ReactNode }) {
   const bottom = useMotionValue(0);
   const prefersReducedMotion = useReducedMotion();
   const rawRedAmount = useTransform([top, bottom], ([t = 0, b = 0]: number[]) => 1 - Math.max(t, b));
-  const smoothRedAmount = useSpring(rawRedAmount, { stiffness: 320, damping: 42, mass: 0.6, restDelta: 0.001 });
+  const smoothRedAmount = useSpring(rawRedAmount, { stiffness: 420, damping: 46, mass: 0.5, restDelta: 0.001 });
   const redAmount = prefersReducedMotion ? rawRedAmount : smoothRedAmount;
   const leftCurtainX = useTransform(redAmount, [0, 1], ["-100%", "0%"]);
   const rightCurtainX = useTransform(redAmount, [0, 1], ["100%", "0%"]);
