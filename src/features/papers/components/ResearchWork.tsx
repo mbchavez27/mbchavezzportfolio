@@ -26,7 +26,7 @@ function Citation({ paper }: { paper: Paper }) {
 export default function ResearchWork({ venueGroups }: { venueGroups: readonly VenueGroup[] }) {
   return (
     <div className="page-container">
-      <SectionHeading number="1" eyebrow="Featured Contributions" title="Research Work" />
+      <SectionHeading number="1" title="Research Work" />
 
       {venueGroups.map(({ venue, papers }, v) => (
         <section key={venue.name}>

@@ -7,7 +7,6 @@ export default function TechnicalStack({ categories }: { categories: readonly St
     <section className="page-container pb-16">
       <SectionHeading
         number="2"
-        eyebrow="Technical Stack"
         title="The technologies and tools I use to build software systems, intelligent applications, and data-driven solutions."
       />
       <EntryList>
