@@ -4,15 +4,18 @@ import { Link } from "react-router";
 import NavAnchor from "@/components/atoms/NavAnchor";
 import NavDropdown from "@/components/molecules/NavDropdown";
 import { navItems } from "@/config/links";
+import { bleedLayerClass, useFullBleed } from "@/lib/full-bleed";
 
 const MOBILE_MENU_ID = "mobile-menu";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const closeMenu = () => setIsMenuOpen(false);
+  const { navbarExpanded } = useFullBleed();
 
   return (
-    <header className="sticky top-0 z-50 bg-black border-b border-zinc-800">
+    <header className="sticky top-0 z-50 isolate">
+      <div aria-hidden className={`${bleedLayerClass(navbarExpanded)} bg-black border-b border-zinc-800`} />
       <div className="page-container h-14 flex items-center justify-between">
         <Link
           to="/"
