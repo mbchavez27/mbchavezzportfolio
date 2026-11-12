@@ -7,7 +7,8 @@ import { revealOnScroll } from "@/lib/motion";
 type Props = {
   /** The left column: a date, venue, category or status. Stacks above the content on mobile. */
   meta: ReactNode;
-  title: ReactNode;
+  /** Optional: rows like a skills category show only meta and children. */
+  title?: ReactNode;
   /** Internal route the title links to. */
   to?: string;
   /** External URL the title links to (opens in a new tab). */
@@ -43,9 +44,9 @@ export default function EntryRow({ meta, title, to, href, subtitle, summary, thu
       {title}
       <ArrowUpRight size={14} className={arrowClass} />
     </a>
-  ) : (
+  ) : title ? (
     <span className={TITLE_CLASS}>{title}</span>
-  );
+  ) : null;
 
   return (
     <motion.li
@@ -55,10 +56,10 @@ export default function EntryRow({ meta, title, to, href, subtitle, summary, thu
       <div className="font-body font-light text-xs text-zinc-400 tracking-wide sm:pt-1">{meta}</div>
       <div className="flex gap-5">
         <div className="min-w-0 flex-1">
-          <h3>{heading}</h3>
+          {heading && <h3>{heading}</h3>}
           {subtitle && <p className="font-body font-light text-sm text-zinc-500 mt-1">{subtitle}</p>}
           {summary && <p className="font-body font-light text-sm text-zinc-500 leading-relaxed mt-2">{summary}</p>}
-          {children && <div className="mt-3">{children}</div>}
+          {children && <div className={heading || subtitle || summary ? "mt-3" : ""}>{children}</div>}
         </div>
         {thumbnail && (
           <img
