@@ -20,10 +20,13 @@ export default function SiteFrame({ children }: { children: ReactNode }) {
   const rightCurtainX = useTransform(redAmount, [0, 1], ["100%", "0%"]);
   // The column's shadow only reads against the red curtains; on the black backdrop it shows as a halo.
   const shadowColor = useTransform(redAmount, (value) => `rgb(0 0 0 / ${0.25 * value})`);
+  const navDividerOpacity = useTransform(redAmount, (value) => 1 - value);
 
   return (
     <BackdropContext value={darkness}>
       <div aria-hidden className="fixed inset-0 -z-10 overflow-hidden bg-zinc-950">
+        {/* The navbar divider, carried out to the screen edges on the black backdrop; the curtains cover it. */}
+        <div className="absolute inset-x-0 top-14 h-px bg-zinc-800" />
         {/* Each curtain shows its own half of the full-screen image and carries it as it slides. */}
         <motion.div style={{ x: leftCurtainX }} className="absolute inset-y-0 left-0 w-1/2 overflow-hidden will-change-transform">
           <img src={redGradient} alt="" className="absolute inset-y-0 left-0 w-screen h-full max-w-none object-cover" />
@@ -39,7 +42,7 @@ export default function SiteFrame({ children }: { children: ReactNode }) {
         style={{ "--tw-shadow-color": shadowColor } as MotionStyle}
         className="relative mx-auto max-w-6xl min-h-screen bg-white text-foreground overflow-clip lg:shadow-2xl"
       >
-        <Navbar />
+        <Navbar dividerOpacity={navDividerOpacity} />
         <main>{children}</main>
       </motion.div>
     </BackdropContext>

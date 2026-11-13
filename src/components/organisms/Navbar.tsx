@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { motion, type MotionValue } from "motion/react";
 import { Link } from "react-router";
 import NavAnchor from "@/components/atoms/NavAnchor";
 import NavDropdown from "@/components/molecules/NavDropdown";
@@ -7,12 +8,18 @@ import { navItems } from "@/config/links";
 
 const MOBILE_MENU_ID = "mobile-menu";
 
-export default function Navbar() {
+type Props = {
+  /** How visible the bottom divider is: 1 on the black home hero, 0 once the red backdrop is in. */
+  dividerOpacity: MotionValue<number>;
+};
+
+export default function Navbar({ dividerOpacity }: Props) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
     <header className="sticky top-0 z-50 bg-zinc-950">
+      <motion.div aria-hidden style={{ opacity: dividerOpacity }} className="absolute inset-x-0 -bottom-px h-px bg-zinc-800" />
       <div className="page-container h-14 flex items-center justify-between">
         <Link
           to="/"
