@@ -31,5 +31,12 @@
     "typescript": "^7.0.2",
     "vite": "^8.3.5",
     "wrangler": "^4.154.0"
+  },
+  "overrides": {
+    "postcss-selector-parser": "^6.1.5"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true,
+    "workerd@1.20261023.1": true
   }
 }
