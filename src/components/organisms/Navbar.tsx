@@ -12,7 +12,7 @@ export default function Navbar() {
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-black border-b border-zinc-800">
+    <header className="sticky top-0 z-50 bg-zinc-950 border-b border-zinc-800">
       <div className="page-container h-14 flex items-center justify-between">
         <Link
           to="/"
@@ -53,7 +53,7 @@ export default function Navbar() {
         <nav
           id={MOBILE_MENU_ID}
           aria-label="Main"
-          className="md:hidden border-t border-zinc-800 bg-black px-6 py-4 flex flex-col gap-4"
+          className="md:hidden border-t border-zinc-800 bg-zinc-950 px-6 py-4 flex flex-col gap-4"
         >
           {navItems.map((item) =>
             item.kind === "group" ? (

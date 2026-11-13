@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { motion, useMotionValue, useReducedMotion, useSpring, useTransform } from "motion/react";
+import { motion, useMotionValue, useReducedMotion, useSpring, useTransform, type MotionStyle } from "motion/react";
 import redGradient from "@/assets/background/red-gradient.jpg";
 import Navbar from "@/components/organisms/Navbar";
 import { BackdropContext } from "@/lib/backdrop";
@@ -18,6 +18,8 @@ export default function SiteFrame({ children }: { children: ReactNode }) {
   const redAmount = prefersReducedMotion ? rawRedAmount : smoothRedAmount;
   const leftCurtainX = useTransform(redAmount, [0, 1], ["-100%", "0%"]);
   const rightCurtainX = useTransform(redAmount, [0, 1], ["100%", "0%"]);
+  // The column's shadow only reads against the red curtains; on the black backdrop it shows as a halo.
+  const shadowColor = useTransform(redAmount, (value) => `rgb(0 0 0 / ${0.25 * value})`);
 
   return (
     <BackdropContext value={darkness}>
@@ -33,10 +35,13 @@ export default function SiteFrame({ children }: { children: ReactNode }) {
         </motion.div>
       </div>
 
-      <div className="relative mx-auto max-w-6xl min-h-screen bg-white text-foreground overflow-clip lg:shadow-2xl">
+      <motion.div
+        style={{ "--tw-shadow-color": shadowColor } as MotionStyle}
+        className="relative mx-auto max-w-6xl min-h-screen bg-white text-foreground overflow-clip lg:shadow-2xl"
+      >
         <Navbar />
         <main>{children}</main>
-      </div>
+      </motion.div>
     </BackdropContext>
   );
 }
