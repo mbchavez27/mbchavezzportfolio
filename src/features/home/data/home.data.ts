@@ -42,33 +42,29 @@ export const otherHats: readonly Hat[] = [
   },
 ];
 
-/** The research metric is derived from the papers feature, so it is added by HighlightsContainer. */
-export const researchHighlight: Omit<Highlight, "metric"> = {
-  category: "Publications & Conference Presentations",
-  title: "A Machine Proposed Human-Validated Taglish-English Parallel Corpus for E-Commerce Alignment Analysis.",
-  description:
-    "Chavez, M.B., Lee, H., Sadiarin Jr., E., & Gonda, R. — Accepted for Oral Presentation at AILRIC 2026. Research on building a machine-proposed, human-validated parallel corpus for Taglish-English e-commerce text alignment.",
-  tags: ["AILRIC 2026", "Corpus Linguistics", "NLP", "Taglish"],
-};
-
-export const otherHighlights: readonly Highlight[] = [
-  {
-    category: "Software Projects",
-    title: "LEAP 2025 Registration Platform.",
-    description:
-      "Led frontend development of a high-traffic registration platform in Next.js and TypeScript serving 22,000+ DLSU students — delivering a scalable, secure, and mobile-first enrollment experience under tight timelines.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Apr–Jun 2025"],
-    metric: { value: "29k+", label: "Students Served" },
-  },
-  {
-    category: "Production Experiences",
-    title: "Animo Christmas — Live Broadcast Switcher.",
-    description:
-      "Operated live camera switching and broadcast output to the campus big screen for DLSU's Animo Christmas event, watched by at least 2,000 students on-site.",
-    tags: ["Live Switching", "Broadcast", "Camera", "2k+ Audience"],
-    metric: { value: "5+", label: "Events Produced" },
-  },
-];
+/** The research metric is the accepted-paper count from the papers feature, so HighlightsContainer supplies it. */
+export function selectedWork(acceptedPapers: number): readonly Highlight[] {
+  return [
+    {
+      hat: "AI Researcher",
+      metric: { value: String(acceptedPapers), label: acceptedPapers === 1 ? "accepted paper" : "accepted papers" },
+      title: "A Machine-Proposed, Human-Validated Taglish–English Parallel Corpus for E-Commerce Alignment Analysis.",
+      description: "Chavez, M.B., Lee, H., Sadiarin Jr., E., & Gonda, R. Oral presentation, AILRIC 2026.",
+    },
+    {
+      hat: "Software Engineer",
+      metric: { value: "22,000+", label: "students served" },
+      title: "LEAP 2025 Registration Platform.",
+      description: "Led frontend development in Next.js and TypeScript for DLSU student registration, 2025.",
+    },
+    {
+      hat: "Technical Operator",
+      metric: { value: "5+", label: "events produced" },
+      title: "Animo Christmas Live Broadcast.",
+      description: "Live camera switching to the campus big screen for 2,000+ students, DLSU.",
+    },
+  ];
+}
 
 const github: ContactLink = { label: "GitHub", value: "github.com/mbchavezz", href: profileLinks.github, Icon: Github };
 const linkedin: ContactLink = {
