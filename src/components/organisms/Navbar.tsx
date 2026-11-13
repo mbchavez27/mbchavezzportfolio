@@ -12,7 +12,7 @@ export default function Navbar() {
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-zinc-950 border-b border-zinc-800">
+    <header className="sticky top-0 z-50 bg-zinc-950">
       <div className="page-container h-14 flex items-center justify-between">
         <Link
           to="/"
