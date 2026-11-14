@@ -8,6 +8,8 @@ import RotatingRoles from "./RotatingRoles";
 import type { CallToAction, ContactLink } from "../domain/home.domain";
 
 const BIRTH_DATE = new Date(2005, 3, 23); // April 23, 2005 (months are 0-based)
+/** Worked out once when the page loads, so every render shows the same age. */
+const AGE = ageOn(BIRTH_DATE, new Date());
 
 type Props = {
   portraitSrc: string;
@@ -31,7 +33,7 @@ export default function Introduction({ portraitSrc, hoverPortraitSrc, callToActi
           {...revealOnLoad({ y: 16, delay: 0.2 })}
           className="font-body font-light text-zinc-500 text-sm md:text-base tracking-wide -mb-2"
         >
-          Est. {BIRTH_DATE.getFullYear()} &middot; {ageOn(BIRTH_DATE, new Date())} years in
+          Est. {BIRTH_DATE.getFullYear()} &middot; {AGE} years in
         </motion.p>
 
         <motion.h1

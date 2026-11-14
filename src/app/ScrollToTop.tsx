@@ -6,8 +6,10 @@ import { preferredScrollBehavior } from "@/lib/scroll";
 export default function ScrollToTop() {
   const { pathname } = useLocation();
 
+  // pathname is the trigger, not a value the effect reads, so the "extra dependency" is intended.
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: preferredScrollBehavior() });
+    // oxlint-disable-next-line react/exhaustive-effect-dependencies
   }, [pathname]);
 
   return null;
