@@ -39,3 +39,6 @@ coverage/
 .wrangler/
 .dev.vars*
 !.dev.vars.example
+
+# Lighthouse CI local output
+.lighthouseci/
