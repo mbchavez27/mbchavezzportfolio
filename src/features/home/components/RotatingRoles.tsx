@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { useReducedMotion } from "motion/react";
+import { usePrefersReducedMotion } from "@/lib/use-prefers-reduced-motion";
 
 const ROLES = ["AI researcher", "Software engineer", "Technical operator"] as const;
 const ROLE_DURATION_MS = 3600;
@@ -56,7 +56,7 @@ function useScrambledText(target: string): string {
  * visitors who prefer reduced motion see that same sentence, static.
  */
 export default function RotatingRoles() {
-  const prefersReducedMotion = useReducedMotion();
+  const prefersReducedMotion = usePrefersReducedMotion();
   const [index, setIndex] = useState(0);
   const role = useScrambledText(ROLES[index] ?? ROLES[0]);
 
