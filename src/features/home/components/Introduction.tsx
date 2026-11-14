@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import { Link } from "react-router";
 import DarkBand from "@/components/molecules/DarkBand";
 import { ageOn } from "@/lib/format";
-import { drawRule, revealOnLoad } from "@/lib/motion";
+import { drawRule, revealOnLoad, settleOnLoad } from "@/lib/motion";
 import GlitchPortrait from "./GlitchPortrait";
 import RotatingRoles from "./RotatingRoles";
 import type { CallToAction, ContactLink } from "../domain/home.domain";
@@ -23,7 +23,7 @@ export default function Introduction({ portraitSrc, hoverPortraitSrc, callToActi
     <DarkBand>
       <div className="page-container min-h-[calc(100svh-3.5rem)] flex flex-col items-center justify-center text-center gap-5 py-16 md:py-24">
         <motion.div
-          {...revealOnLoad({ y: 16 })}
+          {...settleOnLoad({ y: 16 })}
           className="relative w-44 sm:w-52 md:w-60 aspect-square rounded-2xl bg-zinc-900 overflow-hidden mb-2"
         >
           <GlitchPortrait frontSrc={portraitSrc} backSrc={hoverPortraitSrc} alt="Max Benedict Chavez" />

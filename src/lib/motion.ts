@@ -24,6 +24,19 @@ export function revealOnLoad({ y = 0, delay = 0, duration = 0.6 }: Omit<Reveal, 
   } as const;
 }
 
+/**
+ * Slides an element up into place once, on first render, without fading it. For the page's largest
+ * image: the browser only counts an element as painted once an opacity fade finishes, so a fade
+ * would hold back the largest paint.
+ */
+export function settleOnLoad({ y = 0, delay = 0, duration = 0.6 }: Omit<Reveal, "x"> = {}) {
+  return {
+    initial: { y, scale: 0.97 },
+    animate: { y: 0, scale: 1 },
+    transition: { duration, delay, ease: "easeOut" },
+  } as const;
+}
+
 /** Draws the short maroon accent rule from zero width. */
 export function drawRule(delay: number) {
   return {

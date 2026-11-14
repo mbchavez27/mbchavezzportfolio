@@ -24,6 +24,8 @@ export default function GlitchPortrait({ frontSrc, backSrc, alt }: Props) {
   const [showBack, setShowBack] = useState(false);
   const [glitchKey, setGlitchKey] = useState(0);
   const [glitching, setGlitching] = useState(false);
+  // The back photo waits for the front one, so it never competes with the page's first paint.
+  const [frontLoaded, setFrontLoaded] = useState(false);
   const timeoutRef = useRef<number | undefined>(undefined);
 
   useEffect(() => () => window.clearTimeout(timeoutRef.current), []);
@@ -60,13 +62,16 @@ export default function GlitchPortrait({ frontSrc, backSrc, alt }: Props) {
         <img
           src={frontSrc}
           alt={alt}
+          onLoad={() => setFrontLoaded(true)}
           className={`${IMAGE_CLASS} ${fade} ${glitching ? "animate-glitch-jolt" : ""} ${showBack ? "opacity-0" : "opacity-100"}`}
         />
-        <img
-          src={backSrc}
-          alt=""
-          className={`${IMAGE_CLASS} ${fade} ${glitching ? "animate-glitch-jolt" : ""} ${showBack ? "opacity-100" : "opacity-0"}`}
-        />
+        {frontLoaded && (
+          <img
+            src={backSrc}
+            alt=""
+            className={`${IMAGE_CLASS} ${fade} ${glitching ? "animate-glitch-jolt" : ""} ${showBack ? "opacity-100" : "opacity-0"}`}
+          />
+        )}
       </div>
 
       {glitching && (
