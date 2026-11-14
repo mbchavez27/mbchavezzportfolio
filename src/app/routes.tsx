@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router";
+import type { RouteObject } from "react-router";
 import HomePage from "@/pages/HomePage";
 import RootLayout from "./RootLayout";
 
@@ -7,7 +7,8 @@ const page = (load: () => Promise<{ default: React.ComponentType }>) => async ()
   Component: (await load()).default,
 });
 
-export const router = createBrowserRouter([
+/** Shared by the browser router (src/main.tsx) and the build-time prerender (src/entry-server.tsx). */
+export const routes: RouteObject[] = [
   {
     Component: RootLayout,
     children: [
@@ -21,4 +22,4 @@ export const router = createBrowserRouter([
       { path: "/case-study/coming-soon", lazy: page(() => import("@/pages/CaseStudyComingSoonPage")) },
     ],
   },
-]);
+];

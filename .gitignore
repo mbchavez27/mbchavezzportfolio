@@ -42,3 +42,6 @@ coverage/
 
 # Lighthouse CI local output
 .lighthouseci/
+
+# Server build used only while prerendering
+dist-server/

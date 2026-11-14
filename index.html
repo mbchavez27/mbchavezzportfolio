@@ -8,8 +8,8 @@
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       <title>mbchavezz</title>
       <meta name="description" content="Max Benedict Chavez — AI researcher, software engineer, and technical operator." />
-      <!-- The hero portrait is the home page's largest paint; React only asks for it after the JS runs. -->
-      <link rel="preload" as="image" href="/src/assets/home/portrait.webp" fetchpriority="high" />
+      <!-- The home hero's portrait is its largest paint. scripts/prerender.mjs keeps this only on the home page. -->
+      <link rel="preload" as="image" href="/src/assets/home/portrait.webp" fetchpriority="high" data-only-on="/" />
       <style>html, body { height: 100%; margin: 0; } #root { height: 100%; }</style>
       
     </head>
