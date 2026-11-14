@@ -31,7 +31,7 @@ export default function Introduction({ portraitSrc, hoverPortraitSrc, callToActi
 
         <motion.p
           {...revealOnLoad({ y: 16, delay: 0.2 })}
-          className="font-body font-light text-zinc-500 text-sm md:text-base tracking-wide -mb-2"
+          className="font-body font-light text-zinc-400 text-sm md:text-base tracking-wide -mb-2"
         >
           Est. {BIRTH_DATE.getFullYear()} &middot; {AGE} years in
         </motion.p>
@@ -47,7 +47,7 @@ export default function Introduction({ portraitSrc, hoverPortraitSrc, callToActi
 
         <motion.p
           {...revealOnLoad({ delay: 0.65, duration: 0.5 })}
-          className="font-body font-light text-zinc-500 text-sm md:text-base tracking-[0.18em] uppercase"
+          className="font-body font-light text-zinc-400 text-sm md:text-base tracking-[0.18em] uppercase"
         >
           Max Benedict Chavez
         </motion.p>
@@ -55,7 +55,7 @@ export default function Introduction({ portraitSrc, hoverPortraitSrc, callToActi
         <motion.div {...revealOnLoad({ delay: 0.75, duration: 0.5 })} className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
           <Link
             to={callToAction.to}
-            className="flex items-center gap-2 text-zinc-500 hover:text-white transition-colors duration-200"
+            className="flex items-center gap-2 text-zinc-400 hover:text-white transition-colors duration-200"
           >
             <callToAction.Icon size={14} />
             <span className="font-body font-light text-sm tracking-wide">{callToAction.label}</span>
@@ -66,7 +66,7 @@ export default function Introduction({ portraitSrc, hoverPortraitSrc, callToActi
               href={href}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-2 text-zinc-500 hover:text-white transition-colors duration-200"
+              className="flex items-center gap-2 text-zinc-400 hover:text-white transition-colors duration-200"
             >
               <Icon size={14} />
               <span className="font-body font-light text-sm tracking-wide">{label}</span>
