@@ -79,8 +79,8 @@
 }
 
 @theme {
-  --font-display: 'Bricolage Grotesque', sans-serif;
-  --font-body: 'Public Sans', sans-serif;
+  --font-display: 'Bricolage Grotesque Variable', sans-serif;
+  --font-body: 'Public Sans Variable', sans-serif;
 }
 
 @theme inline {

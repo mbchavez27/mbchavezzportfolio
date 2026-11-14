@@ -1,2 +1,5 @@
+/* Self-hosted so text never waits on a third-party stylesheet. */
+@import '@fontsource-variable/bricolage-grotesque/wght.css';
+@import '@fontsource-variable/public-sans/wght.css';
 @import './tailwind.css';
 @import './theme.css';

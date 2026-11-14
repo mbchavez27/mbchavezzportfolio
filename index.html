@@ -8,11 +8,8 @@
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       <title>mbchavezz</title>
       <meta name="description" content="Max Benedict Chavez — AI researcher, software engineer, and technical operator." />
-      <!-- The site backdrop is the largest paint; fetch it before the app's JS asks for it. -->
-      <link rel="preload" as="image" href="/src/assets/background/red-gradient.webp" fetchpriority="high" />
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&family=Public+Sans:wght@300;400;500&display=swap" />
+      <!-- The hero portrait is the home page's largest paint; React only asks for it after the JS runs. -->
+      <link rel="preload" as="image" href="/src/assets/home/portrait.webp" fetchpriority="high" />
       <style>html, body { height: 100%; margin: 0; } #root { height: 100%; }</style>
       
     </head>
