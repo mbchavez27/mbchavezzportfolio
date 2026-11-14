@@ -126,7 +126,7 @@ jobs:
           wranglerVersion: 4.160.0
           command: pages deploy dist --project-name mbchavezz --branch ${{ github.head_ref }}
 
-      - uses: marocchino/sticky-pull-request-comment@v2
+      - uses: marocchino/sticky-pull-request-comment@v3
         with:
           header: preview
           message: |
