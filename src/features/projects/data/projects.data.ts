@@ -1,9 +1,9 @@
-import arwImg from "@/assets/projects/arw-2025.png";
-import groupifyImg from "@/assets/projects/groupify.png";
-import leapImg from "@/assets/projects/leap-2025.png";
-import lscsLinksImg from "@/assets/projects/lscs-links.png";
-import lscsWebsiteImg from "@/assets/projects/lscs-website.png";
-import panaToolsImg from "@/assets/projects/pana-tools.png";
+import arwImg from "@/assets/projects/arw-2025.webp";
+import groupifyImg from "@/assets/projects/groupify.webp";
+import leapImg from "@/assets/projects/leap-2025.webp";
+import lscsLinksImg from "@/assets/projects/lscs-links.webp";
+import lscsWebsiteImg from "@/assets/projects/lscs-website.webp";
+import panaToolsImg from "@/assets/projects/pana-tools.webp";
 import type { Stat } from "@/components/organisms/AtAGlance";
 import type { Project, StackCategory } from "../domain/projects.domain";
 

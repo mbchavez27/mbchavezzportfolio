@@ -1,10 +1,10 @@
-import animoCaoImg from "@/assets/productions/animo-christmas-cao.png";
-import animoUsgImg from "@/assets/productions/animo-christmas-usg.png";
-import animusikaImg from "@/assets/productions/animusika.png";
-import froshImg from "@/assets/productions/ccs-frosh.png";
-import comedyManilaImg from "@/assets/productions/comedy-manila.png";
-import echoesImg from "@/assets/productions/echoes-of-a-decade.png";
-import inscapeImg from "@/assets/productions/inscape.png";
+import animoCaoImg from "@/assets/productions/animo-christmas-cao.webp";
+import animoUsgImg from "@/assets/productions/animo-christmas-usg.webp";
+import animusikaImg from "@/assets/productions/animusika.webp";
+import froshImg from "@/assets/productions/ccs-frosh.webp";
+import comedyManilaImg from "@/assets/productions/comedy-manila.webp";
+import echoesImg from "@/assets/productions/echoes-of-a-decade.webp";
+import inscapeImg from "@/assets/productions/inscape.webp";
 import type { Stat, TagGroup } from "@/components/organisms/AtAGlance";
 import type { Capability, Production } from "../domain/productions.domain";
 

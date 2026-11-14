@@ -1,5 +1,5 @@
-import portraitBackImg from "@/assets/home/portrait-back.jpg";
-import portraitImg from "@/assets/home/portrait.jpg";
+import portraitBackImg from "@/assets/home/portrait-back.webp";
+import portraitImg from "@/assets/home/portrait.webp";
 import Introduction from "../components/Introduction";
 import { heroCallToAction, socialLinks } from "../data/home.data";
 

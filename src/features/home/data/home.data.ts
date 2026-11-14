@@ -1,8 +1,8 @@
 import { BriefcaseBusiness, FileText, Mail } from "lucide-react";
 import { Github, Linkedin } from "@/components/atoms/brand-icons";
-import aiResearcherImg from "@/assets/home/ai-researcher.jpg";
-import softwareEngineerImg from "@/assets/home/software-engineer.jpg";
-import technicalOperatorImg from "@/assets/home/technical-operator.jpg";
+import aiResearcherImg from "@/assets/home/ai-researcher.webp";
+import softwareEngineerImg from "@/assets/home/software-engineer.webp";
+import technicalOperatorImg from "@/assets/home/technical-operator.webp";
 import { profileLinks } from "@/config/links";
 import type { CallToAction, ContactLink, Correspondent, Hat, Highlight } from "../domain/home.domain";
 

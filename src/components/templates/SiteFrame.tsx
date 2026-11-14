@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { motion, useMotionValue, useReducedMotion, useSpring, useTransform, type MotionStyle } from "motion/react";
-import redGradient from "@/assets/background/red-gradient.jpg";
+import redGradient from "@/assets/background/red-gradient.webp";
 import Navbar from "@/components/organisms/Navbar";
 import { BackdropContext } from "@/lib/backdrop";
 
