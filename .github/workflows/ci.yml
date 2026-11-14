@@ -14,7 +14,7 @@ permissions:
 
 jobs:
   check:
-    name: Typecheck and build
+    name: Lint, typecheck, build and smoke test
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -26,8 +26,106 @@ jobs:
           cache: npm
 
       - run: npm ci
+      - run: npm audit --omit=dev --audit-level=high
+      - run: npm run lint
       - run: npm run typecheck
       - run: npm run build
+      - run: npm run smoke
+
+      # The exact build that passed is what previews and production ship.
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist
+          retention-days: 1
+
+  lighthouse:
+    name: Lighthouse budget
+    needs: check
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+
+      - uses: treosh/lighthouse-ci-action@v12
+        with:
+          configPath: ./.lighthouserc.json
+          uploadArtifacts: true
+          temporaryPublicStorage: false
+
+  docker:
+    name: Docker image builds
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+
+      - id: changes
+        uses: dorny/paths-filter@v3
+        with:
+          filters: |
+            image:
+              - Dockerfile
+              - .dockerignore
+              - docker/**
+              - package.json
+              - package-lock.json
+
+      - if: steps.changes.outputs.image == 'true'
+        uses: docker/setup-buildx-action@v4
+
+      - if: steps.changes.outputs.image == 'true'
+        uses: docker/build-push-action@v7
+        with:
+          context: .
+          platforms: linux/amd64
+          push: false
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  preview:
+    name: Deploy preview to Cloudflare Pages
+    needs: check
+    # Secrets are unavailable to forks and Dependabot, so skip those PRs.
+    if: >-
+      github.event_name == 'pull_request' &&
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      github.actor != 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pull-requests: write
+    concurrency:
+      group: preview-${{ github.head_ref }}
+      cancel-in-progress: true
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+
+      - id: deploy
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          wranglerVersion: 4.154.0
+          command: pages deploy dist --project-name mbchavezz --branch ${{ github.head_ref }}
+
+      - uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: preview
+          message: |
+            **Preview deployed:** ${{ steps.deploy.outputs.pages-deployment-alias-url || steps.deploy.outputs.deployment-url }}
+
+            Built from ${{ github.event.pull_request.head.sha }}.
 
   deploy:
     name: Deploy to Cloudflare Pages
@@ -42,18 +140,14 @@ jobs:
       group: deploy-production
       cancel-in-progress: false
     steps:
-      - uses: actions/checkout@v7
-
-      - uses: actions/setup-node@v7
+      - uses: actions/download-artifact@v4
         with:
-          node-version: 24
-          cache: npm
-
-      - run: npm ci
-      - run: npm run build
+          name: dist
+          path: dist
 
       - uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          wranglerVersion: 4.154.0
           command: pages deploy dist --project-name mbchavezz --branch main
