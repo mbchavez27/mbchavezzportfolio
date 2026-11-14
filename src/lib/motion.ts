@@ -1,3 +1,5 @@
+import type { CSSProperties } from "react";
+
 type Reveal = {
   readonly x?: number;
   readonly y?: number;
@@ -15,13 +17,25 @@ export function revealOnScroll({ x = 0, y = 20, delay = 0, duration = 0.6 }: Rev
   } as const;
 }
 
-/** Fades and slides an element in once, on first render. */
-export function revealOnLoad({ y = 0, delay = 0, duration = 0.6 }: Omit<Reveal, "x"> = {}) {
+/*
+ * The on-load animations below are plain CSS (keyframes in src/styles/tailwind.css) rather than
+ * motion props, so they play as soon as the prerendered HTML is parsed, before any JavaScript runs.
+ * Spread the result onto a plain element: <p {...revealOnLoad({ y: 16 })}>.
+ */
+type LoadAnimation = { readonly style: CSSProperties };
+
+function onLoad(name: string, { y = 0, delay = 0, duration = 0.6 }: Omit<Reveal, "x">): LoadAnimation {
   return {
-    initial: { opacity: 0, y },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration, delay },
-  } as const;
+    style: {
+      "--load-y": `${y}px`,
+      animation: `${name} ${duration}s cubic-bezier(0.25, 0.1, 0.25, 1) ${delay}s both`,
+    } as CSSProperties,
+  };
+}
+
+/** Fades and slides an element in once, on first render. */
+export function revealOnLoad(options: Omit<Reveal, "x"> = {}): LoadAnimation {
+  return onLoad("reveal-on-load", options);
 }
 
 /**
@@ -29,19 +43,11 @@ export function revealOnLoad({ y = 0, delay = 0, duration = 0.6 }: Omit<Reveal, 
  * image: the browser only counts an element as painted once an opacity fade finishes, so a fade
  * would hold back the largest paint.
  */
-export function settleOnLoad({ y = 0, delay = 0, duration = 0.6 }: Omit<Reveal, "x"> = {}) {
-  return {
-    initial: { y, scale: 0.97 },
-    animate: { y: 0, scale: 1 },
-    transition: { duration, delay, ease: "easeOut" },
-  } as const;
+export function settleOnLoad(options: Omit<Reveal, "x"> = {}): LoadAnimation {
+  return onLoad("settle-on-load", options);
 }
 
 /** Draws the short maroon accent rule from zero width. */
-export function drawRule(delay: number) {
-  return {
-    initial: { width: 0 },
-    animate: { width: 32 },
-    transition: { duration: 0.5, delay },
-  } as const;
+export function drawRule(delay: number): LoadAnimation {
+  return onLoad("draw-rule", { delay, duration: 0.5 });
 }

@@ -28,6 +28,27 @@
   }
 }
 
+/* On-load entrances (revealOnLoad, settleOnLoad, drawRule in src/lib/motion.ts). CSS, so they run before JS. */
+@keyframes reveal-on-load {
+  from {
+    opacity: 0;
+    transform: translateY(var(--load-y, 0));
+  }
+}
+@keyframes settle-on-load {
+  from {
+    transform: translateY(var(--load-y, 0)) scale(0.97);
+  }
+}
+@keyframes draw-rule {
+  from {
+    width: 0;
+  }
+  to {
+    width: 32px;
+  }
+}
+
 /* Hero portrait glitch (GlitchPortrait): torn, offset colour splits, a shake, a flash, noise bars and scanlines. */
 @theme {
   --animate-glitch-a: glitch-a 650ms steps(1, end) both;

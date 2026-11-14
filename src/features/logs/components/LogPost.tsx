@@ -1,5 +1,4 @@
 import { lazy, Suspense } from "react";
-import { motion } from "motion/react";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router";
 import TagList from "@/components/molecules/TagList";
@@ -17,7 +16,7 @@ type Props = {
 
 export default function LogPost({ title, dateLabel, tags, body, backHref }: Props) {
   return (
-    <motion.article {...revealOnLoad({ y: 20 })} className="page-container pb-16">
+    <article {...revealOnLoad({ y: 20 })} className="page-container pb-16">
       {/* The site column is already reading width: back link, header, and body share it. */}
       <div>
         <Link
@@ -42,6 +41,6 @@ export default function LogPost({ title, dateLabel, tags, body, backHref }: Prop
           <MarkdownBody markdown={body} />
         </Suspense>
       </div>
-    </motion.article>
+    </article>
   );
 }
