@@ -12,6 +12,7 @@ export const router = createBrowserRouter([
     Component: RootLayout,
     children: [
       { path: "/", Component: HomePage },
+      { path: "/index.html", Component: HomePage },
       { path: "/experience", lazy: page(() => import("@/pages/ExperiencePage")) },
       { path: "/papers", lazy: page(() => import("@/pages/PapersPage")) },
       { path: "/projects", lazy: page(() => import("@/pages/ProjectsPage")) },
