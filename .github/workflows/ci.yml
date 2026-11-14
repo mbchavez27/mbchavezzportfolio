@@ -52,11 +52,18 @@ jobs:
           name: dist
           path: dist
 
-      - uses: treosh/lighthouse-ci-action@v12
+      - id: lhci
+        uses: treosh/lighthouse-ci-action@v12
         with:
           configPath: ./.lighthouserc.json
           uploadArtifacts: true
+          artifactName: lighthouse-results
           temporaryPublicStorage: false
+
+      # Shows the scores on the run page, including when a budget fails.
+      - name: Summarize Lighthouse results
+        if: always() && steps.lhci.outcome != 'skipped'
+        run: node scripts/lighthouse-summary.mjs "${{ steps.lhci.outputs.resultsPath || '.lighthouseci' }}"
 
   docker:
     name: Docker image builds
