@@ -50,7 +50,9 @@ const { render, prerenderPaths } = await import(pathToFileURL(path.resolve(SERVE
 
 for (const route of prerenderPaths()) {
   const html = deferScripts(templateFor(route)).replace(ROOT, `<div id="root">${await render(route)}</div>`);
-  const file = route === "/" ? path.join(DIST, "index.html") : path.join(DIST, route, "index.html");
+  // /projects -> projects.html, which Cloudflare Pages serves at /projects itself; a projects/index.html
+  // would make it redirect every visit to /projects/ first.
+  const file = route === "/" ? path.join(DIST, "index.html") : path.join(DIST, `${route}.html`);
   mkdirSync(path.dirname(file), { recursive: true });
   writeFileSync(file, html);
   console.log(`prerendered ${route}`);

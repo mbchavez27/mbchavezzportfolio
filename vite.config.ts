@@ -23,8 +23,8 @@ function validateLogs(): Plugin {
 // Noon UTC today, so the date reads as the same calendar day in (almost) every timezone; see src/lib/now.ts.
 /**
  * Makes `vite preview` serve the build like Cloudflare Pages and nginx do: /projects gets the
- * prerendered dist/projects/index.html, and unknown pages get the plain 404.html shell instead of
- * the home page's markup.
+ * prerendered dist/projects.html, and unknown pages get the plain 404.html shell instead of the
+ * home page's markup.
  */
 function servePrerenderedPages(): Plugin {
   return {
@@ -35,7 +35,7 @@ function servePrerenderedPages(): Plugin {
         const pathname = req.url?.split('?')[0] ?? '/'
         const accepts = req.headers.accept ?? ''
         if (path.extname(pathname) || !accepts.includes('text/html')) return next()
-        const page = path.join(pathname, 'index.html')
+        const page = pathname === '/' ? '/index.html' : `${pathname.replace(/\/$/, '')}.html`
         const query = req.url?.slice(pathname.length) ?? ''
         req.url = (existsSync(path.join(outDir, page)) ? page : '/404.html') + query
         next()
