@@ -1,6 +1,5 @@
 import type { ReactNode } from "react";
 import { motion, useMotionValue, useReducedMotion, useSpring, useTransform, type MotionStyle } from "motion/react";
-import redGradient from "@/assets/background/red-gradient.webp";
 import Navbar from "@/components/organisms/Navbar";
 import { BackdropContext } from "@/lib/backdrop";
 
@@ -10,8 +9,14 @@ import { BackdropContext } from "@/lib/backdrop";
  * in from both screen edges like curtains closing behind the column.
  * It is a fixed element rather than `background-attachment: fixed`, which iOS Safari ignores.
  */
-export default function SiteFrame({ children }: { children: ReactNode }) {
-  const darkness = useMotionValue(0);
+type Props = {
+  /** Start with the black backdrop, for pages that open on the dark hero, so the red curtains don't flash in and slide away on load. */
+  startsDark?: boolean;
+  children: ReactNode;
+};
+
+export default function SiteFrame({ startsDark = false, children }: Props) {
+  const darkness = useMotionValue(startsDark ? 1 : 0);
   const prefersReducedMotion = useReducedMotion();
   const rawRedAmount = useTransform(darkness, (value) => 1 - value);
   const smoothRedAmount = useSpring(rawRedAmount, { stiffness: 420, damping: 46, mass: 0.5, restDelta: 0.001 });
@@ -27,13 +32,13 @@ export default function SiteFrame({ children }: { children: ReactNode }) {
       <div aria-hidden className="fixed inset-0 -z-10 overflow-hidden bg-zinc-950">
         {/* The navbar divider, carried out to the screen edges on the black backdrop; the curtains cover it. */}
         <div className="absolute inset-x-0 top-14 h-px bg-zinc-800" />
-        {/* Each curtain shows its own half of the full-screen image and carries it as it slides. */}
+        {/* Each curtain shows its own half of the full-screen gradient and carries it as it slides. */}
         <motion.div style={{ x: leftCurtainX }} className="absolute inset-y-0 left-0 w-1/2 overflow-hidden will-change-transform">
-          <img src={redGradient} alt="" className="absolute inset-y-0 left-0 w-screen h-full max-w-none object-cover" />
+          <div className="absolute inset-y-0 left-0 w-screen bg-curtain" />
           <div className="absolute inset-0 bg-black/40" />
         </motion.div>
         <motion.div style={{ x: rightCurtainX }} className="absolute inset-y-0 right-0 w-1/2 overflow-hidden will-change-transform">
-          <img src={redGradient} alt="" className="absolute inset-y-0 right-0 w-screen h-full max-w-none object-cover" />
+          <div className="absolute inset-y-0 right-0 w-screen bg-curtain" />
           <div className="absolute inset-0 bg-black/40" />
         </motion.div>
       </div>

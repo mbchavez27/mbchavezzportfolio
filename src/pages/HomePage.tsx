@@ -10,7 +10,7 @@ import { LatestLogsContainer } from "@/features/logs";
 
 export default function HomePage() {
   return (
-    <SiteFrame>
+    <SiteFrame startsDark>
       <IntroductionContainer />
       <CurrentRolesContainer />
       <HatSelectorContainer />
