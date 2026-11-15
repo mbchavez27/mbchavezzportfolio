@@ -1,6 +1,6 @@
 export const profileLinks = {
   email: "maxbenedict.chavez@gmail.com",
-  github: "https://github.com/mbchavezz",
+  github: "https://github.com/mbchavez27",
   linkedin: "https://linkedin.com/in/mbchavezz",
   resume: "https://animo.li/mbchavez-resume",
 } as const;

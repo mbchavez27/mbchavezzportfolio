@@ -66,7 +66,7 @@ export function selectedWork(acceptedPapers: number): readonly Highlight[] {
   ];
 }
 
-const github: ContactLink = { label: "GitHub", value: "github.com/mbchavezz", href: profileLinks.github, Icon: Github };
+const github: ContactLink = { label: "GitHub", value: "github.com/mbchavez27", href: profileLinks.github, Icon: Github };
 const linkedin: ContactLink = {
   label: "LinkedIn",
   value: "linkedin.com/in/mbchavezz",
