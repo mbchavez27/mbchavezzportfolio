@@ -13,7 +13,8 @@ export default function FeaturedProductions({ productions }: { productions: read
             position={i}
             image={production.image}
             title={production.title}
-            description={`${production.role} · ${production.date}`}
+            meta={`${production.role} · ${production.date}`}
+            description={`${production.responsibilities.join(". ")}.`}
           />
         ))}
       </FigureGrid>

@@ -9,7 +9,9 @@ type Props = {
   title: string;
   /** Internal route the image and title link to. */
   to?: string;
-  /** One short line under the title; anything past two lines is clipped. */
+  /** One gray line under the title, such as a role and date. */
+  meta?: string;
+  /** A short description; anything past three lines is clipped. */
   description?: string;
   /** Position in its grid, for the staggered reveal. */
   position?: number;
@@ -20,8 +22,8 @@ export function FigureGrid({ children }: { children: ReactNode }) {
   return <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10">{children}</div>;
 }
 
-/** An image card: the linked title and one short line. */
-export default function Figure({ image, title, to, description, position = 0 }: Props) {
+/** An image card: the linked title, an optional gray meta line and a short description. */
+export default function Figure({ image, title, to, meta, description, position = 0 }: Props) {
   const img = (
     <img
       src={image}
@@ -55,8 +57,15 @@ export default function Figure({ image, title, to, description, position = 0 }: 
         ) : (
           <p className={titleClass}>{title}</p>
         )}
+        {meta && (
+          <p className="font-body text-xs text-zinc-400 mt-0.5 truncate" title={meta}>
+            {meta}
+          </p>
+        )}
         {description && (
-          <p className="font-body font-light text-sm text-zinc-500 leading-relaxed line-clamp-2 mt-1">{description}</p>
+          <p className={`font-body font-light text-sm text-zinc-500 leading-relaxed line-clamp-3 ${meta ? "mt-1.5" : "mt-1"}`}>
+            {description}
+          </p>
         )}
       </figcaption>
     </motion.figure>

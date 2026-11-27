@@ -19,7 +19,8 @@ export default function FeaturedProjects({ items }: { items: readonly ProjectCar
             image={project.image}
             title={project.title}
             to={caseStudyHref}
-            description={project.role}
+            meta={project.role}
+            description={project.summary}
           />
         ))}
       </FigureGrid>
