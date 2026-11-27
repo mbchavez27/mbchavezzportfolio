@@ -20,7 +20,6 @@ function validateLogs(): Plugin {
   }
 }
 
-// Noon UTC today, so the date reads as the same calendar day in (almost) every timezone; see src/lib/now.ts.
 /**
  * Makes `vite preview` serve the build like Cloudflare Pages and nginx do: /projects gets the
  * prerendered dist/projects.html, and unknown pages get the plain 404.html shell instead of the
@@ -44,6 +43,7 @@ function servePrerenderedPages(): Plugin {
   }
 }
 
+// Noon UTC today, so the date reads as the same calendar day in (almost) every timezone; see src/lib/now.ts.
 const BUILD_DATE = process.env.BUILD_DATE ?? `${new Date().toISOString().slice(0, 10)}T12:00:00Z`
 
 export default defineConfig({
