@@ -17,7 +17,7 @@ export default function CurrentRoles({ entries }: { entries: readonly CurrentRol
 
   return (
     <section className="page-container">
-      <SectionHeading number="1" title="What Keeps Me Busy" divider={false} />
+      <SectionHeading number="1" title="Currently" divider={false} />
       <EntryList>
         {entries.map((entry, i) => (
           <EntryRow

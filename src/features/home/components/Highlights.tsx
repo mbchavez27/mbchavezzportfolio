@@ -10,7 +10,7 @@ import type { Highlight } from "../domain/home.domain";
 export default function Highlights({ highlights }: { highlights: readonly Highlight[] }) {
   return (
     <section className="page-container pb-16 md:pb-20">
-      <SectionHeading number="3" title="Selected work." />
+      <SectionHeading number="3" title="Selected Work" />
 
       <ol className="max-w-4xl divide-y divide-zinc-100">
         {highlights.map((highlight, i) => (

@@ -16,7 +16,7 @@ export default function LatestLogs({ entries }: { entries: readonly LatestLogEnt
 
   return (
     <section className="page-container">
-      <SectionHeading number="4" title="Notes from the work in progress." />
+      <SectionHeading number="4" title="Latest Logs" />
       <EntryList>
         {entries.map((entry, i) => (
           <EntryRow
