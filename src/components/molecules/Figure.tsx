@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router";
+import ExpandableText from "@/components/atoms/ExpandableText";
 import { revealOnScroll } from "@/lib/motion";
 
 type Props = {
@@ -11,7 +12,7 @@ type Props = {
   to?: string;
   /** One gray line under the title, such as a role and date. */
   meta?: string;
-  /** A short description; anything past three lines is clipped. */
+  /** A short description; past three lines it is clipped and opens on hover. */
   description?: string;
   /** Position in its grid, for the staggered reveal. */
   position?: number;
@@ -63,9 +64,9 @@ export default function Figure({ image, title, to, meta, description, position =
           </p>
         )}
         {description && (
-          <p className={`font-body font-light text-sm text-zinc-500 leading-relaxed line-clamp-3 ${meta ? "mt-1.5" : "mt-1"}`}>
+          <ExpandableText className={`font-body font-light text-sm text-zinc-500 leading-relaxed ${meta ? "mt-1.5" : "mt-1"}`}>
             {description}
-          </p>
+          </ExpandableText>
         )}
       </figcaption>
     </motion.figure>
