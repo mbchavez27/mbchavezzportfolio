@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
 import Tag from "@/components/atoms/Tag";
 import EntryRow, { EntryList } from "@/components/molecules/EntryRow";
-import SectionHeading from "@/components/molecules/SectionHeading";
 
 export type LogListEntry = {
   readonly slug: string;
@@ -15,15 +14,13 @@ export type LogListEntry = {
 
 type Props = {
   entries: readonly LogListEntry[];
-  /** Filter and sort controls, rendered under the heading. */
+  /** Filter and sort controls, rendered above the list. */
   controls: ReactNode;
 };
 
 export default function LogList({ entries, controls }: Props) {
   return (
-    <section className="page-container pb-16">
-      <SectionHeading number="1" title="Entries" divider={false} className="pt-8" />
-
+    <section className="page-container pt-6 pb-16">
       {controls}
 
       {entries.length === 0 ? (

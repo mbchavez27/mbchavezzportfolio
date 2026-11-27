@@ -1,5 +1,4 @@
 import EntryRow, { EntryList } from "@/components/molecules/EntryRow";
-import SectionHeading from "@/components/molecules/SectionHeading";
 import TagList from "@/components/molecules/TagList";
 import CurrentLabel from "./CurrentLabel";
 
@@ -17,7 +16,6 @@ export type PositionEntry = {
 export default function ExperienceTimeline({ entries }: { entries: readonly PositionEntry[] }) {
   return (
     <section>
-      <SectionHeading number="1" title="Work Experience" />
       <EntryList>
         {entries.map((entry, i) => (
           <EntryRow

@@ -15,7 +15,7 @@ export type SchoolingEntry = {
 export default function EducationTimeline({ entries }: { entries: readonly SchoolingEntry[] }) {
   return (
     <section className="mt-10">
-      <SectionHeading number="2" title="Education" />
+      <SectionHeading title="Education" />
       <EntryList>
         {entries.map((entry, i) => (
           <EntryRow
