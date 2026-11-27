@@ -8,12 +8,13 @@ export type Hat = {
   readonly to: string;
 };
 
-/** One entry in the home page's "Selected work" list, tagged with the hat it comes from and one metric. */
+/** One line in the home page's "Selected work" list: the hat it comes from, a short title and one fact. */
 export type Highlight = {
   readonly hat: string;
-  readonly metric: { readonly value: string; readonly label: string };
   readonly title: string;
-  readonly description: string;
+  readonly fact: string;
+  /** The page for the hat this work belongs to. */
+  readonly to: string;
 };
 
 export type CallToAction = {

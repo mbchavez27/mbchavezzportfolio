@@ -1,41 +1,39 @@
 import { motion } from "motion/react";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router";
+import { EntryList } from "@/components/molecules/EntryRow";
 import SectionHeading from "@/components/molecules/SectionHeading";
 import { revealOnScroll } from "@/lib/motion";
 import type { Highlight } from "../domain/home.domain";
 
-/**
- * Selected work as a numbered, paper-style list. Each item names the hat it comes from, a title and one
- * supporting line, with its metric set apart in a right-hand figure column like a table in a paper.
- */
+/** Selected work, one line each: the hat on the left, the linked title, and one fact on the right. */
 export default function Highlights({ highlights }: { highlights: readonly Highlight[] }) {
   return (
     <section className="page-container pb-16 md:pb-20">
       <SectionHeading number="3" title="Selected Work" />
 
-      <ol className="max-w-4xl divide-y divide-zinc-100">
+      <EntryList>
         {highlights.map((highlight, i) => (
           <motion.li
             key={highlight.title}
-            {...revealOnScroll({ y: 10, delay: i * 0.07, duration: 0.45 })}
-            className="grid grid-cols-[1.75rem_1fr] sm:grid-cols-[1.75rem_1fr_auto] py-4 first:pt-0 last:pb-0"
+            {...revealOnScroll({ y: 12, delay: i * 0.05, duration: 0.45 })}
+            className="grid grid-cols-1 sm:grid-cols-[8rem_1fr_auto] items-baseline gap-x-6 gap-y-1 py-3.5"
           >
-            {/* The hat line sits above the title, so the number lines up with the title, not the hat. */}
-            <p className="col-start-2 font-body text-xs text-primary mb-0.5">{highlight.hat}</p>
-            {/* On phones the figure drops below the description; from sm up it gets its own right-hand column. */}
-            <div className="col-start-2 row-start-4 mt-2 flex items-baseline gap-1.5 sm:col-start-3 sm:row-start-1 sm:row-span-3 sm:mt-0 sm:block sm:self-center sm:pl-6 sm:text-right">
-              <p className="font-display font-semibold text-base sm:text-xl md:text-2xl text-zinc-900 tabular-nums leading-none">
-                {highlight.metric.value}
-              </p>
-              <p className="font-body text-xs text-zinc-400 sm:mt-1 whitespace-nowrap">{highlight.metric.label}</p>
-            </div>
-            <span className="col-start-1 row-start-2 font-display font-semibold text-primary tabular-nums">{i + 1}.</span>
-            <p className="col-start-2 row-start-2 font-display font-semibold text-zinc-900">{highlight.title}</p>
-            <p className="col-start-2 row-start-3 font-body font-light text-sm leading-relaxed text-zinc-500 mt-0.5">
-              {highlight.description}
-            </p>
+            <span className="font-body font-light text-xs text-zinc-400 tracking-wide">{highlight.hat}</span>
+            <Link
+              to={highlight.to}
+              className="group justify-self-start inline-flex items-baseline gap-1.5 font-display text-[15px] md:text-base font-semibold text-zinc-900 leading-snug hover:text-primary transition-colors duration-200"
+            >
+              {highlight.title}
+              <ArrowRight
+                size={14}
+                className="shrink-0 self-center opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200"
+              />
+            </Link>
+            <span className="font-body font-light text-sm text-zinc-500 tabular-nums sm:text-right">{highlight.fact}</span>
           </motion.li>
         ))}
-      </ol>
+      </EntryList>
     </section>
   );
 }

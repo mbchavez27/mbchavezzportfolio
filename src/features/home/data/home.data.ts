@@ -42,29 +42,11 @@ export const otherHats: readonly Hat[] = [
   },
 ];
 
-/** The research metric is the accepted-paper count from the papers feature, so HighlightsContainer supplies it. */
-export function selectedWork(acceptedPapers: number): readonly Highlight[] {
-  return [
-    {
-      hat: "AI Researcher",
-      metric: { value: String(acceptedPapers), label: acceptedPapers === 1 ? "accepted paper" : "accepted papers" },
-      title: "A Machine-Proposed, Human-Validated Taglish–English Parallel Corpus for E-Commerce Alignment Analysis.",
-      description: "Chavez, M.B., Lee, H., Sadiarin Jr., E., & Gonda, R. Oral presentation, AILRIC 2026.",
-    },
-    {
-      hat: "Software Engineer",
-      metric: { value: "22,000+", label: "students served" },
-      title: "LEAP 2025 Registration Platform.",
-      description: "Led frontend development in Next.js and TypeScript for DLSU student registration, 2025.",
-    },
-    {
-      hat: "Technical Operator",
-      metric: { value: "5+", label: "events produced" },
-      title: "Animo Christmas Live Broadcast.",
-      description: "Live camera switching to the campus big screen for 2,000+ students, DLSU.",
-    },
-  ];
-}
+export const selectedWork: readonly Highlight[] = [
+  { hat: "AI Researcher", title: "Taglish–English Parallel Corpus", fact: "Oral · AILRIC 2026", to: "/papers" },
+  { hat: "Software Engineer", title: "LEAP 2025 Registration Platform", fact: "22,000+ students", to: "/projects" },
+  { hat: "Technical Operator", title: "Animo Christmas Live Broadcast", fact: "2,000+ viewers", to: "/productions" },
+];
 
 const github: ContactLink = { label: "GitHub", value: "github.com/mbchavez27", href: profileLinks.github, Icon: Github };
 const linkedin: ContactLink = {
