@@ -3,7 +3,7 @@ import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import path from 'node:path'
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
-import { parseLog } from './src/features/logs/domain/logs.domain'
+import { parseLog } from './src/features/logs/domain/logs.domain.ts'
 
 const LOG_POSTS_DIR = path.resolve(import.meta.dirname, './src/features/logs/posts')
 
