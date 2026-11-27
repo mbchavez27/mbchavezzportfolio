@@ -1,13 +1,20 @@
 import AtAGlance from "@/components/organisms/AtAGlance";
-import { productionStats, productionTagGroups } from "../data/productions.data";
+import { productionDisciplines, productionEventTypes, productions } from "../data/productions.data";
+import { firstYear } from "../domain/productions.domain";
 
 export default function ProductionsAtAGlanceContainer() {
   return (
     <AtAGlance
-      title="Production Highlights"
-      summary="A snapshot of my live production work: the events I have supported and how long I have been doing it, along with the technical disciplines I cover and the kinds of events they serve."
-      stats={productionStats}
-      tagGroups={productionTagGroups}
+      title="Productions at a glance"
+      stats={[
+        { value: productions.length, label: "Productions" },
+        { value: productionDisciplines.length, label: "Disciplines" },
+        { value: firstYear(productions), label: "Active since" },
+      ]}
+      tagGroups={[
+        { label: "Disciplines", tags: productionDisciplines },
+        { label: "Event types", tags: productionEventTypes },
+      ]}
     />
   );
 }

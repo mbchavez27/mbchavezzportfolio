@@ -8,13 +8,12 @@ export default function ResearchAtAGlanceContainer() {
   return (
     <AtAGlance
       title="Research at a glance"
-      summary="An overview of my research output so far: peer-reviewed papers on multilingual NLP and computational social science, how many were selected for oral presentation, and the scale of the text data analysed across these studies, alongside the areas the work spans."
       stats={[
-        { value: String(accepted), label: "Accepted Papers" },
-        { value: String(oralPresentations), label: "Oral Presentations" },
-        { value: textSamplesAnalyzed, label: "Text Samples Analyzed" },
+        { value: accepted, label: "Accepted papers" },
+        { value: oralPresentations, label: "Oral presentations" },
+        { value: textSamplesAnalyzed, label: "Text samples analysed" },
       ]}
-      tagGroups={[{ label: "Research Areas", tags: researchAreas }]}
+      tagGroups={[{ label: "Research areas", tags: researchAreas }]}
     />
   );
 }

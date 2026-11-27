@@ -4,14 +4,7 @@ import leapImg from "@/assets/projects/leap-2025.webp";
 import lscsLinksImg from "@/assets/projects/lscs-links.webp";
 import lscsWebsiteImg from "@/assets/projects/lscs-website.webp";
 import panaToolsImg from "@/assets/projects/pana-tools.webp";
-import type { Stat } from "@/components/organisms/AtAGlance";
 import type { Project, StackCategory } from "../domain/projects.domain";
-
-export const projectStats: readonly Stat[] = [
-  { value: "5+", label: "Projects Built" },
-  { value: "3", label: "Domains Explored" },
-  { value: "3+", label: "Technologies Used" },
-];
 
 export const projectDomains: readonly string[] = ["Frontend", "Backend", "Artificial Intelligence"];
 

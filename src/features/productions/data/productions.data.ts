@@ -5,18 +5,11 @@ import froshImg from "@/assets/productions/ccs-frosh.webp";
 import comedyManilaImg from "@/assets/productions/comedy-manila.webp";
 import echoesImg from "@/assets/productions/echoes-of-a-decade.webp";
 import inscapeImg from "@/assets/productions/inscape.webp";
-import type { Stat, TagGroup } from "@/components/organisms/AtAGlance";
 import type { Capability, Production } from "../domain/productions.domain";
 
-export const productionStats: readonly Stat[] = [
-  { value: "5+", label: "Events Supported" },
-  { value: "3+", label: "Years of Experience" },
-];
+export const productionDisciplines: readonly string[] = ["Audio", "AVP", "Technical Operations"];
 
-export const productionTagGroups: readonly TagGroup[] = [
-  { label: "Disciplines", tags: ["Audio", "AVP", "Technical Operations"] },
-  { label: "Event Types", tags: ["University Events", "Concerts", "Productions"] },
-];
+export const productionEventTypes: readonly string[] = ["University Events", "Concerts", "Productions"];
 
 export const productions: readonly Production[] = [
   {

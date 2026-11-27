@@ -1,37 +1,40 @@
-import AcademicTable from "@/components/molecules/AcademicTable";
+import { motion } from "motion/react";
+import { revealOnScroll } from "@/lib/motion";
 
-export type Stat = { readonly value: string; readonly label: string };
+export type Stat = { readonly value: string | number; readonly label: string };
 export type TagGroup = { readonly label: string; readonly tags: readonly string[] };
 
 type Props = {
+  /** Names the block for screen readers; it is not shown. */
   title: string;
-  /** A short paragraph describing what the table summarises, set above it. */
-  summary: string;
   stats: readonly Stat[];
   tagGroups: readonly TagGroup[];
 };
 
-/** Summary at the top of a page: a short summary and "Table 1" of headline numbers and labelled lists. */
-export default function AtAGlance({ title, summary, stats, tagGroups }: Props) {
-  const rows = [
-    ...stats.map((stat) => ({
-      label: stat.label,
-      value: <span className="font-display font-semibold text-zinc-900 tabular-nums">{stat.value}</span>,
-    })),
-    ...tagGroups.map((group) => ({ label: group.label, value: group.tags.join(", ") })),
-  ];
-
+/** The summary at the top of a page: a row of headline numbers, then one line per group of tags. */
+export default function AtAGlance({ title, stats, tagGroups }: Props) {
   return (
-    <div className="page-container mb-6">
-      <AcademicTable
-        number={1}
-        caption={title}
-        summary={summary}
-        columns={["metric", "value"]}
-        rows={rows}
-        valueAlign="right"
-        breakBefore={stats.length}
-      />
-    </div>
+    <motion.section {...revealOnScroll()} aria-label={title} className="page-container mt-5 mb-6">
+      <dl className="grid grid-cols-3 gap-4 sm:gap-6 border-t-2 border-zinc-900 py-5">
+        {stats.map((stat) => (
+          <div key={stat.label} className="flex flex-col-reverse justify-end gap-1">
+            <dt className="font-body text-xs uppercase tracking-wide text-zinc-500">{stat.label}</dt>
+            <dd className="font-display text-2xl sm:text-3xl font-semibold tabular-nums text-zinc-900">{stat.value}</dd>
+          </div>
+        ))}
+      </dl>
+
+      <dl>
+        {tagGroups.map((group) => (
+          <div
+            key={group.label}
+            className="grid grid-cols-1 sm:grid-cols-[8rem_1fr] gap-x-6 gap-y-0.5 border-t border-zinc-200 py-2.5"
+          >
+            <dt className="font-body text-xs uppercase tracking-wide text-primary sm:pt-0.5">{group.label}</dt>
+            <dd className="font-body font-light text-sm text-zinc-600">{group.tags.join(" · ")}</dd>
+          </div>
+        ))}
+      </dl>
+    </motion.section>
   );
 }

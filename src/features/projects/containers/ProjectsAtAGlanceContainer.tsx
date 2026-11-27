@@ -1,12 +1,16 @@
 import AtAGlance from "@/components/organisms/AtAGlance";
-import { projectDomains, projectFocus, projectStats } from "../data/projects.data";
+import { projectDomains, projectFocus, projects } from "../data/projects.data";
+import { countUniqueTags } from "../domain/projects.domain";
 
 export default function ProjectsAtAGlanceContainer() {
   return (
     <AtAGlance
-      title="Projects at a Glance"
-      summary="A summary of the software I have built: the number of projects shipped, the engineering domains they cover from frontend to AI, and the languages and focus areas that recur across them."
-      stats={projectStats}
+      title="Projects at a glance"
+      stats={[
+        { value: projects.length, label: "Projects" },
+        { value: projectDomains.length, label: "Domains" },
+        { value: countUniqueTags(projects), label: "Tools & practices" },
+      ]}
       tagGroups={[
         { label: "Focus", tags: projectFocus },
         { label: "Domains", tags: projectDomains },
