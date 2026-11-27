@@ -6,7 +6,6 @@ type Props = {
   title: ReactNode;
   /** Paper-style section number, e.g. "2" or "1.1". */
   number?: string;
-  subtitle?: ReactNode;
   /** Heading level; sections use h2, groups inside a section (e.g. a venue) use h3. */
   as?: "h2" | "h3";
   /** Draw the hairline above; off for a section that directly follows a dark band. */
@@ -15,7 +14,7 @@ type Props = {
 };
 
 /** The quiet section header used across the site: a faint maroon hairline and a title. */
-export default function SectionHeading({ title, number, subtitle, as: Heading = "h2", divider = true, className = "" }: Props) {
+export default function SectionHeading({ title, number, as: Heading = "h2", divider = true, className = "" }: Props) {
   return (
     <motion.div {...revealOnScroll()} className={`${divider ? "border-t border-primary/15" : ""} pt-10 pb-4 ${className}`}>
       <Heading
@@ -24,7 +23,6 @@ export default function SectionHeading({ title, number, subtitle, as: Heading = 
         {number && <span className="text-primary tabular-nums mr-2">{number}.</span>}
         {title}
       </Heading>
-      {subtitle && <p className="font-body font-light text-sm text-zinc-400 mt-1">{subtitle}</p>}
     </motion.div>
   );
 }
