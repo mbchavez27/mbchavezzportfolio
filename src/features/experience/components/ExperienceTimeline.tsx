@@ -1,7 +1,7 @@
 import EntryRow, { EntryList } from "@/components/molecules/EntryRow";
 import SectionHeading from "@/components/molecules/SectionHeading";
 import TagList from "@/components/molecules/TagList";
-import WhenMeta from "./WhenMeta";
+import CurrentLabel from "./CurrentLabel";
 
 export type PositionEntry = {
   readonly when: string;
@@ -23,8 +23,8 @@ export default function ExperienceTimeline({ entries }: { entries: readonly Posi
           <EntryRow
             key={`${entry.role}@${entry.organization}`}
             position={i}
-            meta={<WhenMeta when={entry.when} isOngoing={entry.isOngoing} />}
-            title={entry.role}
+            meta={entry.when}
+            title={<>{entry.role}{entry.isOngoing && <CurrentLabel />}</>}
             subtitle={
               <>
                 <span className="text-primary">@</span> {entry.organization} · {entry.employmentType}

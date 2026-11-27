@@ -1,7 +1,7 @@
 import Tag from "@/components/atoms/Tag";
 import EntryRow, { EntryList } from "@/components/molecules/EntryRow";
 import SectionHeading from "@/components/molecules/SectionHeading";
-import WhenMeta from "./WhenMeta";
+import CurrentLabel from "./CurrentLabel";
 
 export type SchoolingEntry = {
   readonly when: string;
@@ -21,8 +21,8 @@ export default function EducationTimeline({ entries }: { entries: readonly Schoo
           <EntryRow
             key={entry.school}
             position={i}
-            meta={<WhenMeta when={entry.when} isOngoing={entry.isOngoing} />}
-            title={entry.school}
+            meta={entry.when}
+            title={<>{entry.school}{entry.isOngoing && <CurrentLabel />}</>}
             subtitle={
               <>
                 {entry.program}

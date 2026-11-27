@@ -1,6 +1,7 @@
 import EntryRow, { EntryList } from "@/components/molecules/EntryRow";
 import MoreLink from "@/components/molecules/MoreLink";
 import SectionHeading from "@/components/molecules/SectionHeading";
+import CurrentLabel from "./CurrentLabel";
 
 export type CurrentRoleEntry = {
   readonly role: string;
@@ -22,16 +23,8 @@ export default function CurrentRoles({ entries }: { entries: readonly CurrentRol
           <EntryRow
             key={`${entry.role}@${entry.organization}`}
             position={i}
-            meta={
-              <span className="flex items-center gap-2 uppercase">
-                <span className="relative flex w-2 h-2">
-                  <span className="absolute inset-0 rounded-full bg-primary opacity-75 animate-ping" />
-                  <span className="relative w-2 h-2 rounded-full bg-primary" />
-                </span>
-                Now · {entry.duration}
-              </span>
-            }
-            title={entry.role}
+            meta={entry.duration}
+            title={<>{entry.role}<CurrentLabel /></>}
             to={EXPERIENCE_PATH}
             subtitle={
               <>
