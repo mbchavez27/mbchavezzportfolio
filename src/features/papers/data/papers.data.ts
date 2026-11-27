@@ -1,7 +1,7 @@
 import type { Paper, Venue } from "../domain/papers.domain";
 
-const ailric2026: Venue = { name: "AILRIC 2026", acceptance: "Accepted for Oral Presentation" };
-const ieeeFmlds2026: Venue = { name: "IEEE FMLDS 2026", acceptance: "Accepted Full Paper" };
+const ailric2026: Venue = { name: "AILRIC 2026" };
+const ieeeFmlds2026: Venue = { name: "IEEE FMLDS 2026" };
 
 export const papers: readonly Paper[] = [
   {

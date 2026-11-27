@@ -30,7 +30,7 @@ export default function ResearchWork({ venueGroups }: { venueGroups: readonly Ve
 
       {venueGroups.map(({ venue, papers }, v) => (
         <section key={venue.name}>
-          <SectionHeading as="h3" number={`1.${v + 1}`} title={venue.name} subtitle={venue.acceptance} className="pt-8 pb-2" />
+          <SectionHeading as="h3" number={`1.${v + 1}`} title={venue.name} className="pt-8 pb-2" />
           <EntryList>
             {papers.map((paper, i) => (
               <EntryRow

@@ -1,6 +1,5 @@
 export type Venue = {
   readonly name: string;
-  readonly acceptance: string;
 };
 
 export type PaperLink = {
