@@ -1,18 +1,20 @@
 import portraitBackImg from "@/assets/home/portrait-back.webp";
 import portraitImg from "@/assets/home/portrait.webp";
-import { researchAreas } from "@/features/papers";
-import { productionDisciplines } from "@/features/productions";
-import { stackCategories } from "@/features/projects";
+import { papers, researchAreas } from "@/features/papers";
+import { productionDisciplines, productions } from "@/features/productions";
+import { projectFocus, projects } from "@/features/projects";
 import Introduction from "../components/Introduction";
-import { fieldTokens, heroCallToAction, socialLinks } from "../data/home.data";
+import { heroCallToAction, socialLinks } from "../data/home.data";
 
-/** Every term from the three hats, shuffled together with the generic tokens and deduplicated. */
+/** Only terms from your own work: what you built, produced, published and study. */
 const fieldWords: readonly string[] = [
   ...new Set([
+    ...projects.map((project) => project.title),
+    ...productions.map((production) => production.title),
+    ...papers.map((paper) => paper.venue.name),
     ...researchAreas,
-    ...stackCategories.flatMap((category) => category.items),
+    ...projectFocus,
     ...productionDisciplines,
-    ...fieldTokens,
   ]),
 ];
 

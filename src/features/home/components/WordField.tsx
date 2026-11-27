@@ -3,7 +3,7 @@ import { randomGlyph } from "@/lib/glyphs";
 import { usePrefersReducedMotion } from "@/lib/use-prefers-reduced-motion";
 
 type Props = {
-  /** The vocabulary the field draws from; words repeat when the field needs more than there are. */
+  /** The vocabulary the field draws from; each word appears at most once. */
   words: readonly string[];
 };
 
@@ -113,7 +113,7 @@ export default function WordField({ words }: Props) {
       canvas.width = Math.round(width * dpr);
       canvas.height = Math.round(height * dpr);
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      const count = particleCount(width, height);
+      const count = Math.min(particleCount(width, height), words.length);
       if (particles.length !== count) particles = makeParticles(words, count);
       if (prefersReducedMotion) draw(performance.now());
     };
