@@ -15,19 +15,11 @@ export default function FeaturedProjects({ items }: { items: readonly ProjectCar
         {items.map(({ project, caseStudyHref }, i) => (
           <Figure
             key={project.title}
-            number={i + 1}
             position={i}
             image={project.image}
-            title={`${project.title}.`}
+            title={project.title}
             to={caseStudyHref}
-            details={
-              <>
-                {project.role} · <span className="text-primary">@</span>
-                {project.domain}. {project.summary}
-                <span className="block mt-1.5 text-xs text-zinc-400">{project.tags.join(" · ")}</span>
-              </>
-            }
-            links={[{ label: "case study", to: caseStudyHref }]}
+            description={project.role}
           />
         ))}
       </FigureGrid>

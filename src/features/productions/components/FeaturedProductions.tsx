@@ -10,16 +10,10 @@ export default function FeaturedProductions({ productions }: { productions: read
         {productions.map((production, i) => (
           <Figure
             key={production.title}
-            number={i + 1}
             position={i}
             image={production.image}
-            title={`${production.title}.`}
-            details={
-              <>
-                {production.role}, {production.organization} ({production.date}).{" "}
-                {production.responsibilities.join("; ")}.
-              </>
-            }
+            title={production.title}
+            description={`${production.role} · ${production.date}`}
           />
         ))}
       </FigureGrid>

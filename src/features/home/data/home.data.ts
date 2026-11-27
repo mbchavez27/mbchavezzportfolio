@@ -12,31 +12,22 @@ export const heroCallToAction: CallToAction = {
   Icon: BriefcaseBusiness,
 };
 
-/** The accepted-paper count comes from the papers feature, so HatSelectorContainer supplies it. */
-export function researcherHat(acceptedPapers: number): Hat {
-  return {
+export const hats: readonly Hat[] = [
+  {
     role: "AI Researcher",
-    description: `Research in computational social science, large language models, machine translation, and text mining — with ${acceptedPapers} accepted conference ${acceptedPapers === 1 ? "paper" : "papers"}.`,
-    tags: ["Computational Social Science", "LLMs", "Machine Translation", "Text Mining"],
+    description: "Computational social science, LLMs, machine translation and text mining.",
     image: aiResearcherImg,
     to: "/papers",
-  };
-}
-
-export const otherHats: readonly Hat[] = [
+  },
   {
     role: "Software Engineer",
-    description:
-      "Building scalable systems with TypeScript, Python, and Java. DevOps Engineer Intern at ING Hubs Philippines; previously led frontend engineering across 3+ teams at LSCS, shipping platforms for 22,000+ students.",
-    tags: ["Scalable Systems", "TypeScript", "Python", "Java"],
+    description: "Scalable systems in TypeScript, Python and Java, from ING Hubs to LSCS.",
     image: softwareEngineerImg,
     to: "/projects",
   },
   {
     role: "Technical Operator",
-    description:
-      "Audio and AVP operator for university-wide events — running live sound and audio-visual playback, with camera and live switching work along the way.",
-    tags: ["Audio", "AVP", "Live Sound", "Live Switching"],
+    description: "Live sound and audio-visual playback for university-wide events.",
     image: technicalOperatorImg,
     to: "/productions",
   },

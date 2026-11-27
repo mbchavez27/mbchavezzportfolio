@@ -12,18 +12,11 @@ export default function HatSelector({ hats }: { hats: readonly Hat[] }) {
         {hats.map((hat, i) => (
           <Figure
             key={hat.role}
-            number={i + 1}
             position={i}
             image={hat.image}
-            title={`${hat.role}.`}
+            title={hat.role}
             to={hat.to}
-            details={
-              <>
-                {hat.description}
-                <span className="block mt-1.5 text-xs text-zinc-400">{hat.tags.join(" · ")}</span>
-              </>
-            }
-            links={[{ label: "explore", to: hat.to }]}
+            description={hat.description}
           />
         ))}
       </FigureGrid>
