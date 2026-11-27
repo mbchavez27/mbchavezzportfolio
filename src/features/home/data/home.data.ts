@@ -6,6 +6,9 @@ import technicalOperatorImg from "@/assets/home/technical-operator.webp";
 import { profileLinks } from "@/config/links";
 import type { CallToAction, ContactLink, Correspondent, Hat, Highlight } from "../domain/home.domain";
 
+/** Short generic tokens mixed into the hero's word field alongside the real research, stack and production terms. */
+export const fieldTokens: readonly string[] = ["{ }", "=>", "git push", "cue 1", "fader", "BLEU", "</>", "gain", "epoch", "deploy"];
+
 export const heroCallToAction: CallToAction = {
   label: "View my experience",
   to: "/experience",

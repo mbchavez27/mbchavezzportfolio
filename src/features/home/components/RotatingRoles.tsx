@@ -1,16 +1,11 @@
 import { useEffect, useRef, useState } from "react";
+import { randomGlyph } from "@/lib/glyphs";
 import { usePrefersReducedMotion } from "@/lib/use-prefers-reduced-motion";
 
 const ROLES = ["AI researcher", "Software engineer", "Technical operator"] as const;
 const ROLE_DURATION_MS = 3600;
 const SCRAMBLE_DURATION_MS = 1100;
 const GLYPH_REFRESH_MS = 45;
-const GLYPHS = "!<>-_/[]{}=+*^?#%&$";
-
-function randomGlyph(): string {
-  return GLYPHS.charAt(Math.floor(Math.random() * GLYPHS.length));
-}
-
 /**
  * Returns `target`, but when it changes the text decodes into it: each character flickers
  * through random glyphs and settles roughly left to right.
